@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="@dimen/padding_large"
+
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_home_blog_item_img_height"
+                android:background="@color/skeleton_color" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_marginStart="@dimen/padding_small"
+                android:layout_marginTop="@dimen/padding_small"
+                android:layout_marginEnd="@dimen/padding_huge"
+                android:elevation="4dp"
+                android:layout_marginBottom="@dimen/padding_tiny"
+                android:background="@color/skeleton_color" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_marginStart="@dimen/padding_small"
+                android:layout_marginTop="@dimen/padding_small"
+                android:layout_marginEnd="@dimen/padding_huge"
+                android:layout_marginBottom="@dimen/padding_tiny"
+                android:background="@color/skeleton_darkColor" />
+
+            <View
+                android:layout_width="120dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="@dimen/padding_small"
+                android:layout_marginBottom="@dimen/padding_tiny"
+                android:background="@color/skeleton_darkColor" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

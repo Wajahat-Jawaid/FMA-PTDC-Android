@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="locations">
+        <item>karachi</item>
+        <item>faisalabad</item>
+        <item>islamabad</item>
+        <item>lahore</item>
+        <item>multan</item>
+        <item>quetta</item>
+        <item>peshawar</item>
+        <item>murree</item>
+        <item>naran</item>
+        <item>hunza</item>
+        <item>gilgit</item>
+    </string-array>
+
+
+    <string-array name="services">
+        <item>All services</item>
+        <item>service 1</item>
+        <item>service 2</item>
+        <item>service 3</item>
+        <item>service 4</item>
+    </string-array>
+</resources>

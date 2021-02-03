@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:useLevel="false" >
+    <solid android:color="#35CCCCCC" />
+    <size
+        android:height="50dp"
+        android:width="50dp" />
+</shape>
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+
+<!--    &lt;!&ndash; Drop Shadow Stack &ndash;&gt;-->
+<!--    <item>-->
+<!--        <shape android:shape="oval">-->
+<!--                 <solid android:color="#00CCCCCC" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item>-->
+<!--        <shape android:shape="oval">-->
+
+<!--            <solid android:color="#10CCCCCC" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item>-->
+<!--        <shape android:shape="oval">-->
+<!--                 <solid android:color="#20CCCCCC" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item>-->
+<!--        <shape android:shape="oval">-->
+
+<!--            <solid android:color="#25CCCCCC" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item>-->
+<!--        <shape android:shape="oval">-->
+<!--            <solid android:color="#35CCCCCC" />-->
+<!--        </shape>-->
+<!--    </item>-->
+
+
+<!--</layer-list>-->

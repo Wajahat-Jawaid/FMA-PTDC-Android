@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.salampakistan.utils.TintDrawableAlignment" />
+        <import type="com.salampakistan.model.enums.BookingEntity" />
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.home.HomeFragment" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:visibility="gone">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_home_bg" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#55000000" />
+
+                    <TextView
+                        android:id="@+id/welcome_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/banner_text_separator"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="@string/app_name"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.XLarge"
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/banner_text_separator"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/padding_large"
+                        android:src="@drawable/ic_line_filled"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:fitsSystemWindows="true"
+                    app:contentInsetStart="0dp"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                    <ImageView
+                        android:id="@+id/toolbar_logo_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="86dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/padding_small"
+                        android:src="@mipmap/logo" />
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <!-- Banner -->
+                <RelativeLayout
+                    android:id="@+id/banner_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp">
+
+                    <RelativeLayout
+                        android:id="@+id/toolbar_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/search_toolbar_height"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="45dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/padding_large"
+                            android:scaleType="centerCrop"
+                            android:src="@mipmap/logo" />
+
+                        <ImageButton
+                            android:id="@+id/search_btn"
+                            style="@style/AppTheme.ImageButton"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/padding_small"
+                            android:src="@drawable/ic_search_20dp" />
+
+                        <View
+                            style="@style/AppTheme.Separator.Horizontal"
+                            android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/weather_layout"
+                        android:layout_below="@+id/toolbar_layout"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/bg_home_banner" />
+
+                    <TextView
+                        android:id="@+id/salam_changeable_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/toolbar_layout"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:layout_marginTop="@dimen/padding_gargantua"
+                        android:includeFontPadding="false"
+                        android:text="Salam"
+                        android:textAppearance="@style/AppTheme.TextView.Bold"
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/pakistan_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/salam_changeable_text"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:layout_marginBottom="@dimen/padding_tiny"
+                        android:includeFontPadding="false"
+                        android:text="@string/pakistan"
+                        android:textAppearance="@style/AppTheme.TextView.Bold"
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pakistan_text"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:includeFontPadding="false"
+                        android:text="@string/banner_desc"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        android:textColor="@color/black"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/btn_normal"
+                        android:layout_below="@+id/pakistan_text"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:background="#CCFFFFFF"
+                        android:onClick="@{() -> fragment.onCheckVisaBtnClicked()}"
+                        android:paddingStart="@dimen/padding_huge"
+                        android:paddingEnd="@dimen/padding_huge"
+                        android:text="@string/apply_e_visa"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                        android:textColor="@color/black" />
+
+                    <FrameLayout
+                        android:id="@+id/weather_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_huge"
+                    android:layout_marginBottom="@dimen/padding_small"
+                    android:paddingStart="@dimen/padding_large"
+                    android:paddingEnd="@dimen/padding_large">
+
+                    <TextView
+                        android:id="@+id/booking_and_reservation_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/booking_and_reservation"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/grey80" />
+
+                    <TextView
+                        android:id="@+id/lets_get_booking_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/booking_and_reservation_text"
+                        android:layout_marginBottom="@dimen/padding_small"
+                        android:text="@string/lets_get_booking"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/grey22"
+                        android:textSize="20sp" />
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@+id/lets_get_booking_text"-->
+<!--                        android:layout_marginBottom="@dimen/padding_medium"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/padding_micro"-->
+<!--                            android:layout_marginEnd="@dimen/padding_micro"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:background="@color/greyF4"-->
+<!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.HOTEL)}"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:padding="@dimen/padding_tiny">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
+<!--                                android:src="@drawable/ic_hotel1_32dp"-->
+<!--                                android:tint="@color/grey22" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/hotels"-->
+<!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
+<!--                                android:textColor="@color/grey22" />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginEnd="@dimen/padding_micro"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:background="@color/greyF4"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.FLIGHT)}"-->
+<!--                            android:padding="@dimen/padding_tiny">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
+<!--                                android:src="@drawable/ic_flight_32dp"-->
+<!--                                android:tint="@color/grey22" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/flights"-->
+<!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
+<!--                                android:textColor="@color/grey22" />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:background="@color/greyF4"-->
+<!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.TRAIN)}"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:padding="@dimen/padding_tiny">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="30dp"-->
+<!--                                android:layout_height="30dp"-->
+<!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
+<!--                                android:src="@drawable/ic_train_32dp"-->
+<!--                                android:tint="@color/grey22" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="@string/trains"-->
+<!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
+<!--                                android:textColor="@color/grey22" />-->
+<!--                        </LinearLayout>-->
+<!--                    </LinearLayout>-->
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/lets_get_booking_text"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginBottom="@dimen/padding_micro">
+
+                                <include
+                                    android:id="@+id/hotel_booking"
+                                    layout="@layout/booking_menu_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    app:icon="@{@string/accomodation}"
+                                    app:layout_constraintBottom_toBottomOf="@+id/flight_booking"
+                                    app:layout_constraintEnd_toStartOf="@+id/flight_booking"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:name="@{@string/hotels}" />
+
+                                <include
+                                    android:id="@+id/flight_booking"
+                                    layout="@layout/booking_menu_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    app:icon="@{@string/flight}"
+                                    app:layout_constraintEnd_toStartOf="@+id/include5"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/hotel_booking"
+                                    app:name="@{@string/flight}" />
+
+                                <include
+                                    android:id="@+id/include5"
+                                    layout="@layout/booking_menu_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+
+                                    app:icon="@{@string/train}"
+                                    app:layout_constraintEnd_toStartOf="@+id/bus_booking"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toEndOf="@+id/flight_booking"
+                                    app:name="@{@string/trains}" />
+
+                                <include
+                                    android:id="@+id/bus_booking"
+                                    layout="@layout/booking_menu_item"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    app:icon="@{@string/bus}"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toEndOf="@+id/include5"
+                                    app:name="@{@string/bus}" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/theme_yellow" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="@dimen/padding_large"
+                    android:layout_marginBottom="@dimen/padding_small"
+                    android:background="#00A299"
+                    android:padding="@dimen/padding_large"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/t1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="booking and reservation"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/t2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/t1"
+                        android:text="let's get booking!"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_travel" />
+                </RelativeLayout>
+
+                <!-- WHERE TO GO -->
+                <FrameLayout
+                    android:id="@+id/where_to_go_layout"
+                    style="@style/AppTheme.Home.Section" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="@dimen/padding_gargantua">
+
+                    <WebView
+                        android:id="@+id/web_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </FrameLayout>
+
+                <!-- WHAT TO DO -->
+                <FrameLayout
+                    android:id="@+id/what_to_do_layout"
+                    style="@style/AppTheme.Home.Section"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:layout_marginEnd="@dimen/padding_medium"
+                    android:layout_marginBottom="@dimen/padding_large" />
+
+                <!-- SEASONS -->
+                <FrameLayout
+                    android:id="@+id/seasons_layout"
+                    style="@style/AppTheme.Home.Section"
+                    android:layout_margin="0dp"
+                    android:background="@color/greyF4"
+                    android:paddingStart="@dimen/padding_medium"
+                    android:paddingTop="@dimen/padding_large"
+                    android:paddingBottom="@dimen/padding_big" />
+
+                <!-- TRIPS YOU CANNOT MISS -->
+                <FrameLayout
+                    android:id="@+id/trips_you_cannot_miss_layout"
+                    style="@style/AppTheme.Home.Section" />
+
+                <!-- EXPERT TIPS -->
+                <FrameLayout
+                    android:id="@+id/expert_tips_layout"
+                    style="@style/AppTheme.Home.Section" />
+
+                <!-- CURRENCY -->
+                <FrameLayout
+                    android:id="@+id/currency_layout"
+                    style="@style/AppTheme.Home.Section"
+                    android:layout_margin="0dp" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

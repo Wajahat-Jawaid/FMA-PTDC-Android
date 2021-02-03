@@ -1,0 +1,123 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.salampakistan"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+
+    // Dagger 2 and Compiler
+    implementation "com.google.dagger:dagger:2.27"
+    implementation "com.google.dagger:dagger-android:2.24"
+    implementation "com.google.dagger:dagger-android-support:2.23.2"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    kapt "com.google.dagger:dagger-android-processor:2.23.2"
+    kapt "com.google.dagger:dagger-compiler:2.23.2"
+
+    // RX
+    implementation 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+
+    // Retrofit
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.7.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.1'
+
+    // LiveData & ViewModel
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    kapt 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    //Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.2"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.2"
+
+    //Kotlin Co-routines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.2"
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+
+
+    //Google Map
+    implementation 'com.google.maps:google-maps-services:0.2.5'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    // Others
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+    implementation 'com.github.adroitandroid:ChipCloud:2.2.1'
+    implementation 'com.github.Jay-Goo:RangeSeekBar:v3.0.0'
+    implementation 'com.github.rafakob:DrawMe:0.1.6'
+    implementation 'com.miguelcatalan:materialsearchview:1.4.0'
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
+    implementation 'com.google.android:flexbox:2.0.1'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:2.4.1'
+    implementation 'id.zelory:compressor:3.0.0'
+
+    //social login
+    implementation 'com.facebook.android:facebook-login:5.15.3'
+
+
+
+    implementation('com.wdullaer:materialdatetimepicker:4.2.3') {
+        exclude group: 'androidx.appcompat'
+        exclude group: 'androidx.recyclerview'
+    }
+
+    //Shimmer Layout for skeleton
+    implementation 'com.ethanhua:skeleton:1.1.2'
+    implementation 'io.supercharge:shimmerlayout:2.1.0'
+
+    // Test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

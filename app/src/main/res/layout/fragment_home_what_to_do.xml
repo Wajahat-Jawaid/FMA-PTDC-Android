@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.home.whattodo.WhatToDoSectionFragment" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_big"
+        android:layout_marginBottom="@dimen/padding_small"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/category_title_text"
+            style="@style/AppTheme.TextView.SemiBold"
+            android:layout_marginBottom="@dimen/padding_small"
+            android:text="@string/what_to_do"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/see_all_text"
+            style="@style/AppTheme.TextView.Bold.Medium"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/padding_micro"
+            android:onClick="@{() -> fragment.onSeeAllTextClicked()}"
+            android:text="@string/see_all"
+            android:textColor="@color/theme_green" />
+
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/category_title_text"
+            android:layout_marginBottom="@dimen/padding_medium"
+            android:orientation="horizontal"
+            android:weightSum="2" />
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row1"
+            android:orientation="horizontal"
+            android:weightSum="2" />
+    </RelativeLayout>
+</layout>

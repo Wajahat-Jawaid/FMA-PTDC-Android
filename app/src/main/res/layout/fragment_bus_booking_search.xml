@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="com.salampakistan.model.enums.BusLocation" />
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.booking.bus.BusBookingSearchFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.salampakistan.ui.fragments.booking.bus.BusBookingSearchViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:background="@color/colorPrimary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_small"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.45"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/bus_booking"
+                android:textAlignment="center"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Large"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_x_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45" />
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="@dimen/padding_small"
+            app:cardElevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintWidth_percent=".85">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/padding_medium"
+                    android:paddingVertical="@dimen/padding_medium">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search_and_book_bus_tickets"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.XLarge"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_tiny"
+                        android:text="We're bringing you a new level of comfort."
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_huge"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/textView11"
+                        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+                        <TextView
+                            style="@style/AppTheme.Booking.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/padding_tiny"
+                            android:text="@string/services"
+                            android:textSize="@dimen/text_medium" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_hotel_booking"
+                            android:onClick="@{() -> fragment.onServicesFieldClicked()}"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="@dimen/padding_small"
+                            android:paddingVertical="@dimen/padding_medium"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/location_text"
+                                style="@style/AppTheme.Booking.Text"
+                                android:layout_width="match_parent"
+                                android:layout_weight="0.8"
+                                android:onClick="@{() -> fragment.onServicesFieldClicked()}"
+                                android:text="@={viewModel.services}"
+                                tools:text="@string/location" />
+
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/padding_tiny"
+                                android:onClick="@{() -> fragment.onServicesFieldClicked()}"
+                                android:src="@drawable/ic_dropdown"
+                                tools:ignore="VectorDrawableCompat" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_medium"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/padding_small"
+                            android:layout_weight=".5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/AppTheme.Booking.Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding_tiny"
+                                android:text="@string/departure"
+                                android:textSize="@dimen/text_medium" />
+
+                            <LinearLayout
+                                android:id="@+id/rvTopic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:background="@drawable/bg_hotel_booking"
+                                android:onClick="@{() -> fragment.onLocationDepartureFieldClicked()}"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="@dimen/padding_small"
+                                android:paddingVertical="@dimen/padding_medium"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/location_depart_text"
+                                    style="@style/AppTheme.Booking.Text"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="0.8"
+                                    android:onClick="@{() -> fragment.onLocationDepartureFieldClicked()}"
+                                    android:text="@={viewModel.departLocation}"
+                                    tools:text="@string/location" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginHorizontal="@dimen/padding_tiny"
+                                    android:onClick="@{() -> fragment.onLocationDepartureFieldClicked()}"
+                                    android:src="@drawable/ic_dropdown"
+                                    tools:ignore="VectorDrawableCompat" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/AppTheme.Booking.Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/padding_tiny"
+                                android:text="@string/arrival"
+                                android:textSize="@dimen/text_medium" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_hotel_booking"
+                                android:onClick="@{() -> fragment.onLocationArrivalFieldClicked()}"
+                                android:orientation="horizontal"
+                                android:paddingHorizontal="@dimen/padding_small"
+                                android:paddingVertical="@dimen/padding_medium"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/location_arrival_text"
+                                    style="@style/AppTheme.Booking.Text"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="0.8"
+                                    android:onClick="@{() -> fragment.onLocationArrivalFieldClicked()}"
+                                    android:text="@={viewModel.arrivalLocation}"
+                                    tools:text="@string/location" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_gravity="center"
+                                    android:layout_marginHorizontal="@dimen/padding_tiny"
+                                    android:onClick="@{() -> fragment.onLocationArrivalFieldClicked()}"
+                                    android:src="@drawable/ic_dropdown"
+                                    tools:ignore="VectorDrawableCompat" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_medium"
+                        android:layout_weight=".5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/AppTheme.Booking.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/date"
+                            android:textSize="@dimen/text_medium" />
+
+                        <TextView
+                            android:id="@+id/date_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_hotel_booking"
+                            android:drawableRight="@drawable/ic_calendar"
+                            android:drawablePadding="@dimen/padding_micro"
+                            android:hint="22 dec 2020"
+                            android:onClick="@{() -> fragment.onDateFieldClicked()}"
+                            android:paddingHorizontal="@dimen/padding_small"
+                            android:paddingVertical="@dimen/padding_medium"
+                            android:text="@{viewModel.date}"
+                            android:textAppearance="@style/AppTheme.TextView.Reg.Large"
+                            android:textColor="@color/grey66" />
+
+                    </LinearLayout>
+
+                    <Button
+                        style="@style/AppTheme.Booking.SubmitBtn"
+                        android:layout_marginHorizontal="@dimen/padding_medium"
+                        android:backgroundTint="@{viewModel.valid ? @color/theme_green : @color/green_light}"
+                        android:enabled="@{viewModel.valid}"
+                        android:onClick="@{() -> fragment.onDoneBtnClicked()}" />
+
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

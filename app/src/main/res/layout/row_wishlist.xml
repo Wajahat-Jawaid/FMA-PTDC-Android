@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.WishList" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="@dimen/padding_small"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_small">
+
+        <TextView
+            android:id="@+id/destination_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_micro"
+            android:maxLines="1"
+            android:text="@{model.alias}"
+            android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+            android:textColor="@color/black"
+            tools:text="Khunjerab Pass" />
+
+        <TextView
+            android:id="@+id/description_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/destination_title"
+            android:layout_marginBottom="@dimen/padding_small"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{model.desc}"
+            android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+            android:textColor="@color/grey77"
+            tools:text="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt" />
+
+        <Button
+            android:id="@+id/add_to_plan_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description_text"
+            android:background="@drawable/bg_wish_list_add_to_plan"
+            android:text="@string/add_to_plan"
+            android:textAllCaps="false"
+            android:textColor="@color/add_to_plan_text_color" />
+
+        <Button
+            android:id="@+id/remove_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_wish_list_add_to_plan"
+            android:text="@string/remove"
+            android:textAllCaps="false"
+            android:textColor="@color/add_to_plan_text_color" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <include
+                layout="@layout/view_rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:count="@{30}" />
+
+            <TextView
+                android:id="@+id/reviews_count_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_tiny"
+                android:text="180 reviews"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                android:textColor="@color/grey77" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

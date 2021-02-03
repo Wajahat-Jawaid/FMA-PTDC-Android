@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/padding_large">
+
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/AppTheme.updatePasword.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="give us yolur feedback"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_small"
+            android:numStars="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/title_text"
+            style="@style/AppTheme.Login.EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_large"
+            android:enabled="false"
+            android:gravity="start"
+            android:hint="@string/title"
+            android:inputType="textPersonName"
+            android:padding="@dimen/padding_small"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <EditText
+            android:id="@+id/description_text"
+            style="@style/AppTheme.Login.EditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_large"
+            android:gravity="start"
+            android:hint="@string/enter_your_text_here"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:minLines="3"
+            android:padding="@dimen/padding_small"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text" />
+
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_large"
+            android:background="@color/colorPrimary"
+            android:paddingHorizontal="@dimen/padding_large"
+            android:text="@string/confirm"
+            android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

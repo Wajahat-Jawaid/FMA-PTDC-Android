@@ -1,0 +1,1455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel" />
+        <device id="pixel_4" />
+        <device id="pixel_4_xl" />
+        <device id="pixel_3_xl" />
+        <device id="pixel_3a_xl" />
+        <device id="pixel_3" />
+        <device id="pixel_xl" />
+        <device id="Nexus 6" />
+        <device id="Nexus 5X" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="excep" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="407a654c-bfa5-4441-9caa-466359f41652" name="Default Changelist" comment="Wishlist">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/AppliedFilterHotel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/JunkClass.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/LocationDetails.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/PostReview.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/TripWhatsIncluded.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/enums/BusLocation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/enums/PlanningDate.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/event/Event.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/event/EventDetails.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/event/GetEventDetailsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/event/GetEventsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/event/Location.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/event/Meta.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/getBusDestinationCities/DestinationCity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/getBusDestinationCities/GetBusDestinationCitiesResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/getbusdeparturecities/DepartureCity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/getbusdeparturecities/GetBusDepartureCityResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/getbusservicesreponse/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/getbusservicesreponse/GetBusServicesResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/Address.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/AddressInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/CoordinateLocation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/Hotel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/HotelAmenities.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/HotelInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/HotelRateInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/HotelRating.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/HotelSearchResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/Meta.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/hotelsearchresponse/Photo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/int.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/mapLocationResponse/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/mapLocationResponse/Location.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/mapLocationResponse/MapLocationResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/mapLocationResponse/Meta.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/mapLocationResponse/Surrounding.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/LocationCoordinateData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getpoiresponse/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getpoiresponse/Dist.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getpoiresponse/GetPOIPlacesResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getpoiresponse/Location.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getpoiresponse/Photo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getpoiresponse/PlusCode.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getreviewsresponse/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/getreviewsresponse/GetReviewsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/FetchAllSeasonsResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/Meta.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/festival/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/festival/GetFestivalBySeasonIdResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/festival/Meta.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/seasonbyid/Data.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/seasons/seasonbyid/FetchSeasonByIdResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/transportservicesresponse/GetTransportServicesResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/transportservicesresponse/Service.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/EventRepo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/openweather/SeasonRepo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/BusListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/EventsListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/FlightListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/MapPOIListAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/OnboardingPagerAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/custom/CustomSupportMapFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/custom/layoutManager/SliderLayoutManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/ImageViewFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/bus/BusBookingSearchFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/bus/BusBookingSearchViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/bus/buslist/BusListFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/bus/buslist/BusListViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/flight/flightlist/FlightListFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/flight/flightlist/FlightListViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/HotelListFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/bookingdetails/HotelBookingDetailsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/bookingdetails/HotelBookingDetailsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hoteldetails/HotelDetailsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hoteldetails/HotelDetailsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hotellist/HotelListFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hotellist/HotelListViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/event/EventListFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/event/EventListViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/event/detail/EventDetailsFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/event/detail/EventDetailsViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/seasonexperiences/SeasonViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/poi/POIsDialogFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/map/MapFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/map/MapViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/search/SearchFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/search/SearchViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/updatepassword/UpdatePasswordFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/updatepassword/UpdatePasswordViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/onboarding/OnBoardingActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/DepthPagerTransformer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/ImageUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/ScreenUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/hide_bottom_nav.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/show_bottom_nav.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_in_fragment_from_bottom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_in_fragment_from_left.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_in_fragment_from_top.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_out_fragment_to_bottom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_out_fragment_to_left_test.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_out_fragment_to_top.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/map_mountain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/map_mountain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bg_round_orange.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bookme_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/bus_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/deawoo_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/flight_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_camera.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/map_mountain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/pia_logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/profile_placeholder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/map_mountain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/onboarding_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/onboarding_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/onboarding_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/map_mountain.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bf_round_top.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_book_now.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_book_now_btn.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_booking_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_bottom_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_bottom_shadow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_hotel_booking.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_image.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_img_circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_left_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_room_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_room_number.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_skip.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_top_curve.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/dashed_line.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/divider_rec_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/event_banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fligh_card_bottom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fligh_card_middle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/fligh_card_top.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_accomodation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_airport.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_amusement.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_back_arrow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bakery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_favorite_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bookmark.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_bus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_cafe.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_calendar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_car.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_close.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_dropdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_filter.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_flight.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_food.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_guest_house.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_guide.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_hospital.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_hostel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_map.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_map_pin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_market.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_minus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_more.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_museum.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_park.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pharmacy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pin_map_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_plus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_remove.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_send_text.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_shop.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_sort.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_train.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_trophy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tab_default_indicator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tab_selected_indicator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/tab_selector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_onboarding.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/booking_layout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/booking_menu_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/feedback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/form_plan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_bus_booking_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_bus_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_event_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_flight_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_hotel_booking_details.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_hotel_details.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_hotel_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_image_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_map.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_trip_details.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/inc_chip_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_amenities.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/location_details_fragment_skeleton.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/menu_bottom_camera.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_amenities.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_autocomplete_text_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_bus.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_event.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_featured_event.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_flight.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_hotel_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_map_poi.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_poi_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_property_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_related_event.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_related_location.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_room_photo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_services.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/sort_bottom_sheet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/update_password_fragment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/main_bottom_nav_graph.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/values.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/SplashActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/base/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/base/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/base/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/base/BaseFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/dagger/module/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/dagger/module/AppModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/dagger/module/FragmentBuildersModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/dagger/module/FragmentBuildersModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/dagger/module/ViewModelModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/dagger/module/ViewModelModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/Event.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/Trip.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/Location.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/Location.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/LocationCoordinates.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/LocationCoordinates.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/POI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/POI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/WishList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/WishList.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/EventDetailsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/TripDetailsResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/GetEventsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/GetTripsResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/GetLocationDetailsResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/model/response/GetLocationDetailsResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/JSONKeys.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/JSONKeys.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/ResponseHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/ResponseHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/WebService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/WebService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/fma/FMAWebService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/fma/FMAWebService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/BaseRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/BaseRepo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/BookingRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/BookingRepo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/EventsRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/TripsRepo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/UsersRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/UsersRepo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/fma/FMARepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/fma/FMARepo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/BaseListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/BaseListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/ImagePagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/ImagePagerAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/custom/BottomSheetWebView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/custom/BottomSheetWebView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/ImageCarouselFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/ImageCarouselFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingTabsAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingTabsAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/flight/FlightBookingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/flight/FlightBookingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/HotelBookingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hotelsearch/HotelBookingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/HotelBookingViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hotelsearch/HotelBookingViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/train/TrainBookingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/train/TrainBookingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/currency/CurrencyFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/currency/CurrencyFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/dialog/ListDialogFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/dialog/ListDialogFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/eventdetails/EventDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/tripdetails/TripDetailsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/eventdetails/EventDetailsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/tripdetails/TripDetailsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/forgotpassword/ForgotPasswordFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/forgotpassword/ForgotPasswordFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/forgotpassword/ForgotPasswordViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/forgotpassword/ForgotPasswordViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/BaseHomeSectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/BaseHomeSectionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/ExpertTipsSectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/ExpertTipsSectionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/HomeViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/SeasonsSectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/seasonexperiences/SeasonsSectionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/TripsCannotMissSectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/TripsCannotMissSectionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/WhereToGoSectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/WhereToGoSectionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/whattodo/WhatToDoSectionFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/whattodo/WhatToDoSectionFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/whattodo/WhatToDoSectionViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/whattodo/WhatToDoSectionViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/poi/POIFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/poi/POIFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/poi/POIViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/poi/POIViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/login/LoginFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/login/LoginFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/login/RegisterFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/login/RegisterFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningListAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningListAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/ProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/ProfileFragmentPagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/ProfileFragmentPagerAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/ProfileOptionsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/ProfileOptionsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/update/UpdateProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/update/UpdateProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/update/UpdateProfileViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/update/UpdateProfileViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/reviews/ReviewsListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/reviews/ReviewsListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/reviews/ReviewsListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/reviews/ReviewsListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/season/SeasonDetailsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/season/SeasonDetailsFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/visastatus/CheckVisaStatusFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/visastatus/CheckVisaStatusFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/weather/WeatherFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/weather/WeatherFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoCategoryListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoCategoryListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoCategoryListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoCategoryListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoCategoryListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoCategoryListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoCategoryListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoCategoryListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoListViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoListViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wishlist/WishlistListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wishlist/WishlistListFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wishlist/WishlistViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wishlist/WishlistViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/BindingAdapters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/BindingAdapters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/CalendarUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/CalendarUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/Preferences.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/Preferences.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/extension/PrimitiveExtension.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/salampakistan/utils/extension/PrimitiveExtension.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/anim/slide_out_fragment_to_right.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/anim/slide_out_fragment_to_right.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_home_banner_overlay.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_home_booking_layout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_login_register_form.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_white_16dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_forward_20dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_calendar_grey_24dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_calendar_grey_24dp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_check_white_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_currency_green.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_favorite_white_16dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_hotel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_hotel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_itinerary.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_person_black_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_remove_circle_24dp.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_remove_circle_24dp.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search_green_72dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_star_white_24dp.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_tab_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_tab_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_tab_hotel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_tab_map.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_tab_planning.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/overlay_black_top_to_bottom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/underline.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_fragment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_fragment_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_event_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_event_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_event_filters.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_flight_booking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_flight_booking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_forgot.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_forgot.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_hotel_booking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_hotel_booking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_image_carousel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_image_carousel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_events.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_what_to_do.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_what_to_do.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_what_to_do_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_what_to_do_category.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_where_to_go.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_where_to_go.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_where_to_go_category.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_list_where_to_go_category.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_location_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_location_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_planning.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_planning.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_poi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_poi.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_options.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_options.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_season_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_season_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_update_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_update_profile.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/popup_poi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_home_event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_home_trip.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_home_event_skeleton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_home_trip_skeleton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_home_season.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_home_season.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_image_view_pager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_image_view_pager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_itinerary_object_item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_list_event.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_list_event_skeleton.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_planning.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_planning.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_poi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_review.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_review.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_what_to_do.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_what_to_do.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_what_to_do_type_all.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_where_to_go.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_where_to_go.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_where_to_go_type_all.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_where_to_go_type_all.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_counter_widget.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_counter_widget.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_header_trip_details_collapsed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_header_trip_details_expanded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_home_fragment_container.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_home_fragment_container.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_rating_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_rating_bar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_search_toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/view_search_toolbar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/bottom_navigation_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/search_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/bg_login1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/x1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/x2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/x3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/x4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fall_festivity3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/season_fall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/season_spring.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/season_summer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/season_winter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring_festivity1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring_festivity2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring_festivity3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/spring_festivity4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/summer_festivity3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/winter_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/x1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/fall_festivity3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/season_fall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/season_spring.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/season_summer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/season_winter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring_festivity1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring_festivity2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring_festivity3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/spring_festivity4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/summer_festivity3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/winter_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/x1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/bg_login1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/fall_festivity3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/season_fall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/season_spring.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/season_summer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/season_winter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring_festivity1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring_festivity2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring_festivity3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/spring_festivity4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/summer_festivity3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter_bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter_festivity1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/winter_festivity2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/x1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/animation_duration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/animation_duration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/locations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/locations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/seasons.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/seasons.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_4_XL_API_30]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="navigationResourceFile" />
+        <option value="valueResourceFile" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin Enum" />
+        <option value="resourceFile" />
+        <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="E:\SALAM PAKISTAN\salampakistan.jks" />
+    <option name="KEY_ALIAS" value="PTDC" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ldZYhUYvcFV18m3cHf5puSqak5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="Pixel_2_XL_API_27 [emulator-5554]" />
+    <property name="DEBUGGABLE_PROCESS" value="com.salampakistan" />
+    <property name="DEBUGGER_ID" value="Auto" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_4_XL_API_30" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-02-03T10:17:33.125Z" />
+    <property name="ExportApk.ApkPath" value="C:\Users\Levitate\AndroidStudioProjects\Salam Pakistan\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="algorithm" value="Scalr" />
+    <property name="android-custom-view/home/syed/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="android-custom-view/home/syed/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.1/37d55d5141066b3d118d24232fa7025b65eb3a74/material-1.2.1-sources.jar!/com/google/android/material/chip/Chip.java_SELECTED" value="Chip" />
+    <property name="android-custom-view/home/syed/Android/Sdk/sources/android-29/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/Lenovo/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="android-custom-viewC:/Users/Lenovo/AndroidStudioProjects/Salam Pakistan/app/src/main/java/com/salampakistan/ui/custom/NonSwipeableViewPager.kt_SELECTED" value="NonSwipeableViewPager" />
+    <property name="android-custom-viewC:/Users/Lenovo/AndroidStudioProjects/Salam Pakistan/app/src/main/java/com/salampakistan/ui/custom/ObservableWebView.kt_SELECTED" value="ObservableWebView" />
+    <property name="android-custom-viewC:/Users/Lenovo/AndroidStudioProjects/Salam Pakistan/app/src/main/java/com/salampakistan/ui/custom/progressbar/SpinView.kt_SELECTED" value="SpinView" />
+    <property name="android-custom-viewC:/Users/Lenovo/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/Lenovo/AppData/Local/Android/Sdk/sources/android-29/android/view/ViewGroup.java_SELECTED" value="ViewGroup" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="destination" value="DRAWABLE" />
+    <property name="format" value="PNG" />
+    <property name="lastFolderRoot" value="$PROJECT_DIR$/../video.png" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="method" value="Automatic" />
+    <property name="multi-representation-preview/home/syed/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/home/syed/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.1/37d55d5141066b3d118d24232fa7025b65eb3a74/material-1.2.1-sources.jar!/com/google/android/material/chip/Chip.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/home/syed/Android/Sdk/sources/android-29/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Lenovo/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Lenovo/AndroidStudioProjects/Salam Pakistan/app/src/main/java/com/salampakistan/ui/custom/NonSwipeableViewPager.kt_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Lenovo/AndroidStudioProjects/Salam Pakistan/app/src/main/java/com/salampakistan/ui/custom/ObservableWebView.kt_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Lenovo/AndroidStudioProjects/Salam Pakistan/app/src/main/java/com/salampakistan/ui/custom/progressbar/SpinView.kt_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Lenovo/AppData/Local/Android/Sdk/sources/android-29/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Lenovo/AppData/Local/Android/Sdk/sources/android-29/android/view/ViewGroup.java_selected" value="Custom views" />
+    <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="project.structure.last.edited" value="Build Variants" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="resolutions" value="MDPI&#10;XHDPI&#10;XXXHDPI&#10;HDPI&#10;XXHDPI" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+    <property name="sourceResolution" value="XHDPI" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="BUILD_VARIANTS_TAB" value="Flavors" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="debug" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.salampakistan.ui.fragments.booking.hotel.hotelsearch" />
+      <recent name="com.salampakistan.ui.fragments.home.seasonexperiences" />
+      <recent name="com.salampakistan.ui.fragments.locationdetails.poi" />
+      <recent name="com.salampakistan.ui.fragments.booking.hotel" />
+      <recent name="com.salampakistan.ui.fragments.booking.train" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.salampakistan.utils" />
+      <recent name="com.salampakistan.ui.fragments.locationdetails.poi" />
+      <recent name="com.salampakistan.model.response" />
+      <recent name="com.salampakistan.ui.fragments.planning" />
+      <recent name="com.salampakistan.ui.fragments.forgotpassword" />
+    </key>
+    <key name="android.template.-212196896">
+      <recent name="com.salampakistan.ui" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\drawable-xxhdpi" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\drawable" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\layout" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\drawable-xhdpi" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\anim" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.salampakistan.ui" />
+      <recent name="com.salampakistan.network" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\drawable" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\drawable-xhdpi" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\layout" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\res\anim" />
+      <recent name="C:\Users\Lenovo\Desktop\Salam Pakistan\app\src\main\java\com\salampakistan\ui\custom" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="PTDC.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Salam Pakistan:app [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Salam Pakistan:app [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Salam Pakistan:app [signingReport]" />
+        <item itemvalue="Gradle.Salam Pakistan:app [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="407a654c-bfa5-4441-9caa-466359f41652" name="Default Changelist" comment="" />
+      <created>1600502545821</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600502545821</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Designed Booking screen">
+      <created>1603619096787</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603619096787</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changed Fragment Transitions">
+      <created>1604323960328</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604323960328</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Season Details">
+      <created>1604908839260</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604908839260</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Season Details resolution">
+      <created>1604983026834</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604983026835</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Wishlist">
+      <created>1606889405356</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1606889405356</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Designed Booking screen" />
+    <MESSAGE value="Changed Fragment Transitions" />
+    <MESSAGE value="Season Details" />
+    <MESSAGE value="Season Details resolution" />
+    <MESSAGE value="Wishlist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wishlist" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="200" y="110" key="#PSD" timestamp="1611161967523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="200" y="110" key="#PSD/0.0.1366.728@0.0.1366.728" timestamp="1611161967523" />
+    <state x="484" y="0" key="#app" timestamp="1610021956949">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="0" key="#app/0.0.1536.824@0.0.1536.824" timestamp="1610021956949" />
+    <state x="474" y="80" width="452" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1612175330807">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="474" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1612175330807" />
+    <state x="533" y="91" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1610028893384" />
+    <state x="666" y="143" width="452" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1610297078067" />
+    <state x="224" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1612179177978">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="224" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1612179177978" />
+    <state x="420" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1612179180104">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="420" y="245" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1366.728@0.0.1366.728" timestamp="1612179180104" />
+    <state x="56" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1611800666660">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="56" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1611800666660" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612332709233">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1612332709233" />
+    <state x="400" y="142" width="567" height="443" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1611036869173">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="400" y="142" width="567" height="443" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1611036869173" />
+    <state x="65" y="116" width="1280" height="436" key="#xdebugger.evaluate" timestamp="1612335782532">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="116" width="1280" height="436" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1612335782532" />
+    <state x="379" y="151" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1610027408723" />
+    <state x="736" y="344" width="1039" height="736" key="#xdebugger.evaluate/0.27.1920.1053@0.27.1920.1053" timestamp="1610305114139" />
+    <state x="430" y="198" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1612275352081">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="430" y="198" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1612275352081" />
+    <state x="100" y="100" width="1158" height="528" key="AVDManager" timestamp="1612191126523">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="100" y="100" width="1158" height="528" key="AVDManager/0.0.1366.728@0.0.1366.728" timestamp="1612191126523" />
+    <state x="141" y="172" width="1628" height="764" key="AVDManager/0.27.1920.1053@0.27.1920.1053" timestamp="1610114216470" />
+    <state x="263" y="119" width="824" height="491" key="AndroidCreateResourceFileDialog" timestamp="1612347878433">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="263" y="119" key="AndroidCreateResourceFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1612347878433" />
+    <state x="296" y="135" key="AndroidCreateResourceFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1610026026116" />
+    <state x="370" y="200" width="824" height="491" key="AndroidCreateResourceFileDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1610277089031" />
+    <state x="527" y="154" width="357" height="423" key="AndroidCreateXmlResourceDialog" timestamp="1612345241048">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="527" y="154" key="AndroidCreateXmlResourceDialog/0.0.1366.728@0.0.1366.728" timestamp="1612345241048" />
+    <state x="741" y="250" width="357" height="423" key="AndroidCreateXmlResourceDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1610101395210" />
+    <state x="481" y="110" width="493" height="512" key="AndroidProcessChooserDialog" timestamp="1612335656269">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="481" y="110" key="AndroidProcessChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1612335656269" />
+    <state x="541" y="125" key="AndroidProcessChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1610027543986" />
+    <state x="676" y="187" width="493" height="512" key="AndroidProcessChooserDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1610304869052" />
+    <state width="523" height="466" key="DebuggerActiveHint" timestamp="1612191776242">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="523" height="466" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1612191776242" />
+    <state width="436" height="528" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1610027561885" />
+    <state x="100" y="100" width="1166" height="528" key="DiffContextDialog" timestamp="1608041007866">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="100" y="100" width="1166" height="528" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1608041007866" />
+    <state x="463" y="119" width="424" height="491" key="FileChooserDialogImpl" timestamp="1612334052454">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612334052454" />
+    <state x="651" y="199" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1610307080654" />
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1611830169353">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1366.728@0.0.1366.728" timestamp="1611830169353" />
+    <state width="1323" height="264" key="GridCell.Tab.0.bottom" timestamp="1612349711400">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="264" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612349711400" />
+    <state width="1491" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610027905841" />
+    <state width="1874" height="362" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1610306563713" />
+    <state width="1323" height="264" key="GridCell.Tab.0.center" timestamp="1612349711400">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="264" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612349711400" />
+    <state width="1491" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610027905841" />
+    <state width="1874" height="362" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1610306563712" />
+    <state width="1323" height="264" key="GridCell.Tab.0.left" timestamp="1612349711400">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="264" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612349711400" />
+    <state width="1491" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610027905841" />
+    <state width="1874" height="362" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1610306563712" />
+    <state width="1323" height="264" key="GridCell.Tab.0.right" timestamp="1612349711400">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="264" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612349711400" />
+    <state width="1491" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610027905841" />
+    <state width="1874" height="362" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1610306563713" />
+    <state width="1323" height="165" key="GridCell.Tab.1.bottom" timestamp="1612337260820">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612337260820" />
+    <state width="1491" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610027905843" />
+    <state width="1874" height="275" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1610305118355" />
+    <state width="1323" height="165" key="GridCell.Tab.1.center" timestamp="1612337260820">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1612337260820" />
+    <state width="1491" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1610027905841" />
+    <state width="1874" height="275" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1610305118354" />
+    <state width="1323" height="165" key="GridCell.Tab.1.left" timestamp="1612337260819">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1612337260819" />
+    <state width="1491" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1610027905841" />
+    <state width="1874" height="275" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1610305118354" />
+    <state width="1323" height="165" key="GridCell.Tab.1.right" timestamp="1612337260820">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="165" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1612337260820" />
+    <state width="1491" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1610027905841" />
+    <state width="1874" height="275" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1610305118355" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1610022460083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1610022460083" />
+    <state width="498" height="497" key="SwitcherDM" timestamp="1612176619091">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="498" height="497" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1612176619091" />
+    <state x="100" y="100" width="1158" height="528" key="VCS.FileHistoryDialog" timestamp="1608307312050">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="100" y="100" width="1158" height="528" key="VCS.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1608307312050" />
+    <state width="655" height="372" key="XDebugger.FullValuePopup" timestamp="1612185428567">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="655" height="372" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1612185428567" />
+    <state width="972" height="539" key="XDebugger.FullValuePopup/0.27.1920.1053@0.27.1920.1053" timestamp="1610124097056" />
+    <state x="499" y="142" key="chooseDestDirectoryDialog" timestamp="1610976094321">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="499" y="142" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1610976094321" />
+    <state x="100" y="100" width="1166" height="528" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1611916756721">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="100" y="100" width="1166" height="528" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1611916756721" />
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1612012509708">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1612012509708" />
+    <state x="129" y="160" width="1662" height="787" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1610306257845" />
+    <state x="526" y="162" width="857" height="789" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610179590322">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="526" y="162" width="857" height="789" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1610179590322" />
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1611650665133">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1611650665133" />
+    <state x="100" y="100" width="1158" height="528" key="dock-window-1" timestamp="1608618558555">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="100" y="100" width="1158" height="528" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1608618558555" />
+    <state x="100" y="100" width="1158" height="528" key="dock-window-2" timestamp="1608618558555">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="100" y="100" width="1158" height="528" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1608618558555" />
+    <state x="390" y="97" width="817" height="592" key="find.popup" timestamp="1612347116841">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="817" height="592" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1612347116841" />
+    <state x="439" y="110" width="919" height="632" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1610022249959" />
+    <state x="549" y="168" width="1149" height="808" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1610264862857" />
+    <state x="526" y="135" key="refactoring.ChangeSignatureDialog" timestamp="1611244148206">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="526" y="135" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1611244148206" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1612338049273">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1612338049273" />
+    <state x="476" y="261" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1610307174780" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1612349071410">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1612349071410" />
+    <state x="389" y="55" width="756" height="768" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1610030920721" />
+    <state x="486" y="96" width="945" height="982" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1610306429728" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/updatepassword/UpdatePasswordFragment.kt</url>
+          <line>41</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/updatepassword/UpdatePasswordFragment.kt</url>
+          <line>36</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/updatepassword/UpdatePasswordFragment.kt</url>
+          <line>60</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/UsersRepo.kt</url>
+          <line>71</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>197</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>225</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>70</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>224</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>443</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoCategoryListFragment.kt</url>
+          <line>141</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/home/ExpertTipsSectionFragment.kt</url>
+          <line>45</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoListFragment.kt</url>
+          <line>54</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoListFragment.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/poi/POIFragment.kt</url>
+          <line>81</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/forgotpassword/ForgotPasswordFragment.kt</url>
+          <line>46</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/season/SeasonDetailsFragment.kt</url>
+          <line>115</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningFragment.kt</url>
+          <line>135</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningFragment.kt</url>
+          <line>133</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingFragment.kt</url>
+          <line>24</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/BookingFragment.kt</url>
+          <line>29</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/planning/PlanningFragment.kt</url>
+          <line>110</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/wheretogo/WhereToGoListFragment.kt</url>
+          <line>42</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/whattodo/WhatToDoCategoryListFragment.kt</url>
+          <line>49</line>
+          <properties>
+            <option name="lambda-ordinal" value="0" />
+          </properties>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hotellist/HotelListFragment.kt</url>
+          <line>141</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/bookingdetails/HotelBookingDetailsFragment.kt</url>
+          <line>59</line>
+          <option name="timeStamp" value="142" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hoteldetails/HotelDetailsFragment.kt</url>
+          <line>98</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hoteldetails/HotelDetailsFragment.kt</url>
+          <line>85</line>
+          <option name="timeStamp" value="144" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>314</line>
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/update/UpdateProfileFragment.kt</url>
+          <line>80</line>
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/update/UpdateProfileFragment.kt</url>
+          <line>61</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/profile/update/UpdateProfileFragment.kt</url>
+          <line>70</line>
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/BaseRepo.kt</url>
+          <line>37</line>
+          <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/map/MapFragment.kt</url>
+          <line>93</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>404</line>
+          <option name="timeStamp" value="182" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>165</line>
+          <option name="timeStamp" value="185" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>289</line>
+          <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>286</line>
+          <option name="timeStamp" value="187" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/locationdetails/LocationDetailsFragment.kt</url>
+          <line>129</line>
+          <option name="timeStamp" value="192" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/tripdetails/TripDetailsFragment.kt</url>
+          <line>50</line>
+          <option name="timeStamp" value="194" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/event/detail/EventDetailsFragment.kt</url>
+          <line>54</line>
+          <option name="timeStamp" value="201" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/adapters/EventsListAdapter.kt</url>
+          <line>22</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/login/LoginFragment.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/login/LoginFragment.kt</url>
+          <line>59</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/tripdetails/TripDetailsFragment.kt</url>
+          <line>214</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/tripdetails/TripDetailsFragment.kt</url>
+          <line>191</line>
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/bus/buslist/BusListFragment.kt</url>
+          <line>57</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/bus/buslist/BusListFragment.kt</url>
+          <line>55</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hoteldetails/HotelDetailsFragment.kt</url>
+          <line>105</line>
+          <option name="timeStamp" value="219" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hoteldetails/HotelDetailsFragment.kt</url>
+          <line>74</line>
+          <option name="timeStamp" value="220" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hotelsearch/HotelBookingFragment.kt</url>
+          <line>114</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/ui/fragments/booking/hotel/hotelsearch/HotelBookingFragment.kt</url>
+          <line>113</line>
+          <option name="timeStamp" value="223" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/BaseRepo.kt</url>
+          <line>17</line>
+          <option name="timeStamp" value="224" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/BaseRepo.kt</url>
+          <line>16</line>
+          <option name="timeStamp" value="225" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/salampakistan/network/repos/UsersRepo.kt</url>
+          <line>18</line>
+          <properties class="com.salampakistan.network.repos.UsersRepo" method="login" />
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="com.salampakistan.model.response.getpoiresponse.Data" fieldName="location" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

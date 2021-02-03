@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="blackTint"
+            type="Boolean" />
+    </data>
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        style="@style/AppTheme.ImageButton"
+        android:tint="@{blackTint ? @color/black : @color/white}"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_back_white_24dp" />
+</layout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_tiny"
+            android:layout_marginTop="@dimen/padding_tiny"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/back_btn_view"
+                layout="@layout/view_back_btn"
+                app:blackTint="@{true}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/booking_and_reservation_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_small"
+                android:layout_marginTop="6dp"
+                android:text="@string/booking_and_reservation"
+                android:textAppearance="@style/AppTheme.TextView.Bold.XLarge"
+                android:textColor="@color/grey80"
+                app:layout_constraintStart_toEndOf="@+id/back_btn_view"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lets_get_booking_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/booking_and_reservation_text"
+                android:layout_marginStart="@dimen/padding_small"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:text="@string/lets_get_booking"
+                android:textAppearance="@style/AppTheme.TextView.Bold"
+                android:textColor="@color/grey22"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/back_btn_view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/btn_normal"
+            android:layout_marginTop="@dimen/padding_small"
+            android:background="@color/greyF4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:tabIndicatorColor="@color/theme_yellow"
+            app:tabSelectedTextColor="@color/grey22"
+            app:tabTextAppearance="@style/AppTheme.TextView.Bold.Small"
+            app:tabTextColor="@color/greyAA" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/padding_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

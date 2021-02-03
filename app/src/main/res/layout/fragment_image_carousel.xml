@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/category_title_text"
+            style="@style/AppTheme.TextView.SemiBold.XXLarge"
+            android:layout_marginBottom="6dp"
+            android:text="@string/images" />
+
+        <TextView
+            android:id="@+id/see_all_text"
+            style="@style/AppTheme.TextView.Bold.Medium"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/padding_micro"
+            android:layout_marginEnd="@dimen/padding_small"
+            android:text="@string/see_all"
+            android:visibility="gone"
+            android:textColor="@color/theme_green" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/category_title_text"
+            android:layout_marginTop="@dimen/padding_tiny" />
+    </RelativeLayout>
+</layout>

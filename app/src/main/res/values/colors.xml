@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#8cc63e</color>
+    <color name="colorPrimaryDark">#8cc63e</color>
+    <color name="colorAccent">#8cc63e</color>
+    <color name="black">@android:color/black</color>
+    <color name="white">@android:color/white</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="separator">#f0f0f0</color>
+    <color name="separator_dark">#E0E0E0</color>
+    <color name="skeleton_color">#F0F0F0</color>
+    <color name="skeleton_darkColor">#E0E0E0</color>
+    <color name="sea_green">#12A294</color>
+    <color name="theme_green">#8CC63E</color>
+    <!--    <color name="theme_blue">#006AFF</color>-->
+    <color name="theme_blue">#0066a1</color>
+    <color name="theme_dark_blue">#121c45</color>
+    <color name="theme_yellow">#EFEC6E</color>
+    <color name="line_seperator">#f5f3a9</color>
+    <color name="green_light">#B5DA82</color>
+
+    <color name="grey41434f">#41434f</color>
+    <color name="greya8a6a2">#a8a6a2</color>
+    <color name="grey46">#464646</color>
+    <color name="greye0">#E0E0E0</color>
+    <color name="grey22">#222222</color>
+    <color name="greyF0">#F0F0F0</color>
+    <color name="greyF9">#F9F9F9</color>
+    <color name="grey242021">#242021</color>
+    <color name="greyF1">#F1F1F1</color>
+    <color name="greyF4">#F4F4F4</color>
+    <color name="greyF3F5F7">#f3f5f7</color>
+    <color name="greyAA">#AAAAAA</color>
+    <color name="greyCC">#CCCCCC</color>
+    <color name="greyD8">#D8D8D8</color>
+    <color name="greyDC">#dcdcdc</color>
+    <color name="greyEE">#EEEEEE</color>
+    <color name="grey67">#676767</color>
+    <color name="grey66">#666666</color>
+    <color name="grey77">#777777</color>
+    <color name="grey80">#808080</color>
+    <color name="grey90">#909090</color>
+    <color name="grey241f20">#241f20</color>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="festivity"
+            type="String" />
+
+        <variable
+            name="desc"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_large"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:id="@+id/index_text"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="@dimen/padding_large"
+            android:gravity="center"
+            android:text="@{String.valueOf(index)}"
+            android:textAppearance="@style/AppTheme.TextView.Bold"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:background="@drawable/bg_green_circle"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/index_text"
+            android:text="@{festivity}"
+            android:textAppearance="@style/AppTheme.TextView.Bold.Large"
+            android:textColor="@color/theme_green"
+            tools:text="Chilam Juhst" />
+
+        <TextView
+            android:id="@+id/desc_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:layout_marginTop="@dimen/padding_tiny"
+            android:layout_toEndOf="@+id/index_text"
+            android:text="@{desc}"
+            android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+            android:textColor="@color/grey41434f"
+            tools:text="@string/check_best_things" />
+    </RelativeLayout>
+</layout>

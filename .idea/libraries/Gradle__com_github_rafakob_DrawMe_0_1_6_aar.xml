@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.rafakob:DrawMe:0.1.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bedef779ef8064b83bf581252e3d58e/jetified-DrawMe-0.1.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bedef779ef8064b83bf581252e3d58e/jetified-DrawMe-0.1.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4bedef779ef8064b83bf581252e3d58e/jetified-DrawMe-0.1.6/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.rafakob/DrawMe/0.1.6/72e63efedcaa160548d556b91fcc370c2423ee61/DrawMe-0.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

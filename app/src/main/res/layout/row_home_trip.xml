@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.Trip" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/row_home_event_item_width"
+        android:layout_height="@dimen/row_home_event_item_height"
+        android:layout_marginEnd="@dimen/padding_small"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="@dimen/padding_large"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_home_blog_item_img_height"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:background="@color/greye0"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{model.thumbnail}" />
+
+            <TextView
+                android:id="@+id/title_text"
+                style="@style/AppTheme.TextView.Bold"
+                android:layout_marginBottom="@dimen/padding_tiny"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:minLines="2"
+                android:text="@{model.title}"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+                tools:text="14" />
+
+            <TextView
+                android:id="@+id/desc_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_micro"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:text="@{@string/starting_from(model.startingLocation)}"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                android:textColor="@color/grey77"
+                tools:text="14" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

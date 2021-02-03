@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.salampakistan.model.enums.TripType" />
+
+        <import type="com.salampakistan.model.enums.TripDirection" />
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.booking.train.TrainBookingFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.salampakistan.ui.fragments.booking.train.TrainBookingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/from_label"
+            style="@style/AppTheme.Booking.Label"
+            android:background="@color/transparent"
+            android:text="@string/from"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/from_text"
+            style="@style/AppTheme.Booking.Text"
+            android:onClick="@{() -> fragment.onLocationFieldClicked(TripDirection.FROM)}"
+            android:text="@={viewModel.fromLocation}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/from_label"
+            tools:text="@string/location" />
+
+        <View
+            android:id="@+id/from_separator"
+            style="@style/AppTheme.Booking.Separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/from_text" />
+
+        <TextView
+            android:id="@+id/to_label"
+            style="@style/AppTheme.Booking.Label"
+            android:layout_marginStart="@dimen/padding_small"
+            android:background="@color/transparent"
+            android:text="@string/to"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/to_text"
+            style="@style/AppTheme.Booking.Text"
+            android:layout_marginStart="@dimen/padding_small"
+            android:onClick="@{() -> fragment.onLocationFieldClicked(TripDirection.TO)}"
+            android:text="@={viewModel.toLocation}"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/from_label"
+            tools:text="@string/location" />
+
+        <View
+            style="@style/AppTheme.Booking.Separator"
+            android:layout_marginStart="@dimen/padding_small"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/to_text" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <RadioGroup
+            android:id="@+id/trip_type_rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_medium"
+            android:checkedButton="@id/one_way_rb"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/from_separator">
+
+            <RadioButton
+                android:id="@+id/one_way_rb"
+                style="@style/AppTheme.Booking.RadioBtns"
+                android:layout_marginEnd="@dimen/padding_huge"
+                android:onClick="@{() -> viewModel.switchTripType(TripType.ONE_WAY)}"
+                android:text="@string/one_way" />
+
+            <RadioButton
+                style="@style/AppTheme.Booking.RadioBtns"
+                android:onClick="@{() -> viewModel.switchTripType(TripType.ROUND_TRIP)}"
+                android:text="@string/returning" />
+        </RadioGroup>
+
+        <Button
+            style="@style/AppTheme.Booking.SubmitBtn"
+            android:background="@{viewModel.valid ? @color/theme_green : @color/green_light}"
+            android:enabled="@{viewModel.valid}"
+            android:onClick="@{() -> fragment.onDoneBtnClicked()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/trip_type_rg" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

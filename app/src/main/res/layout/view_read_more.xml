@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/read_more_text"
+    style="@style/AppTheme.TextView.Reg.Small"
+    android:drawableEnd="@drawable/ic_arrow_forward_green_14dp"
+    android:gravity="center"
+    android:includeFontPadding="false"
+    android:text="@string/read_more"
+    android:drawablePadding="@dimen/padding_large"
+    android:textColor="@color/theme_green" />

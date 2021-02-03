@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data />
+
+    <LinearLayout style="@style/AppTheme.Dialog.Container">
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/AppTheme.Dialog.Title" />
+
+        <TextView
+            android:id="@+id/msg_text"
+            style="@style/AppTheme.Dialog.Message" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/separator" />
+
+        <Button
+            android:id="@+id/ok_btn"
+            style="@style/AppTheme.Dialog.Buttons"
+            android:layout_width="match_parent"
+            android:text="@android:string/ok"
+            android:textAllCaps="true" />
+    </LinearLayout>
+</layout>

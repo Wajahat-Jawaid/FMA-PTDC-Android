@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_bottom_sheet"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_sheet"
+            app:contentInsetStart="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.rafakob.drawme.DrawMeTextView
+                    android:id="@+id/top_bar"
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/padding_small"
+                    android:layout_marginBottom="@dimen/padding_micro"
+                    app:dm_backColor="@color/greyCC"
+                    app:dm_radius="@dimen/padding_micro"
+                    tools:background="@color/greyCC" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/content_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/top_bar"
+                    android:layout_marginStart="@dimen/padding_medium"
+                    android:layout_marginEnd="@dimen/padding_medium"
+                    android:layout_marginBottom="@dimen/padding_tiny">
+
+                    <TextView
+                        android:id="@+id/clear_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="@dimen/padding_micro"
+                        android:text="@string/clear"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        app:layout_constraintEnd_toStartOf="@+id/title_text"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/sort"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+                        android:textColorHint="@color/black"
+                        app:layout_constraintEnd_toStartOf="@+id/done_text"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/clear_text"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/done_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/padding_micro"
+                        android:text="@string/done"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.Small"
+                        android:textColor="@color/colorPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/title_text" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/content_bar"
+                    android:background="@color/separator" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/padding_small"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/stars_chip_view"
+                layout="@layout/inc_chip_view"
+                app:title="@{@string/Sort_by}" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="text"
+            type="String" />
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.locationdetails.poi.POIFragment" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="300dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_large"
+            android:text="@string/discover_surroundings"
+            android:textAppearance="@style/AppTheme.TextView.Bold.XLarge" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:drawableStart="@drawable/ic_arrow_down_grey"
+            android:drawableEnd="@drawable/ic_down_arrow_32dp"
+            android:drawablePadding="@dimen/padding_small"
+            android:gravity="center_vertical"
+            android:onClick="@{() -> fragment.showPOIsPopup()}"
+            android:text="@{text}"
+            android:textAppearance="@style/AppTheme.TextView.Bold.Large"
+            android:textColor="@color/black"
+            tools:text="Group excursions" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/theme_yellow" />
+
+        <fragment
+            android:id="@+id/mapFragment"
+            android:name="com.salampakistan.ui.custom.CustomSupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+
+    </LinearLayout>
+</layout>

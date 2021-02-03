@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                   
+
+    
+                 
+                        
+                                                      
+                 
+                         
+                             
+           
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp" android:tag="layout/row_planning_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+        <TextView
+            android:id="@+id/distance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            tools:text="1234 km"
+            android:tag="binding_1"          
+            android:textAppearance="@style/AppTheme.TextView.Bold.Small" />
+
+        <RelativeLayout
+            android:id="@+id/left_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/distance_text"
+            android:layout_toEndOf="@id/distance_text"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/v_one"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:background="@drawable/bg_green_circle" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/v_one"
+                android:layout_marginStart="6dp"
+                android:background="@color/black" />
+
+            <View
+                android:id="@+id/v_two"
+                android:layout_width="24dp"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="6dp"
+                android:background="@color/black" />
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/padding_small"
+                android:layout_toEndOf="@+id/v_two"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:tag="binding_2"      
+                android:textAppearance="@style/AppTheme.TextView.Bold.Small" />
+        </RelativeLayout>
+    </RelativeLayout>
+         

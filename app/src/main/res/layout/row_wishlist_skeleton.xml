@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="@dimen/padding_small"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_small">
+
+        <View
+            android:id="@+id/destination_title"
+            android:layout_width="300dp"
+            android:layout_height="16dp"
+            android:background="@color/skeleton_darkColor"
+            android:layout_marginBottom="@dimen/padding_micro" />
+
+        <View
+            android:id="@+id/description_text"
+            android:layout_width="200dp"
+            android:layout_height="12dp"
+            android:layout_below="@+id/destination_title"
+            android:background="@color/skeleton_darkColor"
+            android:layout_marginBottom="@dimen/padding_small" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/description_text"
+            android:background="@drawable/bg_wish_list_add_to_plan"
+            android:text="@string/add_to_plan"
+            android:textAllCaps="false"
+            android:textColor="@color/add_to_plan_text_color" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center">
+
+            <include
+                layout="@layout/view_rating_bar"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/reviews_count_text"
+                android:layout_width="100dp"
+                android:background="@color/skeleton_darkColor"
+                android:layout_height="12dp"
+                android:layout_marginStart="@dimen/padding_tiny"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                android:textColor="@color/grey77" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

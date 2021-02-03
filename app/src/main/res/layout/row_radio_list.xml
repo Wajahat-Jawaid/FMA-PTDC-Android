@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_list_item"
+        android:layout_height="44dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_medium"
+            android:layout_marginBottom="@dimen/padding_micro"
+            android:drawableEnd="@drawable/ic_radio_icon_24dp"
+            android:text="@{model}"
+            android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+            android:textColor="@color/grey41434f"
+            tools:text="Canadian Dollar" />
+
+        <View
+            style="@style/AppTheme.Separator.Horizontal"
+            android:layout_alignParentBottom="true"
+            android:background="@color/greyEE" />
+    </RelativeLayout>
+</layout>

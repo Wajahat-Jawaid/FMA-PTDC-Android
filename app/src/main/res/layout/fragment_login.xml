@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.login.LoginFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/banner_layout"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/bg_banner_login" />
+
+                <ImageView
+                    android:id="@+id/logo_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="@dimen/padding_gargantua"
+                    android:src="@mipmap/logo_white" />
+
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logo_icon"
+                    android:layout_marginStart="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/padding_medium"
+                    android:text="@string/welcome_back"
+                    android:textAppearance="@style/AppTheme.TextView.Bold"
+                    android:textColor="@color/theme_yellow"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/desc_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_text"
+                    android:layout_marginStart="@dimen/padding_small"
+                    android:text="@string/start_adventure"
+                    android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_large"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner_layout">
+
+                <EditText
+                    android:id="@+id/email_text"
+                    style="@style/AppTheme.Profile.Field"
+                    android:hint="@string/enter_email"
+                    android:inputType="textEmailAddress"
+                    android:text="fitog61402@5y5u.com" />
+
+                <EditText
+                    android:id="@+id/pwd_text"
+                    style="@style/AppTheme.Profile.Field"
+                    android:hint="@string/pwd"
+                    android:inputType="textPassword"
+                    android:text="abcdef" />
+
+                <TextView
+                    android:id="@+id/forgot_pwd_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:text="@string/forgot_pwd"
+                    android:textColor="@color/theme_blue"
+                    android:visibility="visible" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_huge"
+                    android:background="@color/theme_green"
+                    android:gravity="center"
+                    android:onClick="@{() -> fragment.login()}"
+                    android:text="@string/login"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                    android:textColor="@color/white" />
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/login_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:text="@string/be_member"
+                        android:textColor="@color/grey41434f" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:onClick="@{() -> fragment.onCreateAccountBtnClicked()}"
+                        android:paddingStart="@dimen/padding_tiny"
+                        android:paddingEnd="@dimen/padding_tiny"
+                        android:paddingBottom="@dimen/padding_tiny"
+                        android:text="@string/create_account"
+                        android:textColor="@color/theme_blue" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

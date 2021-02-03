@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.mapLocationResponse.Data" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/row_related_locations_height"
+        android:layout_marginHorizontal="@dimen/padding_micro">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/image_container"
+            android:layout_width="@dimen/row_where_to_go_height"
+            android:layout_height="@dimen/row_where_to_go_height"
+            app:cardBackgroundColor="@color/greyEE"
+            app:cardCornerRadius="@dimen/padding_tiny"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:height="@{@dimen/row_where_to_go_height}"
+                app:imageUrlCustomDimensions="@{model.thumbnail}"
+                app:width="@{@dimen/row_where_to_go_height}" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="@dimen/row_where_to_go_height"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_container"
+            android:layout_marginTop="@dimen/padding_nano"
+            android:layout_marginEnd="-275dp"
+            android:layout_marginBottom="@dimen/padding_micro"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{model.name}"
+            android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+            tools:text="@string/location" />
+
+        <FrameLayout
+            android:id="@+id/rating_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_text"
+            android:layout_marginBottom="@dimen/padding_micro">
+
+            <include
+                android:visibility="gone"
+                layout="@layout/view_rating_bar"
+                app:count="@{0}"
+                app:progress="@{0}"/>
+        </FrameLayout>
+    </RelativeLayout>
+</layout>

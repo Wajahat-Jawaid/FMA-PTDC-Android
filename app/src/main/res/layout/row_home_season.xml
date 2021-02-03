@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.seasons.Data" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/row_home_season_item_width"
+        android:layout_height="@dimen/row_home_season_item_height"
+        android:layout_marginEnd="@dimen/padding_small"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="@dimen/padding_large"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_item_home_trip">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:imageUrl="@{model.thumbnail}"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_bottom_to_top_black_overlay" />
+
+            <TextView
+                android:id="@+id/title_text"
+                style="@style/AppTheme.TextView.Bold"
+                android:layout_above="@+id/desc_text"
+                android:layout_centerHorizontal="true"
+                android:includeFontPadding="false"
+                android:text="@{model.title}"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Large"
+                android:textColor="@color/white"
+                tools:text="14" />
+
+            <TextView
+                android:id="@+id/desc_text"
+                style="@style/AppTheme.TextView.Bold"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/padding_micro"
+                android:layout_marginBottom="@dimen/padding_medium"
+                android:includeFontPadding="false"
+                android:text="@{model.alias}"
+                android:textAppearance="@style/AppTheme.TextView.Light.Small"
+                android:textColor="@color/white"
+                tools:text="14" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,284 @@
+<resources>
+    <string name="app_name">Salam Pakistan</string>
+    <string name="facebook_app_id">3509076755872961</string>
+    <string name="fb_login_protocol_scheme">fb216908928974155</string>
+
+
+    <string name="about_us">About Us</string>
+    <string name="amount">Amount</string>
+    <string name="activities">activities</string>
+    <string name="all_four_seasons_to_enjoy">all four seasons to enjoy</string>
+    <string name="apply_online">apply online</string>
+    <string name="booking_and_reservation">booking and reservation</string>
+    <string name="be_member">be a member</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="confirm_pwd">Confirm Password</string>
+    <string name="check_in">check in</string>
+    <string name="check_out">check out</string>
+    <string name="cnic">cnic</string>
+    <string name="cancellation_policy">cancellation policy</string>
+    <string name="check_best_things">Check out the best things to do in Pakistan</string>
+    <string name="create_account">create account</string>
+    <string name="currency_exchange">currency exchange</string>
+    <string name="dob">Date of Birth</string>
+    <string name="date_format">22 dec</string>
+    <string name="bus_date_format">22 dec 2020</string>
+    <string name="departing">departing</string>
+    <string name="discover_surroundings">Discover the surroundings</string>
+    <string name="day_count">day %d</string>
+    <string name="email">Email</string>
+    <string name="email_address">Email Address</string>
+    <string name="empty"> </string>
+    <string name="expert_tips">expert tips</string>
+    <string name="explore_more">explore more</string>
+    <string name="enter_email">enter your email</string>
+    <string name="facilities">facilities</string>
+    <string name="forgot_pwd">forgot password?</string>
+    <string name="from">from</string>
+    <string name="female">Female</string>
+    <string name="featured_text">Featured %s</string>
+    <string name="first_name">First Name</string>
+    <string name="user_name">%s %s</string>
+    <string name="find_out">find out</string>
+    <string name="flights">flights</string>
+    <string name="festivities_n_events_text">%s Festivities &amp; Events</string>
+    <string name="gender">Gender</string>
+    <string name="general_info">General information</string>
+    <string name="home">Home</string>
+    <string name="hotels">hotels</string>
+    <string name="hotel">hotel</string>
+    <string name="ca">car</string>
+    <string name="accomodation">accomodation</string>
+    <string name="aitport">airport</string>
+    <string name="flight">flight</string>
+    <string name="train">train</string>
+    <string name="car_rentals">car rental</string>
+    <string name="bus">bus</string>
+    <string name="intimate_insights">Intimate insights</string>
+    <string name="images">Images</string>
+    <string name="last_name">Last Name</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="location">location</string>
+    <string name="url">%s</string>
+    <string name="set_city">%s</string>
+    <string name="set_location">%s, %s</string>
+    <string name="set_start_end_date">%s,%s</string>
+    <string name="set_per_person_text">Rs. %s / person</string>
+    <string name="locations">Locations</string>
+    <string name="lets_get_booking">let\'s get booking!</string>
+    <string name="lets_go">let\'s go</string>
+    <string name="male">Male</string>
+    <string name="made_by_experts">Made by experts</string>
+    <string name="mobile_number">mobile number</string>
+    <string name="mission">Mission</string>
+    <string name="one_way">one way</string>
+    <string name="pakistan">Pakistan</string>
+    <string name="profile">Profile</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="planning">Planning</string>
+    <string name="enter_city_name">enter city name</string>
+    <string name="map">Map</string>
+    <string name="map_lowercase">map</string>
+    <string name="pwd">Password</string>
+    <string name="pk_rupee">Pakistani Rupee</string>
+    <string name="plus_count">+ %d</string>
+    <string name="reviews_count">%d reviews</string>
+    <string name="review_count">%d Reviews</string>
+    <string name="rating_average">%.1f</string>
+    <string name="read_more">Read More</string>
+    <string name="remove">Remove</string>
+    <string name="room">room</string>
+    <string name="returning">returning</string>
+    <string name="submit">Submit</string>
+    <string name="seasonal_foods_n_fruits">seasonal foods &amp; fruits</string>
+    <string name="services">services</string>
+    <string name="all_services">All services</string>
+    <string name="city_state">%s, %s</string>
+    <string name="see_all">see all</string>
+    <string name="starting_from">Starting from %s</string>
+    <string name="sights_of_text">the sights of %s</string>
+    <string name="start_adventure">start your adventure</string>
+    <string name="trains">trains</string>
+    <string name="type">Type</string>
+    <string name="to">to</string>
+    <string name="trips_u_cant_miss">trips you cannot miss</string>
+    <string name="trip_itinerary">Trip Itinerary</string>
+    <string name="travelling_text">travelling in %s</string>
+    <string name="update">update</string>
+    <string name="vision">Vision</string>
+    <string name="visa_status">Visa Status</string>
+    <string name="visa_availability">visa availability</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="where_to_go">where to go</string>
+    <string name="what_to_do">what to do</string>
+    <string name="welcome_back">welcome back</string>
+    <string name="zero">0</string>
+
+    <plurals name="rooms">
+        <item quantity="one">room</item>
+        <item quantity="other">rooms</item>
+    </plurals>
+
+    <plurals name="adults">
+        <item quantity="one">adult</item>
+        <item quantity="other">adults</item>
+    </plurals>
+
+    <plurals name="children">
+        <item quantity="one">child</item>
+        <item quantity="other">children</item>
+    </plurals>
+
+    <plurals name="infants">
+        <item quantity="one">infant</item>
+        <item quantity="other">infants</item>
+    </plurals>
+
+    <!-- Home -->
+    <string name="banner_desc">Your gateway to a realm of incredible beauty, warm\nhospitality, exquisite food &amp; endless discovery.</string>
+    <string name="apply_e_visa">apply e-visa</string>
+
+    <!-- Login Register -->
+    <string name="already_member">already a member?</string>
+    <string name="login_here">login here</string>
+    <string name="login_signup">Log In / Sign Up</string>
+    <string name="login_to_view_details">Please login to view and edit your details</string>
+    <string name="logout_confirm_dialog_title">Confirm Logout</string>
+    <string name="logout_confirm_dialog_msg">Are you sure you want to logout?</string>
+    <string name="email_empty">Email Address cannot be empty</string>
+    <string name="email_already_exists_error">An account with this email address already exists</string>
+    <string name="invalid_first_name">Invalid First Name</string>
+    <string name="invalid_last_name">Invalid Last Name</string>
+    <string name="invalid_email">Invalid Email Address</string>
+    <string name="invalid_mobile">Invalid Mobile Number</string>
+    <string name="invalid_cnic">Invalid CNIC number</string>
+    <string name="invalid_pwd">Invalid Password</string>
+    <string name="invalid_cnfrm_pwd">Invalid Confirm Password</string>
+    <string name="pwd_length_error">Password must have at least 6 characters</string>
+    <string name="profile_updated_success">Profile updated successfully</string>
+    <string name="cnfrm_pwd">Password and Confirm Password must be equal</string>
+    <string name="invalid_gender">Please select gender</string>
+    <string name="invalid_dob">Please provide Date of Birth</string>
+    <string name="experience_the_seasons">experience the seasons</string>
+    <string name="no_wishlist">No Wishlist present</string>
+    <string name="no_review">No Review present</string>
+
+    <!-- Profile -->
+    <string name="ptdc_phone">051&#8211;9212850</string>
+    <string name="ptdc_email">info@tourism.gov.pk</string>
+    <string name="contact_us_confirmation_title">Switch application?</string>
+    <string name="contact_us_call_confirmation_msg">This action will launch the phone application</string>
+
+    <!-- About Us -->
+    <string name="about_message_director_title">Message from the Managing Director</string>
+    <string name="about_message_director_content">Impact of tourism on a country\’s economy, society, communities, and prosperity cannot be underscored. Throughout the world, tourism sector has been hailed for its invaluable worth as a powerful driver of socioeconomic development. Today, countries are increasingly striving to position themselves as a preferred destination for tourists. We, at PTDC, are committed to fulfil the potential of Pakistan as the tourism\’s next big venture to look forward to. Pakistan is endowed with unparalleled natural beauty, rich culture, hospitable communities, religious diversity, and distinctive culinary delights. Our vision is to share these gifts with the world in a sustainable fashion, while ensuring that our communities reap the benefits of a thriving tourism industry.\n\nI am pleased with the progress we have made to achieve our objectives, including the formulation of the National Tourism Strategy (2020&#8211;2030) complemented by 5 years Action Plan (2020&#8211;25), which will guide the sector in the coming years. National Minimum Standards for the tourism sector is yet another accomplishment which will ensure tourist service excellence and a memorable consumer experience. We will continue to work with our provinces, partners and stakeholders for developing synergies, building capacities, strengthening public&#8211;private partnerships, investing in human capital, and promoting our unmatched tourism products to make Pakistan one of the leading tourist destinations.</string>
+    <string name="about_message_vision_content">The Vision is to develop the tourism sector as a national priority in a sustainable and acceptable manner, taking full advantage of regional and international trends and developments so that it can significantly contribute to the improvement of quality of life in Pakistan whilst promoting the country\’s cultural and natural heritage.</string>
+    <string name="about_message_mission_content">To create an enabling environment for Pakistan\’s tourism industry by providing world&#8211;class facilities that commensurate with our rich cultural heritage, rare archaeological treasures and exquisite environmental beauty in close partnership and coordination between the public and the private sector while preserving and protecting our cultural and moral values and projecting tourist friendly image of the country.</string>
+
+    <!-- Wishlist -->
+    <string name="add_to_plan">add to plan</string>
+    <string name="add_to_wishlist">add to wishlist</string>
+
+    <!-- Filters -->
+
+    <!-- Check Visa Status -->
+    <string name="check_visa_desc">get all the visa information you need to travel to pakistan. the good news is that we offer several countries a visa on arrival. select your country to get started.</string>
+    <string name="check_visa_select_country">Select your country</string>
+    <string name="check_visa_country_not_listed">if your country is not listed above, kindly visit the nearest Pakistani embassy for details.</string>
+    <string name="check_visa_check_availability">check availability</string>
+    <string name="check_visa_onArrival_visa_available_msg">tourist visa is applicable for your country</string>
+    <string name="check_visa_online_visa_available_msg">on arrival visa is also applicable for your country</string>
+
+    <!-- Messages -->
+    <string name="invalid_credentials">Invalid credentials</string>
+    <string name="text_copied_to_clipboard">%s copied to clipboard</string>
+    <string name="no_data_error_msg">Oops! No data found</string>
+    <string name="no_data_error_suggestion">Try looking for something else, maybe?</string>
+    <string name="old_password">Old Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_your_text_here">enter your text here</string>
+
+
+    <!--    Google map API-->
+    <string name="google_maps_key">AIzaSyDLcz0kMX5XISsZKYfZcduPM3MQc0JOx7k</string>
+    <!--    <string name="google_maps_key">AIzaSyC6S5kXbyCRDE19BK8SsqY4SoBrA8eln6E</string>-->
+    <string name="no_attraction_point">No Attraction point</string>
+    <string name="reviews_and_feedback"><![CDATA[Reviews & Feedback]]></string>
+    <string name="title">Title</string>
+    <string name="pleaseProvideEmail">Please provide email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_a_city">Select a city</string>
+    <string name="proceed">Proceed</string>
+    <string name="enter_your_plan_details">enter your plan details</string>
+    <string name="let_s_get_your_booking">let\'s get your booking</string>
+    <string name="check_in_check_out">check-in - check-out</string>
+    <string name="hotel_booking">Hotel Booking</string>
+    <string name="search_hotel">search hotel</string>
+    <string name="sort">sort</string>
+    <string name="filters">filters</string>
+    <string name="available_rooms">Available Rooms</string>
+    <string name="amenities">Amenities</string>
+    <string name="book_now">book now</string>
+    <string name="summary">Summary</string>
+    <string name="total">total</string>
+    <string name="pay_now">pay now</string>
+    <string name="clear">Clear</string>
+    <string name="done">Done</string>
+    <string name="star">Stars</string>
+    <string name="Sort_by">Sort By</string>
+    <string name="price">Price</string>
+    <string name="edit_image">edit image</string>
+    <string name="camera">camera</string>
+    <string name="gallery">gallery</string>
+    <string name="cancel">cancel</string>
+    <string name="err_grant_permission">please provide permission.</string>
+    <string name="please_add_to_the_wishlist_to_see_your_wishlist">Please add to the wishlist to see your wishlist</string>
+    <string name="please_provide_review">Please provide review to event or location</string>
+    <string name="no_review_present">No review present</string>
+    <string name="remove_from_plan">remove from plan</string>
+    <string name="remove_from_wish_list">remove from wishlist</string>
+    <string name="check_out_the_best_accommodations_in_pakistan">Check out the best accommodations \nin Pakistan</string>
+    <string name="arrival">arrival</string>
+    <string name="departure">departure</string>
+    <string name="city">city</string>
+    <string name="payment_details">payment details</string>
+    <string name="adults">adults</string>
+    <string name="childern">childern</string>
+    <string name="event">Events</string>
+    <string name="check_out_the_latest_events">Check out the latest events</string>
+    <string name="events">events</string>
+    <string name="browse_events">Browse events</string>
+    <string name="search_by_name_types_city_or_province">Search by Name, Types, City or Province</string>
+    <string name="imagUrl">https://upload.wikimedia.org/wikipedia/commons/5/56/Shandur-Polo-Festivals_kahtours.jpg</string>
+    <string name="featured_event">featured events</string>
+    <string name="all_events">all events</string>
+    <string name="show_all">Show all</string>
+    <string name="add_your_comment">Add your comment</string>
+    <string name="related_events">related events</string>
+    <string name="powered_by">Powered by</string>
+    <string name="bus_booking">Bus Booking</string>
+    <string name="search_and_book_bus_tickets">search and book bus tickets</string>
+    <string name="date">date</string>
+    <string name="infants">infants</string>
+    <string name="flight_booking">Flight Booking</string>
+    <string name="top_tourist_destination">TOP TOURIST DESTINATION</string>
+    <string name="new_location_name">near %s</string>
+    <string name="get_a_taste_of_pakistan">Get a Taste \nof Pakistan</string>
+    <string name="get_information_on_places_you_want_to_nvisit_and_see">Get information on places you want to\nvisit and see.</string>
+    <string name="build_your_itinerary">Build Your\nItinerary</string>
+    <string name="onboarding_detail_3">Use the in-app tool to map out your entire\njourney—hotels, travel, food, and more.</string>
+    <string name="explore_destinations">Explore\nDestinations</string>
+    <string name="onboarding_detail_1">View all popular destinations and\nhiddens gems in Pakistan.</string>
+    <string name="set_journey_city">%s to %s</string>
+    <string name="skip">skip</string>
+    <string name="please_select_the_service_first">Please select the service first.</string>
+    <string name="pleaseselectdeparturecityfirst">please select departure city first.</string>
+    <string name="one">1</string>
+    <string name="fee_cancellation">Fee Cancellation: %s</string>
+    <string name="reviews">Reviews</string>
+    <string name="test_title">shandur polo festival</string>
+</resources>

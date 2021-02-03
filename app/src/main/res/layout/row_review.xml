@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.response.getreviewsresponse.Data" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="@dimen/padding_medium"
+        android:background="@color/greyEE"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_small">
+
+        <LinearLayout
+            android:id="@+id/destination_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_micro"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/travel_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_small"
+                android:maxLines="1"
+                android:text="@string/title"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/destination_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.title}"
+                android:maxLines="1"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+                android:textColor="@color/sea_green" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/top_separator"
+            style="@style/AppTheme.Separator.Horizontal.Dark"
+            android:layout_below="@+id/destination_layout"
+            android:layout_marginBottom="@dimen/padding_micro" />
+
+        <LinearLayout
+            android:id="@+id/type_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/top_separator"
+            android:layout_marginBottom="@dimen/padding_nano"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/type_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_small"
+                android:maxLines="1"
+                android:text="@string/type"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/type_value_text"
+                style="@style/AppTheme.TextView"
+                android:text="@{model.type}"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rating_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type_layout"
+            android:layout_marginBottom="@dimen/padding_micro"
+            android:gravity="center">
+
+            <RatingBar
+                style="@style/AppTheme.RatingBarFilled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/padding_tiny"
+                android:indeterminateOnly="false"
+                android:numStars="5"
+                android:rating="@{model.rating}" />
+
+            <TextView
+                android:id="@+id/reviews_count_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_tiny"
+                android:visibility="gone"
+                android:text="180 reviews"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                android:textColor="@color/grey77" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/bottom_separator"
+            style="@style/AppTheme.Separator.Horizontal.Dark"
+            android:layout_below="@+id/rating_layout"
+            android:layout_marginBottom="@dimen/padding_micro" />
+
+        <TextView
+            android:id="@+id/description_text"
+            style="@style/AppTheme.TextView"
+            android:layout_below="@+id/bottom_separator"
+            android:maxLines="2"
+            android:text="@{model.description}"
+            android:textColor="@color/grey77" />
+    </RelativeLayout>
+</layout>

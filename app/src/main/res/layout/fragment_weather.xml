@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.salampakistan.utils.extension.PrimitiveExtensionKt" />
+
+        <import type="com.salampakistan.utils.TintDrawableAlignment" />
+
+        <variable
+            name="location"
+            type="String" />
+
+        <variable
+            name="temperature"
+            type="Float" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/weather_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_weather_layout_height"
+        android:background="@color/theme_green"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/padding_medium"
+        android:paddingEnd="@dimen/padding_medium">
+
+        <TextView
+            android:id="@+id/city_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_down_arrow_white_32dp"
+            android:drawablePadding="@dimen/padding_small"
+            android:gravity="center_vertical"
+            android:text="weather in Islamabad"
+            android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:drawableEnd="@drawable/ic_weather_green"
+            android:drawablePadding="@dimen/padding_tiny"
+            android:text="@{PrimitiveExtensionKt.getCelsiusTemperature(temperature)}"
+            android:textAppearance="@style/AppTheme.TextView.SemiBold.XLarge"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:drawableAlignment="@{TintDrawableAlignment.RIGHT}"
+            app:drawableTint="@{@color/white}"
+            tools:text="10 c" />
+    </RelativeLayout>
+</layout>

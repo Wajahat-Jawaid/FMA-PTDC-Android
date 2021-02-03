@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.Location" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/row_home_where_to_go_item_width"
+        android:layout_height="@dimen/row_home_where_to_go_item_height"
+        android:layout_marginEnd="@dimen/padding_medium"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="@dimen/padding_large"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_home_item_height"
+                android:scaleType="centerCrop"
+                app:imageUrlCustomDimensions="@{model.thumbnail}"
+                app:shouldNotUsePlaceholder="@{true}" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/bg_bottom_to_top_black_overlay" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/AppTheme.TextView.Bold"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/padding_huge"
+                android:layout_marginEnd="@dimen/padding_small"
+                android:layout_marginBottom="@dimen/padding_medium"
+                android:includeFontPadding="false"
+                android:text="@{model.name}"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Large"
+                android:textColor="@color/white"
+                tools:text="14" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

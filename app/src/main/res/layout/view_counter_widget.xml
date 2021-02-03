@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="marginTop"
+            type="Float" />
+
+        <variable
+            name="marginStart"
+            type="Float" />
+
+        <variable
+            name="marginEnd"
+            type="Float" />
+
+        <variable
+            name="marginBottom"
+            type="Float" />
+    </data>
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_counter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:weightSum="1"
+            android:paddingHorizontal="@dimen/padding_small"
+            android:paddingVertical="@dimen/padding_medium"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_hotel_booking">
+
+            <ImageView
+                android:id="@+id/decrease_counter_btn"
+                style="@style/AppTheme.Booking.DecCounterBtn"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.01" />
+
+            <TextView
+                android:id="@+id/counter_value_text"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/grey66"
+                android:text="@string/zero"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Large"
+                tools:text="@string/zero"
+                android:layout_weight="0.98"/>
+
+            <ImageView
+                android:layout_weight="0.01"
+                android:id="@+id/increase_counter_btn"
+                style="@style/AppTheme.Booking.IncCounterBtn" />
+        </LinearLayout>
+</layout>

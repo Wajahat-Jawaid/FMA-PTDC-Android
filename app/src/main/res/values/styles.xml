@@ -1,0 +1,464 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/ButtonStyle</item>
+        <item name="buttonStyleSmall">@style/ButtonStyle</item>
+        <item name="android:lineSpacingMultiplier">1.35</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_height">20dp</item>
+    </style>
+
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+
+    <style name="MyBottomNavigationView" parent="Widget.Design.BottomNavigationView">
+        <!--        <item name="itemIconTint">@color/bottom_navigation_item_selector</item>-->
+        <item name="itemTextAppearanceActive">@style/MyBottomNavigationView.TextAppearance</item>
+        <item name="itemTextAppearanceInactive">@style/MyBottomNavigationView.TextAppearance</item>
+    </style>
+
+    <style name="MyBottomNavigationView.TextAppearance" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">10sp</item>
+        <!--        <item name="fontFamily">@font/poppins_regular</item>-->
+    </style>
+
+    <!-- Separator -->
+    <style name="AppTheme.Separator" />
+
+    <style name="AppTheme.Separator.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/separator</item>
+    </style>
+
+    <style name="AppTheme.Separator.Horizontal.Dark">
+        <item name="android:background">@color/separator_dark</item>
+    </style>
+
+    <!-- ImageButton -->
+    <style name="AppTheme.ImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/transparent</item>
+
+    </style>
+
+    <!-- Rating Bar -->
+    <style name="AppTheme.RatingBarFilled" parent="android:Widget.Material.ProgressBar.Horizontal">
+        <item name="android:indeterminate">false</item>
+        <item name="android:progressDrawable">@drawable/rating_bar_filled</item>
+        <item name="android:minHeight">7dp</item>
+        <item name="android:maxHeight">9dp</item>
+        <item name="android:max">100</item>
+    </style>
+
+    <!-- Dialog -->
+
+    <!-- Text Appearance -->
+
+    <style name="AppTheme.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Small</item>
+    </style>
+
+    <style name="AppTheme.ToolbarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- REGULAR -->
+    <style name="AppTheme.TextView.Reg">
+        <item name="android:fontFamily">@font/byom_reg</item>
+    </style>
+
+    <style name="AppTheme.TextView.Reg.Small" parent="AppTheme.TextView.Reg">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="AppTheme.TextView.Reg.Medium" parent="AppTheme.TextView.Reg">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="AppTheme.TextView.Reg.Large" parent="AppTheme.TextView.Reg">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <!-- SEMI-BOLD -->
+    <style name="AppTheme.TextView.SemiBold">
+        <item name="android:fontFamily">@font/byom_bold</item>
+    </style>
+
+    <style name="AppTheme.TextView.SemiBold.Small" parent="AppTheme.TextView.SemiBold">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="AppTheme.TextView.SemiBold.Medium" parent="AppTheme.TextView.SemiBold">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="AppTheme.TextView.SemiBold.Large" parent="AppTheme.TextView.SemiBold">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="AppTheme.TextView.SemiBold.XLarge" parent="AppTheme.TextView.SemiBold">
+        <item name="android:textSize">@dimen/text_x_large</item>
+    </style>
+
+    <style name="AppTheme.TextView.SemiBold.XXLarge" parent="AppTheme.TextView.SemiBold">
+        <item name="android:textSize">@dimen/text_xx_large</item>
+    </style>
+
+    <style name="AppTheme.TextView.SemiBold.Huge" parent="AppTheme.TextView.SemiBold">
+        <item name="android:textSize">@dimen/text_huge</item>
+    </style>
+
+    <!-- BOLD -->
+    <style name="AppTheme.TextView.Bold">
+        <item name="android:fontFamily">@font/byom_bold</item>
+    </style>
+
+    <style name="AppTheme.TextView.Bold.Small" parent="AppTheme.TextView.Bold">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="AppTheme.TextView.Bold.Medium" parent="AppTheme.TextView.Bold">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="AppTheme.TextView.Bold.Large" parent="AppTheme.TextView.Bold">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="AppTheme.TextView.Bold.XLarge" parent="AppTheme.TextView.Bold">
+        <item name="android:textSize">@dimen/text_x_large</item>
+    </style>
+
+    <style name="AppTheme.TextView.Bold.XXLarge" parent="AppTheme.TextView.Bold">
+        <item name="android:textSize">@dimen/text_xx_large</item>
+    </style>
+
+    <!-- LIGHT -->
+    <style name="AppTheme.TextView.Light">
+        <item name="android:fontFamily">@font/byom_light</item>
+    </style>
+
+    <style name="AppTheme.TextView.Light.Small" parent="AppTheme.TextView.Light">
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="AppTheme.TextView.Light.XLarge" parent="AppTheme.TextView.Light">
+        <item name="android:textSize">@dimen/text_x_large</item>
+    </style>
+
+    <!-- Home -->
+    <style name="AppTheme.Home" />
+
+    <style name="AppTheme.Home.Section">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/padding_big</item>
+        <item name="android:layout_marginStart">@dimen/padding_medium</item>
+    </style>
+
+    <!-- Booking Form -->
+    <style name="AppTheme.Booking" />
+
+    <style name="AppTheme.Booking.Label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/padding_tiny</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Bold.Small</item>
+    </style>
+
+    <style name="AppTheme.Booking.Text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Large</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/grey41434f</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="AppTheme.Booking.Separator">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/theme_yellow</item>
+    </style>
+
+    <style name="AppTheme.Booking.IncCounterBtn" parent="AppTheme.ImageButton">
+        <item name="android:background">@drawable/ic_plus</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AppTheme.Booking.DecCounterBtn" parent="AppTheme.ImageButton">
+        <item name="android:src">@drawable/ic_minus</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="AppTheme.Booking.RadioBtns">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleX">0.8</item>
+        <item name="android:scaleY">0.8</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Large</item>
+    </style>
+
+    <style name="AppTheme.Booking.SubmitBtn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/bg_hotel_booking</item>
+        <item name="android:backgroundTint">@color/green_light</item>
+        <item name="android:layout_marginTop">@dimen/padding_big</item>
+        <item name="android:paddingTop">@dimen/padding_large</item>
+        <item name="android:paddingBottom">@dimen/padding_large</item>
+        <item name="android:text">Search</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Bold.Medium</item>
+    </style>
+
+    <!-- Login Register -->
+    <style name="AppTheme.Login" />
+
+    <style name="AppTheme.Login.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_fields_height</item>
+        <item name="android:layout_marginTop">@dimen/login_fields_margin_top</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColor">@color/grey41434f</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Small</item>
+        <item name="android:padding">@dimen/padding_tiny</item>
+    </style>
+
+    <!-- Profile -->
+    <style name="AppTheme.Profile" />
+
+    <style name="AppTheme.Profile.Label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Bold.Small</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginBottom">@dimen/padding_micro</item>
+    </style>
+
+    <style name="AppTheme.Profile.Field">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_profile_field</item>
+        <item name="android:paddingStart">@dimen/padding_large</item>
+        <item name="android:paddingEnd">@dimen/padding_large</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Small</item>
+        <item name="android:inputType">text</item>
+        <item name="android:layout_marginBottom">@dimen/padding_large</item>
+    </style>
+
+
+    <!-- Contact Us -->
+    <style name="AppTheme.ContactUs" />
+
+    <style name="AppTheme.ContactUs.Icon">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/padding_medium</item>
+    </style>
+
+    <style name="AppTheme.ContactUs.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Medium</item>
+    </style>
+
+    <style name="AppTheme.ContactUs.Value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingBottom">@dimen/padding_micro</item>
+        <item name="android:paddingTop">@dimen/padding_nano</item>
+        <item name="android:paddingEnd">@dimen/padding_micro</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.SemiBold.Medium</item>
+    </style>
+
+<!--    Update Password -->
+
+    <style name="AppTheme.updatePasword" />
+
+    <style name="AppTheme.updatePasword.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Bold.XXLarge</item>
+    </style>
+
+    <!-- Season Details -->
+    <style name="AppTheme.SeasonDetails" />
+
+    <style name="AppTheme.SeasonDetails.ImageCard">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_marginStart">@dimen/padding_medium</item>
+        <item name="android:layout_marginEnd">@dimen/padding_medium</item>
+        <item name="android:layout_marginBottom">@dimen/padding_big</item>
+        <item name="cardCornerRadius">@dimen/padding_small</item>
+    </style>
+
+    <style name="AppTheme.SeasonDetails.ImageView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="AppTheme.SeasonDetails.Text1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/padding_medium</item>
+        <item name="android:layout_marginEnd">@dimen/padding_medium</item>
+        <item name="android:layout_marginBottom">@dimen/padding_tiny</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Bold.Small</item>
+        <item name="android:textColor">@color/grey67</item>
+    </style>
+
+    <style name="AppTheme.SeasonDetails.Text2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/padding_medium</item>
+        <item name="android:layout_marginEnd">@dimen/padding_medium</item>
+        <item name="android:layout_marginBottom">@dimen/padding_medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Small</item>
+        <item name="android:textColor">@color/grey67</item>
+    </style>
+
+    <!-- Event Details -->
+    <style name="AppTheme.EventDetails" />
+
+    <style name="AppTheme.EventDetails.FacilitiesTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Bold.XLarge</item>
+    </style>
+
+    <style name="AppTheme.EventDetails.FacilitiesLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/padding_small</item>
+        <item name="android:layout_marginBottom">@dimen/padding_large</item>
+        <item name="flexDirection">row</item>
+        <item name="flexWrap">wrap</item>
+    </style>
+
+    <!-- Trips Filters -->
+
+    <!-- LocationDetails -->
+    <style name="AppTheme.LocationDetails" />
+
+    <style name="AppTheme.LocationDetails.BannerBtn">
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">@dimen/btn_normal</item>
+        <item name="android:layout_marginStart">@dimen/padding_small</item>
+        <item name="android:layout_marginTop">@dimen/padding_small</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Bold.Small</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Dialog -->
+    <style name="AppTheme.Dialog" />
+
+    <style name="MyAlertDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">600dp</item>
+        <item name="android:layout_height">200dp</item>
+    </style>
+
+    <style name="AppTheme.Dialog.Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/padding_huge</item>
+        <item name="android:layout_marginStart">@dimen/padding_huge</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/dialog_background</item>
+    </style>
+
+    <style name="AppTheme.Dialog.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_margin">@dimen/padding_medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Small</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="AppTheme.Dialog.Message">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">@dimen/padding_medium</item>
+        <item name="android:layout_marginEnd">@dimen/padding_medium</item>
+        <item name="android:layout_marginBottom">@dimen/padding_medium</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Small</item>
+        <item name="android:textColor">@color/black</item>
+        <!--        <item name="android:fontFamily">@font/poppins_medium</item>-->
+    </style>
+
+    <style name="AppTheme.Dialog.Buttons" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/dialog_btn_height</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+
+    <!-- transparent bottom dialog -->
+    <style name="BottomSheetDialog.Transparent" parent="Theme.Design.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+
+
+    <!--Events-->
+    <style name="AppTheme.Event" />
+    <style name="AppTheme.Event.EventList"/>
+
+    <style name="AppTheme.Event.EventList.Text">
+        <item name="android:textSize">@dimen/text_xx_large</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/byom_bold</item>
+
+        <item name="android:textColor">@color/grey242021</item>
+    </style>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.Location" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="@dimen/row_where_to_go_type_all_width"
+        android:layout_height="@dimen/row_where_to_go_type_all_height"
+        android:layout_marginEnd="@dimen/padding_small"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="@dimen/padding_large"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/row_where_to_go_type_all_width"
+                android:layout_height="@dimen/row_where_to_go_type_all_image_height"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:background="@color/greye0"
+                android:scaleType="centerCrop"
+                app:height="@{@dimen/row_where_to_go_type_all_height}"
+                app:imageUrlCustomDimensions="@{model.thumbnail}"
+                app:width="@{@dimen/row_where_to_go_type_all_width}" />
+
+            <TextView
+                android:id="@+id/title_text"
+                style="@style/AppTheme.TextView.Bold"
+                android:layout_marginBottom="@dimen/padding_tiny"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:text="@{model.name}"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+                android:textColor="@color/grey77"
+                tools:text="14" />
+
+            <TextView
+                android:id="@+id/desc_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_micro"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:minLines="2"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Small"
+                tools:text="14" />
+
+            <include
+                android:visibility="gone"
+                layout="@layout/view_rating_bar"
+                app:count="@{49}" />
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="@dimen/btn_small"
+                android:layout_marginTop="@dimen/padding_micro"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:background="@color/theme_green"
+                android:text="@string/read_more"
+                android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

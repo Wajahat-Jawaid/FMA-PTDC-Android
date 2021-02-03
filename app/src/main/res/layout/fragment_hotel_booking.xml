@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="com.salampakistan.model.enums.HotelCheck" />
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.booking.hotel.hotelsearch.HotelBookingFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.salampakistan.ui.fragments.booking.hotel.hotelsearch.HotelBookingViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.75"
+                android:background="@color/colorPrimary" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_small"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/padding_medium"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="0.45"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/hotel_booking"
+                android:textAlignment="center"
+                android:textAppearance="@style/AppTheme.TextView.SemiBold.Large"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_x_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.45" />
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:elevation="4dp"
+            app:cardCornerRadius="@dimen/padding_small"
+            app:cardElevation="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintWidth_percent=".85">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_large">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search Hotel"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.Large"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_micro"
+                        android:text="@string/check_out_the_best_accommodations_in_pakistan"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_small"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="@+id/textView11"
+                        app:layout_constraintTop_toBottomOf="@+id/textView11">
+
+                        <TextView
+                            style="@style/AppTheme.Booking.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="city"
+                            android:textSize="@dimen/text_medium" />
+
+                        <LinearLayout
+                            android:id="@+id/rvTopic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/bg_hotel_booking"
+                            android:onClick="@{() -> fragment.onLocationFieldClicked()}"
+                            android:orientation="horizontal"
+                            android:paddingVertical="@dimen/padding_medium"
+                            android:paddingHorizontal="@dimen/padding_small"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/location_text"
+                                style="@style/AppTheme.Booking.Text"
+                                android:layout_width="match_parent"
+                                android:onClick="@{() -> fragment.onLocationFieldClicked()}"
+                                android:layout_weight="0.8"
+                                android:text="@={viewModel.location}"
+                                tools:text="@string/location" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="@dimen/padding_tiny"
+                                android:onClick="@{() -> fragment.onLocationFieldClicked()}"
+                                android:src="@drawable/ic_dropdown"
+                                tools:ignore="VectorDrawableCompat" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_small"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/padding_small"
+                            android:layout_weight=".5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/arrival"
+                                style="@style/AppTheme.Booking.Label"
+                                android:textSize="@dimen/text_medium" />
+
+                            <TextView
+                                android:id="@+id/check_in_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_hotel_booking"
+                                android:drawableRight="@drawable/ic_calendar"
+                                android:hint="22 dec"
+                                android:drawablePadding="@dimen/padding_large"
+                                android:onClick="@{() -> fragment.onDateFieldClicked(HotelCheck.CHECK_IN)}"
+                                android:paddingHorizontal="@dimen/padding_small"
+                                android:paddingVertical="@dimen/padding_medium"
+                                android:text="@{viewModel.checkInDate}"
+
+                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"
+                                android:textColor="@color/grey66"
+                                tools:layout_editor_absoluteX="75dp"
+                                tools:layout_editor_absoluteY="191dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/departure"
+                                style="@style/AppTheme.Booking.Label"
+                                android:textSize="@dimen/text_medium" />
+
+                            <TextView
+                                android:id="@+id/check_out_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.checkOutDate}"
+                                android:onClick="@{() -> fragment.onDateFieldClicked(HotelCheck.CHECK_OUT)}"
+                                android:background="@drawable/bg_hotel_booking"
+                                android:drawableRight="@drawable/ic_calendar"
+                                android:drawablePadding="@dimen/padding_micro"
+                                android:paddingHorizontal="@dimen/padding_small"
+                                android:paddingVertical="@dimen/padding_medium"
+                                android:hint="22 dec"
+                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"
+                                android:textColor="@color/grey66"
+                                tools:layout_editor_absoluteX="75dp"
+                                tools:layout_editor_absoluteY="191dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_small"
+                        android:text="@string/room"
+                        style="@style/AppTheme.Booking.Label"
+                        android:textSize="@dimen/text_medium" />
+
+
+                    <include
+                        android:id="@+id/rooms_counter_layout"
+                        layout="@layout/view_counter_widget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check_in_separator" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_small"
+                        android:text="@string/adults"
+                        style="@style/AppTheme.Booking.Label"
+                        android:textSize="@dimen/text_medium" />
+
+
+                    <include
+                        android:id="@+id/adults_counter_layout"
+                        layout="@layout/view_counter_widget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_small"
+                        android:text="@string/childern"
+                        style="@style/AppTheme.Booking.Label"
+                        android:textSize="@dimen/text_medium" />
+
+
+                    <include
+                        android:id="@+id/children_counter_layout"
+                        layout="@layout/view_counter_widget"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/check_in_separator" />
+
+                    <Button
+
+                        style="@style/AppTheme.Booking.SubmitBtn"
+                        android:backgroundTint="@{viewModel.valid ? @color/theme_green : @color/green_light}"
+                        android:enabled="@{viewModel.valid}"
+                        android:onClick="@{() -> fragment.onDoneBtnClicked()}"
+                        />
+
+                </LinearLayout>
+            </ScrollView>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools">-->
+
+    <!--    <data>-->
+
+    <!--        <import type="com.salampakistan.model.enums.HotelCheck" />-->
+
+    <!--        <variable-->
+    <!--            name="fragment"-->
+    <!--            type="com.salampakistan.ui.fragments.booking.hotel.hotelsearch.HotelBookingFragment" />-->
+
+    <!--        <variable-->
+    <!--            name="viewModel"-->
+    <!--            type="com.salampakistan.ui.fragments.booking.hotel.hotelsearch.HotelBookingViewModel" />-->
+    <!--    </data>-->
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="@dimen/padding_small">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/location_label"-->
+    <!--            style="@style/AppTheme.Booking.Label"-->
+    <!--            android:background="@color/transparent"-->
+    <!--            android:text="@string/location"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/location_text"-->
+    <!--            style="@style/AppTheme.Booking.Text"-->
+    <!--            android:onClick="@{() -> fragment.onLocationFieldClicked()}"-->
+    <!--            android:text="@={viewModel.location}"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/location_label"-->
+    <!--            tools:text="@string/location" />-->
+
+    <!--        <View-->
+    <!--            style="@style/AppTheme.Booking.Separator"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/location_text" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/check_in_label"-->
+    <!--            style="@style/AppTheme.Booking.Label"-->
+    <!--            android:layout_marginTop="@dimen/padding_large"-->
+    <!--            android:text="@string/check_in"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/location_text" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/check_in_text"-->
+    <!--            style="@style/AppTheme.Booking.Text"-->
+    <!--            android:drawableEnd="@drawable/ic_calendar_grey_24dp"-->
+    <!--            android:onClick="@{() -> fragment.onDateFieldClicked(HotelCheck.CHECK_IN)}"-->
+    <!--            android:paddingStart="0dp"-->
+    <!--            android:paddingEnd="@dimen/padding_micro"-->
+    <!--            android:text="@{viewModel.checkInDate}"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/check_in_label"-->
+    <!--            tools:text="@string/date_format" />-->
+
+    <!--        <View-->
+    <!--            android:id="@+id/check_in_separator"-->
+    <!--            style="@style/AppTheme.Booking.Separator"-->
+    <!--            android:layout_marginRight="@dimen/padding_micro"-->
+    <!--            app:layout_constraintEnd_toStartOf="@+id/check_in_guideline"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/check_in_text" />-->
+
+    <!--        <androidx.constraintlayout.widget.Guideline-->
+    <!--            android:id="@+id/check_in_guideline"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintGuide_percent="0.5" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/check_out_label"-->
+    <!--            style="@style/AppTheme.Booking.Label"-->
+    <!--            android:layout_marginStart="@dimen/padding_small"-->
+    <!--            android:layout_marginTop="@dimen/padding_large"-->
+    <!--            android:text="@string/check_out"-->
+    <!--            app:layout_constraintStart_toEndOf="@id/check_in_guideline"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/location_text" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/check_out_text"-->
+    <!--            style="@style/AppTheme.Booking.Text"-->
+    <!--            android:layout_marginStart="@dimen/padding_small"-->
+    <!--            android:drawableEnd="@drawable/ic_calendar_grey_24dp"-->
+    <!--            android:onClick="@{() -> fragment.onDateFieldClicked(HotelCheck.CHECK_OUT)}"-->
+    <!--            android:paddingStart="0dp"-->
+    <!--            android:paddingEnd="@dimen/padding_micro"-->
+    <!--            android:text="@{viewModel.checkOutDate}"-->
+    <!--            app:layout_constraintStart_toEndOf="@id/check_in_guideline"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/check_out_label"-->
+    <!--            tools:text="@string/date_format" />-->
+
+    <!--        <View-->
+    <!--            android:id="@+id/view4"-->
+    <!--            style="@style/AppTheme.Booking.Separator"-->
+    <!--            android:layout_marginLeft="@dimen/padding_micro"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="@+id/check_in_guideline"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/check_out_text" />-->
+
+    <!--        <include-->
+    <!--            android:id="@+id/rooms_counter_layout"-->
+    <!--            layout="@layout/view_counter_widget"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/check_in_separator"-->
+    <!--            app:marginTop="@{@dimen/padding_large}"-->
+    <!--            app:title="@{@plurals/rooms(2)}"-->
+    <!--            tools:layout_marginTop="@dimen/padding_large" />-->
+
+    <!--        <include-->
+    <!--            android:id="@+id/adults_counter_layout"-->
+    <!--            layout="@layout/view_counter_widget"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/rooms_counter_layout"-->
+    <!--            app:marginTop="@{@dimen/padding_tiny}"-->
+    <!--            app:title="@{@plurals/adults(2)}"-->
+    <!--            tools:layout_marginTop="@dimen/padding_tiny" />-->
+
+    <!--        <include-->
+    <!--            android:id="@+id/children_counter_layout"-->
+    <!--            layout="@layout/view_counter_widget"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/adults_counter_layout"-->
+    <!--            app:marginTop="@{@dimen/padding_tiny}"-->
+    <!--            app:title="@{@plurals/children(2)}"-->
+    <!--            tools:layout_marginTop="@dimen/padding_tiny" />-->
+
+    <!--        <Button-->
+    <!--            style="@style/AppTheme.Booking.SubmitBtn"-->
+    <!--            android:background="@{viewModel.valid ? @color/theme_green : @color/green_light}"-->
+    <!--            android:enabled="@{viewModel.valid}"-->
+    <!--            android:onClick="@{() -> fragment.onDoneBtnClicked()}"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/children_counter_layout" />-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--</layout>-->

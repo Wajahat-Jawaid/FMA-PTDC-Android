@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.salampakistan.model.Itinerary" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/padding_large">
+
+        <TextView
+            android:id="@+id/day_text"
+            android:layout_width="@dimen/itinerary_dayText_width"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp"
+            android:text="@{@string/day_count(model.day)}"
+            android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+            android:textColor="@color/theme_green"
+            app:layout_constraintBottom_toBottomOf="@id/itinerary_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/itinerary_layout"
+            tools:text="day 1" />
+
+        <View
+            android:id="@+id/day_separator_vertical"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/greyAA"
+            app:layout_constraintStart_toEndOf="@id/day_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/day_separator_horizontal"
+            android:layout_width="34dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/greyAA"
+            app:layout_constraintBottom_toBottomOf="@id/itinerary_layout"
+            app:layout_constraintStart_toEndOf="@id/day_text"
+            app:layout_constraintTop_toTopOf="@id/itinerary_layout" />
+
+        <LinearLayout
+            android:id="@+id/itinerary_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/padding_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/day_separator_horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/itinerary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_small"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                android:textColor="@color/grey80"
+                tools:text="leave chillas for raikot\nleave chillas for raikot\nleave chillas for raikot" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

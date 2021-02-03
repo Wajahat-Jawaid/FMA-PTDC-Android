@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/parent_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/title_view"
+            style="@style/AppTheme.TextView.SemiBold.Large"
+            android:text="@{title}" />
+
+        <com.adroitandroid.chipcloud.ChipCloud
+            android:id="@+id/chip_cloud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:gravity="left" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="categoryLocation"
+            type="com.salampakistan.model.Location" />
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.wheretogo.WhereToGoCategoryListFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_search_toolbar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/banner_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_top_banner_height">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:imageUrl="@{categoryLocation.thumbnail}" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#77000000" />
+
+                    <TextView
+                        android:id="@+id/title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:layout_marginTop="@dimen/padding_gargantua"
+                        android:text="@{categoryLocation.name}"
+                        android:textAppearance="@style/AppTheme.TextView.Bold"
+                        android:textColor="@color/theme_yellow"
+                        android:textSize="30sp"
+                        tools:text="mountains" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title_text"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="@{categoryLocation.description}"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/white"
+                        tools:text="@string/check_best_things" />
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/view_no_trips"
+                    layout="@layout/view_no_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/featured_list_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/banner_layout"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginTop="@dimen/padding_large"
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:text="@{@string/featured_text(categoryLocation.name)}"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.XLarge"
+                    tools:text="Featured Museums &amp; Galleries" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/featured_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/featured_list_title"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="@dimen/padding_large"
+                    android:paddingBottom="@dimen/padding_large"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/row_where_to_go" />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

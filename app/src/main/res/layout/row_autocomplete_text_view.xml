@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:textColor="@color/white"
+    android:background="@color/colorPrimary"
+    android:text="@string/select_a_city"
+    android:textSize="@dimen/text_x_large"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/padding_medium"
+    android:paddingStart="@dimen/padding_big"
+    android:textAppearance="?android:attr/textAppearanceListItem"
+    android:gravity="center_vertical"
+    />

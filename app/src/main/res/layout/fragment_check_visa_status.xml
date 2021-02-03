@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--        <com.google.android.material.appbar.AppBarLayout-->
+        <!--            android:_id="@+_id/appbar"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
+
+        <!--            <androidx.appcompat.widget.Toolbar-->
+        <!--                android:_id="@+_id/toolbar"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="?attr/actionBarSize"-->
+        <!--                android:background="@color/white"-->
+        <!--                android:fitsSystemWindows="true"-->
+        <!--                app:contentInsetStart="0dp"-->
+        <!--                app:layout_collapseMode="pin">-->
+
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:orientation="vertical">-->
+
+        <!--                    <include layout="@layout/view_back_btn_black" />-->
+
+        <!--                    <TextView-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="wrap_content"-->
+        <!--                        android:text="@string/apply_e_visa" />-->
+        <!--                </LinearLayout>-->
+        <!--            </androidx.appcompat.widget.Toolbar>-->
+        <!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <include
+                    android:id="@+id/back_btn_view"
+                    layout="@layout/view_back_btn_black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:includeFontPadding="false"
+                    android:text="@string/visa_status"
+                    android:textAppearance="@style/AppTheme.TextView.Bold"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_small"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/img_visa" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_small"
+                    android:text="@string/check_visa_desc"
+                    android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+                    android:textColor="@color/grey41434f" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_large">
+
+                    <TextView
+                        android:id="@+id/country_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/padding_tiny"
+                        android:drawableEnd="@drawable/ic_arrow_down_grey"
+                        android:drawablePadding="@dimen/text_small"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/check_visa_select_country"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+                        android:textColor="@color/grey90" />
+
+                    <View
+                        android:layout_width="150dp"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/country_text"
+                        android:background="#f0ec65" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/country_not_listed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_medium"
+                    android:includeFontPadding="false"
+                    android:text="@string/check_visa_country_not_listed"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                    android:textColor="@color/grey41434f" />
+
+                <Button
+                    style="?borderlessButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:paddingStart="@dimen/padding_large"
+                    android:paddingEnd="@dimen/padding_large"
+                    android:text="@string/check_visa_check_availability"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

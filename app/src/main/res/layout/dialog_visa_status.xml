@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="country"
+            type="String" />
+
+        <variable
+            name="arrival"
+            type="Boolean" />
+
+        <variable
+            name="online"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        style="@style/AppTheme.Dialog.Container"
+        android:padding="@dimen/padding_large">
+
+        <TextView
+            style="@style/AppTheme.Dialog.Title"
+            android:layout_margin="0dp"
+            android:text="@string/visa_availability"
+            android:textAppearance="@style/AppTheme.TextView.Bold.XLarge"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/country_text"
+            style="@style/AppTheme.Dialog.Title"
+            android:layout_margin="@dimen/padding_small"
+            android:text="@{country}"
+            android:textAppearance="@style/AppTheme.TextView.SemiBold"
+            android:textSize="16sp"
+            tools:text="@string/visa_availability" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_small"
+            android:layout_marginBottom="@dimen/padding_micro"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:visibilityGone="@{online}">
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="@dimen/padding_tiny"
+                android:src="@drawable/ic_radio_icon_24dp" />
+
+            <TextView
+                android:id="@+id/arrival_visa_status_text"
+                style="@style/AppTheme.Dialog.Message"
+                android:layout_gravity="start"
+                android:layout_margin="0dp"
+                android:gravity="start"
+                android:text="@string/check_visa_onArrival_visa_available_msg"
+                android:textAppearance="@style/AppTheme.TextView.Bold.Small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:visibilityGone="@{arrival}">
+
+            <ImageView
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="@dimen/padding_tiny"
+                android:src="@drawable/ic_radio_icon_24dp" />
+
+            <TextView
+                android:id="@+id/online_visa_status_text"
+                style="@style/AppTheme.Dialog.Message"
+                android:layout_gravity="start"
+                android:layout_margin="0dp"
+                android:gravity="start"
+                android:text="@string/check_visa_online_visa_available_msg"
+                android:textAppearance="@style/AppTheme.TextView.Bold.Small" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/ok_btn"
+            style="@style/AppTheme.Dialog.Buttons"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/padding_big"
+            android:background="@color/theme_green"
+            android:paddingStart="@dimen/padding_big"
+            android:paddingEnd="@dimen/padding_big"
+            android:text="@string/apply_online"
+            android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</layout>

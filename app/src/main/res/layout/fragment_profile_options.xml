@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/padding_big"
+        android:paddingTop="@dimen/padding_small"
+        android:paddingEnd="@dimen/padding_big">
+
+        <RelativeLayout
+            android:id="@+id/login_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_medium">
+
+            <ImageView
+                android:id="@+id/user_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="@dimen/padding_medium"
+                android:src="@mipmap/ic_user"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/padding_micro"
+                android:layout_toEndOf="@+id/user_image"
+                android:text="@string/login_signup"
+                android:textAppearance="@style/AppTheme.TextView.Bold.Large"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/edit_icon"
+                style="@style/AppTheme.ImageButton"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bg_black_circle"
+                android:padding="@dimen/padding_micro"
+                android:src="@drawable/ic_edit_white_12dp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_text"
+                android:layout_toEndOf="@+id/user_image"
+                android:text="@string/login_to_view_details" />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/wishlist_layout"
+            layout="@layout/view_profile_option"
+            android:visibility="gone"
+            app:icon="@{@drawable/ic_phone_green_24dp}"
+            app:title="@{@string/wishlist}" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/greyF0" />
+
+        <include
+            android:id="@+id/contact_us_layout"
+            layout="@layout/view_profile_option"
+            android:visibility="gone"
+            app:icon="@{@drawable/ic_phone_green_24dp}"
+            app:title="@{@string/contact_us}" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/greyF0" />
+
+        <include
+            android:id="@+id/review_layout"
+            layout="@layout/view_profile_option"
+            android:visibility="gone"
+            app:icon="@{@drawable/ic_phone_green_24dp}"
+            app:title="@{@string/reviews_and_feedback}" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:background="@color/greyF0"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/about_us_layout"
+            layout="@layout/view_profile_option"
+            android:visibility="gone"
+            app:icon="@{@drawable/ic_about_green_24dp}"
+            app:title="@{@string/about_us}" />
+
+        <LinearLayout
+            android:id="@+id/logout_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="@color/greyF0" />
+
+            <include
+                layout="@layout/view_profile_option"
+                app:icon="@{@drawable/ic_logout_green_24dp}"
+                app:title="@{@string/logout}" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.locationdetails.LocationDetailsFragment" />
+
+        <variable
+            name="location"
+            type="com.salampakistan.model.LocationDetails" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/view_search_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/list_top_banner_height">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:imageUrl="@{location.thumbnails[0]}"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#77000000" />
+
+                    <TextView
+                        android:id="@+id/title_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:layout_marginTop="@dimen/padding_gargantua"
+                        android:text="@{location.name}"
+                        android:textAppearance="@style/AppTheme.TextView.Bold"
+                        android:textColor="@color/theme_yellow"
+                        android:textSize="30sp"
+                        tools:text="mountains" />
+
+                    <TextView
+                        android:id="@+id/desc_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title_text"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="@{location.description}"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/white"
+                        tools:text="@string/check_best_things" />
+
+                    <Button
+                        android:id="@+id/add_to_plan_btn"
+                        style="@style/AppTheme.LocationDetails.BannerBtn"
+                        android:layout_below="@id/desc_text"
+                        android:background="@color/theme_green"
+                        android:visibility="gone"
+                        android:onClick="@{() -> fragment.addToPlan()}"
+                        android:text="@string/add_to_plan" />
+                    <Button
+                        android:id="@+id/remove_from_plan_btn"
+                        style="@style/AppTheme.LocationDetails.BannerBtn"
+                        android:layout_toEndOf="@id/add_to_plan_btn"
+                        android:layout_below="@id/desc_text"
+                        android:visibility="gone"
+                        android:background="#ff5959"
+                        android:onClick="@{() -> fragment.removeFromPlan()}"
+                        android:text="@string/remove_from_plan" />
+                    <Button
+                        android:id="@+id/remove_from_wish_list"
+                        style="@style/AppTheme.LocationDetails.BannerBtn"
+                        android:layout_toEndOf="@id/remove_from_plan_btn"
+                        android:layout_below="@id/desc_text"
+                        android:visibility="gone"
+                        android:background="#ff5959"
+                        android:onClick="@{() -> fragment.removeFromWishList()}"
+                        android:text="@string/remove_from_wish_list"/>
+
+                    <Button
+                        android:id="@+id/add_to_wish_list"
+                        style="@style/AppTheme.LocationDetails.BannerBtn"
+                        android:layout_below="@id/desc_text"
+                        android:layout_toEndOf="@+id/remove_from_wish_list"
+                        android:background="@color/sea_green"
+                        android:visibility="gone"
+                        android:onClick="@{() -> fragment.addToWishList()}"
+                        android:text="@string/add_to_wishlist" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginTop="@dimen/padding_large"
+                    android:layout_marginEnd="@dimen/padding_large"
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:text="@{location.longDescription}"
+                    android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                    tools:text="@string/about_message_director_content"
+                    tools:visibility="gone" />
+
+                <FrameLayout
+                    android:id="@+id/images_frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginBottom="@dimen/padding_large" />
+
+                <FrameLayout
+                    android:id="@+id/poi_frame_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginEnd="@dimen/padding_large"
+                    android:layout_marginBottom="@dimen/padding_large" />
+
+                <include
+                    android:visibility="gone"
+                    layout="@layout/feedback"
+                    android:id="@+id/feedback_view"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginEnd="@dimen/padding_large"
+                    android:background="@color/greyF0"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/top_tourist_destination"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Large"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginEnd="@dimen/padding_large"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{@string/new_location_name(location.name)}"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginTop="@dimen/padding_micro"
+                    tools:text="near lahore"
+                    android:layout_marginEnd="@dimen/padding_large"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rel_loc_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginEnd="@dimen/padding_large"
+                    android:layout_marginBottom="@dimen/padding_tiny"
+                    android:layout_marginTop="@dimen/padding_tiny"
+                    tools:listitem="@layout/row_related_location"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
