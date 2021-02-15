@@ -14,6 +14,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.jakewharton.rxbinding.view.RxView
 import com.salampakistan.R
 import com.salampakistan.dagger.Injectable
+import com.salampakistan.databinding.FilterBottomSheetBinding
 import com.salampakistan.databinding.SortBottomSheetBinding
 import com.salampakistan.model.AppliedFilterHotel
 import rx.subjects.PublishSubject
@@ -22,12 +23,13 @@ import javax.inject.Inject
 class HotelListFilter : BottomSheetDialogFragment() {
 
     lateinit var starArray:ArrayList<String>
-    lateinit var binding: SortBottomSheetBinding
+    lateinit var binding: FilterBottomSheetBinding
     val filtersAppliedSubjecthotel: PublishSubject<AppliedFilterHotel> =
         PublishSubject.create<AppliedFilterHotel>()
     val filtersClearedSubject: PublishSubject<Void> = PublishSubject.create<Void>()
 
     private var appliedFiltersData = AppliedFilterHotel()
+    lateinit var filters: ArrayList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +41,7 @@ class HotelListFilter : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = SortBottomSheetBinding.inflate(inflater, container, false)
+        binding = FilterBottomSheetBinding.inflate(inflater, container, false)
         setView()
         return binding.root
     }
@@ -50,15 +52,15 @@ class HotelListFilter : BottomSheetDialogFragment() {
 
 
         starArray = ArrayList()
-//        starArray.add("0-1 star")
-//        starArray.add("1-2 star")
-//        starArray.add("2-3 star")
-//        starArray.add("3-4 star")
-//        starArray.add("4-5 star")
-        starArray.add("rating: high to low")
-        starArray.add("rating: low to high")
-        starArray.add("Price: high to low")
-        starArray.add("Price: low to high")
+        starArray.add("0-1 star")
+        starArray.add("1-2 star")
+        starArray.add("2-3 star")
+        starArray.add("3-4 star")
+        starArray.add("4-5 star")
+        starArray.add("Rs. 500 - Rs. 1,000")
+        starArray.add("Rs. 1,000 - Rs. 1,500")
+        starArray.add("Rs. 1,500 - Rs. 2,000")
+        starArray.add("Above Rs. 2,000")
 
         binding.starsChipView.parentContainer.visibility = View.VISIBLE
         generateChipCloud(
@@ -68,16 +70,54 @@ class HotelListFilter : BottomSheetDialogFragment() {
             starChipClickListener
         )
 
+        setSelections()
     }
 
+    private fun setSelections() {
+        if (!filters.isNullOrEmpty()) {
+            for (item in filters) {
+                when (item) {
+                    "0-1 star" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(0)
+                    }
+                    "1-2 star" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(1)
+                    }
+                    "2-3 star" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(2)
+                    }
+                    "3-4 star" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(3)
+                    }
+                    "4-5 star" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(4)
+                    }
+                    "Rs. 500 - Rs. 1,000" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(5)
+                    }
+                    "Rs. 1,000 - Rs. 1,500" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(6)
+                    }
+                    "Rs. 1,500 - Rs. 2,000" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(7)
+                    }
+                    "Above Rs. 2,000" -> {
+                        binding.starsChipView.chipCloud.setSelectedChip(8)
+                    }
+
+                }
+            }
+            filters.removeAll(filters)
+        }
+    }
 
    private val starChipClickListener = object : ChipListener {
         override fun chipDeselected(index: Int) {
-            appliedFiltersData.stars = ""
+            appliedFiltersData.values.removeAt(appliedFiltersData.values.indexOf(starArray[index]))
         }
 
         override fun chipSelected(index: Int) {
-            appliedFiltersData.stars = starArray[index]
+            appliedFiltersData.values.add(starArray[index])
         }
     }
 

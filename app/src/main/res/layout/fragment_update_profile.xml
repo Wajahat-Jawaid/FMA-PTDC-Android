@@ -38,7 +38,8 @@
                     layout="@layout/view_back_btn_black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"/>
 
                 <ImageView
                     android:layout_width="80dp"
@@ -48,13 +49,6 @@
                     android:layout_toEndOf="@+id/back_btn_view"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/logo" />
-
-                <ImageButton
-                    style="@style/AppTheme.ImageButton"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="@dimen/padding_small"
-                    android:src="@drawable/ic_search_20dp" />
 
                 <View
                     style="@style/AppTheme.Separator.Horizontal"
@@ -125,20 +119,20 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                   <LinearLayout
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:layout_gravity="center_vertical"
-                       android:layout_weight="0.6"
-                       android:orientation="vertical">
-                       <TextView
-                           android:id="@+id/user_text"
-                           style="@style/AppTheme.TextView.SemiBold.Large"
-                           android:maxLines="1"
-                           android:ellipsize="end"
-                           android:text="@{@string/user_name(user.firstName,user.lastName)}" />
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="0.6"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/user_text"
+                            style="@style/AppTheme.TextView.SemiBold.Large"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="@{@string/user_name(user.firstName,user.lastName)}" />
 
-                   </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
 
@@ -189,7 +183,7 @@
                     style="@style/AppTheme.Profile.Field"
                     android:hint="@string/cnic"
                     android:inputType="number"
-                    android:text="42101-1324567-9" />
+                    android:text="@{user.cnic}" />
 
                 <TextView
                     style="@style/AppTheme.Profile.Label"
@@ -246,15 +240,15 @@
 
                     <TextView
                         android:id="@+id/pwd_text"
-                        style="@style/AppTheme.Profile.Field"                        android:layout_below="@+id/pwd_title"
+                        style="@style/AppTheme.Profile.Field"
+                        android:paddingStart="0dp"
+                        android:layout_below="@+id/pwd_title"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="10dp"
                         android:layout_toStartOf="@+id/edit_phone_img_btn"
                         android:background="@color/transparent"
-                        android:inputType="textPassword"
                         android:gravity="center_vertical"
-                        android:text="@string/pwd"
-                        tools:text="0333-1234567" />
+                        android:text="@string/change_password" />
 
                     <ImageButton
                         android:id="@+id/edit_phone_img_btn"

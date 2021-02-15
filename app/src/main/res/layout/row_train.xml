@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data >
+        <variable
+            name="model"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/padding_tiny">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_Vew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/fligh_card_top">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_small"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout14"
+                tools:layout_editor_absoluteX="12dp">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="ISL"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.XXLarge"
+                        android:textColor="@color/grey46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Islamabad"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        android:textColor="@color/grey46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="8:00 pm"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="@dimen/padding_small"
+                    android:background="@color/greyDC"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/linearLayout10"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout9"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.3" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_booking_round"
+                    android:padding="@dimen/padding_tiny"
+                    android:src="@drawable/ic_train"
+                    android:elevation="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/view7"
+                    app:layout_constraintEnd_toEndOf="@+id/view7"
+                    app:layout_constraintStart_toEndOf="@+id/linearLayout9"
+                    app:layout_constraintTop_toTopOf="@+id/view7" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="02 h 30 m"
+                    android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                    android:textColor="@color/grey46"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView5"
+                    app:layout_constraintStart_toStartOf="@+id/imageView5"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView5"
+                    app:layout_constraintVertical_bias="0.5" />
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="KHI"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.XXLarge"
+                        android:textColor="@color/grey46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="karachi"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        android:textColor="@color/grey46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="10:30 pm"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/padding_small"
+
+                android:layout_marginTop="@dimen/padding_medium"
+                android:background="@drawable/dashed_line"
+                android:layerType="software"
+                app:layout_constraintBottom_toTopOf="@+id/relativeLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout7"
+                tools:layout_editor_absoluteX="12dp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/padding_small"
+                android:layout_marginTop="@dimen/padding_small"
+                app:layout_constraintBottom_toTopOf="@+id/rec_services"
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                tools:layout_editor_absoluteX="12dp">
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/padding_small"
+                    android:text="@string/class_type"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                    android:textColor="@color/grey46"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/rv_class_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintWidth_percent="0.5"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/bg_hotel_booking"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    app:layout_constraintHorizontal_bias="0.9"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView26"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/class_type_text"
+                        style="@style/AppTheme.Booking.Text"
+                        android:layout_width="match_parent"
+                        android:layout_weight="0.8"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/padding_small"
+                        android:paddingVertical="@dimen/padding_small"
+                        android:text="@{model}"
+                        android:drawableEnd="@drawable/ic_dropdown"
+                        android:drawablePadding="@dimen/padding_tiny"/>
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/bottom_logo_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/padding_tiny"
+                android:layout_marginBottom="@dimen/book_now_button_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rec_services">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/powered_by"
+                    android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                    android:textColor="@color/grey46" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/bookme_logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="@dimen/padding_medium"
+                android:layout_marginBottom="@dimen/padding_gargantua"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_logo_text"
+                app:layout_constraintEnd_toEndOf="@+id/relativeLayout4"
+                app:layout_constraintStart_toStartOf="@+id/relativeLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout4">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="@string/seats"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/grey46"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="20"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+                        android:textColor="@color/grey46"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="@string/fare_berth"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/grey46"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="2000"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+                        android:textColor="@color/grey46"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="@string/fare_seat"
+                        android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                        android:textColor="@color/grey46"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/padding_small"
+                        android:text="1500"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Medium"
+                        android:textColor="@color/grey46"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/book_now_btn"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_book_now"
+            android:elevation="5dp"
+            android:text="Book Now"
+            android:textAppearance="@style/AppTheme.TextView.SemiBold.Medium"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_x_large"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/container_Vew"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/container_Vew"
+            app:layout_constraintWidth_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

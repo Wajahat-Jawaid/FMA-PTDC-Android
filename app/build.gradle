@@ -37,6 +37,13 @@ android {
     }
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -104,6 +111,7 @@ dependencies {
 
     //social login
     implementation 'com.facebook.android:facebook-login:5.15.3'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
 
 
@@ -115,6 +123,10 @@ dependencies {
     //Shimmer Layout for skeleton
     implementation 'com.ethanhua:skeleton:1.1.2'
     implementation 'io.supercharge:shimmerlayout:2.1.0'
+
+
+    implementation 'com.github.ar-android:AndroidSvgLoader:1.0.2'
+
 
     // Test
     testImplementation 'junit:junit:4.12'

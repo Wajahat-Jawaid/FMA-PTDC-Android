@@ -32,7 +32,8 @@ object ResponseHandler {
             user.mobile,
             user.cnic,
             user.gender,
-            user.dob
+            user.dob,
+            ""
         )
         Timber.d("user1: %s", Gson().toJson(user1))
         prefs.saveUser(user1)

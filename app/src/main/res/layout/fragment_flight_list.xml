@@ -52,10 +52,12 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/depart_city_small_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="ISL"
+                    tools:text="ISL"
                     android:textAppearance="@style/AppTheme.TextView.SemiBold.XXLarge"
                     android:textColor="@color/white" />
 
@@ -69,11 +71,12 @@
                     android:textColor="@color/white" />
 
                 <TextView
+                    android:id="@+id/departure_date_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/padding_small"
                     android:gravity="center"
-                    android:text="22 Dec 2020"
+                    tools:text="22 Dec 2020"
                     android:textAppearance="@style/AppTheme.TextView.Reg.Small"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -106,10 +109,11 @@
 
 
             <TextView
+                android:id="@+id/adult_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="1 Adult"
+                tools:text="1 Adult"
                 android:textAppearance="@style/AppTheme.TextView.Reg.Small"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -129,6 +133,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
+                    android:id="@+id/destination_city_short_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -137,6 +142,7 @@
                     android:textColor="@color/white" />
 
                 <TextView
+                    android:id="@+id/destination_long_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -145,12 +151,12 @@
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/dest_text"
+                    android:id="@+id/cabin_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/padding_small"
                     android:gravity="center"
-                    android:text="Economy"
+                    tools:text="Economy"
                     android:textAppearance="@style/AppTheme.TextView.Reg.Small"
                     android:textColor="@color/white" />
             </LinearLayout>
@@ -212,6 +218,7 @@
                     android:id="@+id/sort_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_small"
                     android:drawableLeft="@drawable/ic_sort"
                     android:drawablePadding="@dimen/padding_tiny"
                     android:enabled="false"
@@ -233,15 +240,16 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="@dimen/padding_tiny"
                     android:background="@color/greyF0"
-                    app:layout_constraintEnd_toStartOf="@+id/textView2"
+                    app:layout_constraintEnd_toStartOf="@+id/filter_text"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/sort_text"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
-                    android:id="@+id/textView2"
-
+                    android:enabled="false"
+                    android:id="@+id/filter_text"
+                    android:padding="@dimen/padding_small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_filter"
@@ -271,6 +279,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
                 tools:itemCount="3"
                 tools:listitem="@layout/row_flight" />
+            <TextView
+                android:id="@+id/nothing_found_text"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_record_found"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

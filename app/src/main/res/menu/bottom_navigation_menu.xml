@@ -8,15 +8,18 @@
         android:title="@string/home" />
     <item
         android:id="@+id/eventListFragment"
-        android:icon="@drawable/ic_map"
+        android:icon="@drawable/ic_event"
+        android:menuCategory="container"
         android:title="@string/event" />
     <item
         android:id="@+id/mapFragment"
         android:icon="@drawable/ic_map"
+        android:menuCategory="container"
         android:title="@string/map" />
     <item
         android:id="@+id/planningFragment"
         android:icon="@drawable/ic_planning"
+        android:menuCategory="container"
         android:title="@string/planning" />
     <!--    <item-->
     <!--        android:id="@+id/hotel"-->
@@ -30,5 +33,6 @@
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_tab_profile"
         app:showAsAction="always"
+        android:menuCategory="container"
         android:title="@string/profile" />
 </menu>

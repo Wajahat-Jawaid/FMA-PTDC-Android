@@ -232,7 +232,7 @@
         <item name="android:layout_marginTop">@dimen/padding_big</item>
         <item name="android:paddingTop">@dimen/padding_large</item>
         <item name="android:paddingBottom">@dimen/padding_large</item>
-        <item name="android:text">Search</item>
+        <item name="android:text">search</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textAppearance">@style/AppTheme.TextView.Bold.Medium</item>
     </style>
@@ -302,7 +302,7 @@
         <item name="android:textAppearance">@style/AppTheme.TextView.SemiBold.Medium</item>
     </style>
 
-<!--    Update Password -->
+    <!--    Update Password -->
 
     <style name="AppTheme.updatePasword" />
 
@@ -312,6 +312,16 @@
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:includeFontPadding">false</item>
         <item name="android:textAppearance">@style/AppTheme.TextView.Bold.XXLarge</item>
+    </style>
+
+    <style name="AppTheme.updatePasword.EditText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/grey46</item>
+        <item name="android:textColorHint">@color/grey77</item>
+        <item name="android:textAppearance">@style/AppTheme.TextView.Reg.Small</item>
     </style>
 
     <!-- Season Details -->

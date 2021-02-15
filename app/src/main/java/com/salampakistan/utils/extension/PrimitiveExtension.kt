@@ -39,7 +39,7 @@ fun Int.getCommaSeparatedPrice(): String {
 }
 
 fun Float.getFormattedPrice(): String {
-    val formatter = DecimalFormat("#,###,###")
+    val formatter = DecimalFormat("#,###,###.##")
     return formatter.format(this)
 }
 
@@ -71,7 +71,7 @@ fun BigDecimal.getCommaSeparatedPrice(): String {
 
 
 fun getPerPersonSpannable(context: Context, price: BigDecimal): SpannableString {
-    val perText = "PKR ${price.getCommaSeparatedPrice()}"
+    val perText = "pkr ${price.getCommaSeparatedPrice()}"
     val spannable = SpannableString(perText)
     spannable.setSpan(RelativeSizeSpan(0.6f), perText.length - 10, perText.length, 0)
     spannable.setSpan(

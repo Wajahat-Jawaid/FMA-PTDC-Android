@@ -28,7 +28,7 @@
     <dimen name="row_carousel_image_width">270dp</dimen>
     <dimen name="row_carousel_image_height">180dp</dimen>
 
-<!--    on boarding-->
+    <!--    on boarding-->
     <dimen name="tab_ind_width">12dp</dimen>
     <dimen name="tab_indicator_margin">10dp</dimen>
     <dimen name="tab_indicator_height">12dp</dimen>
@@ -37,7 +37,9 @@
     <!--    Map-->
     <dimen name="map_height">250dp</dimen>
 
-    <dimen name="bottom_navigation_menu_height">44dp</dimen>
+    <dimen tools:override="true"
+        name="bottom_navigation_menu_height">44dp</dimen>
+    <dimen tools:override="true" name="design_navigation_icon_padding">5dp</dimen>
     <dimen name="progressbar_container_dimens">42dp</dimen>
 
     <dimen name="list_top_banner_height">190dp</dimen>
@@ -70,7 +72,7 @@
     <dimen name="row_home_event_item_height">262dp</dimen>
 
     <!-- Booking -->
-<!--    <dimen name="booking_field_width"></dimen>-->
+    <!--    <dimen name="booking_field_width"></dimen>-->
 
     <!-- Itinerary -->
     <dimen name="itinerary_dayText_width">60dp</dimen>
@@ -84,7 +86,7 @@
     <!--Event -->
     <dimen name="row_event_height">120dp</dimen>
     <dimen name="row_event_width">220dp</dimen>
-    <dimen name="row_related_event_width">320dp</dimen>
+    <dimen name="row_related_event_width">300dp</dimen>
     <dimen name="row_event_img_height">300dp</dimen>
     <!-- Where to go -->
     <dimen name="row_related_locations_height">170dp</dimen>
@@ -99,6 +101,7 @@
     <dimen name="room_height">240dp</dimen>
     <dimen name="photo_height">120dp</dimen>
     <dimen name="room_list_img_height">196dp</dimen>
+    <dimen name="hotel_list_image_placeholder_size">50dp</dimen>
 
     <!--flight-->
     <dimen name="flight_card_height">350dp</dimen>
@@ -107,5 +110,11 @@
     <dimen name="book_now_button_height">50dp</dimen>
     <dimen name="book_now_button_margin">30dp</dimen>
 
-
+    <!--Bus-->
+    <dimen name="amenity_height_width">24dp</dimen>
+    <dimen name="poi_map_height">300dp</dimen>
+    <dimen name="room_photo_width">220dp</dimen>
+    <dimen name="row_planning_km">90dp</dimen>
+    <dimen name="airline_logo_width">120dp</dimen>
+    <dimen name="airline_logo_height">50dp</dimen>
 </resources>

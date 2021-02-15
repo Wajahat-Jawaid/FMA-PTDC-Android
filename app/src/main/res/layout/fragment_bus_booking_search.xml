@@ -163,19 +163,10 @@
                                 android:layout_weight="0.8"
                                 android:onClick="@{() -> fragment.onServicesFieldClicked()}"
                                 android:text="@={viewModel.services}"
-                                tools:text="@string/location" />
+                                tools:text="@string/location"
+                                android:drawableEnd="@drawable/ic_dropdown"
+                                android:drawablePadding="@dimen/padding_small"/>
 
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="@dimen/padding_tiny"
-                                android:onClick="@{() -> fragment.onServicesFieldClicked()}"
-                                android:src="@drawable/ic_dropdown"
-                                tools:ignore="VectorDrawableCompat" />
 
                         </LinearLayout>
 
@@ -222,20 +213,11 @@
                                     style="@style/AppTheme.Booking.Text"
                                     android:layout_width="match_parent"
                                     android:layout_weight="0.8"
+                                    android:drawableEnd="@drawable/ic_dropdown"
+                                    android:drawablePadding="@dimen/padding_small"
                                     android:onClick="@{() -> fragment.onLocationDepartureFieldClicked()}"
                                     android:text="@={viewModel.departLocation}"
                                     tools:text="@string/location" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerVertical="true"
-                                    android:layout_gravity="center"
-                                    android:layout_marginHorizontal="@dimen/padding_tiny"
-                                    android:onClick="@{() -> fragment.onLocationDepartureFieldClicked()}"
-                                    android:src="@drawable/ic_dropdown"
-                                    tools:ignore="VectorDrawableCompat" />
 
                             </LinearLayout>
 
@@ -273,18 +255,9 @@
                                     android:layout_weight="0.8"
                                     android:onClick="@{() -> fragment.onLocationArrivalFieldClicked()}"
                                     android:text="@={viewModel.arrivalLocation}"
+                                    android:drawableEnd="@drawable/ic_dropdown"
+                                    android:drawablePadding="@dimen/padding_small"
                                     tools:text="@string/location" />
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerVertical="true"
-                                    android:layout_gravity="center"
-                                    android:layout_marginHorizontal="@dimen/padding_tiny"
-                                    android:onClick="@{() -> fragment.onLocationArrivalFieldClicked()}"
-                                    android:src="@drawable/ic_dropdown"
-                                    tools:ignore="VectorDrawableCompat" />
 
                             </LinearLayout>
 
@@ -313,7 +286,6 @@
                             android:background="@drawable/bg_hotel_booking"
                             android:drawableRight="@drawable/ic_calendar"
                             android:drawablePadding="@dimen/padding_micro"
-                            android:hint="22 dec 2020"
                             android:onClick="@{() -> fragment.onDateFieldClicked()}"
                             android:paddingHorizontal="@dimen/padding_small"
                             android:paddingVertical="@dimen/padding_medium"

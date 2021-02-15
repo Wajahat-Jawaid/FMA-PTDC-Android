@@ -127,6 +127,7 @@
                             android:id="@+id/one_way_rb"
                             style="@style/AppTheme.Booking.RadioBtns"
                             android:layout_marginEnd="@dimen/padding_huge"
+                            android:checked="@{viewModel.tripType == TripType.ONE_WAY}"
                             android:background="@drawable/bg_hotel_booking"
                             android:onClick="@{() -> viewModel.switchTripType(TripType.ONE_WAY)}"
                             android:paddingHorizontal="@dimen/padding_tiny"
@@ -136,11 +137,45 @@
                         <RadioButton
                             style="@style/AppTheme.Booking.RadioBtns"
                             android:background="@drawable/bg_hotel_booking"
+                            android:checked="@{viewModel.tripType == TripType.ROUND_TRIP}"
                             android:onClick="@{() -> viewModel.switchTripType(TripType.ROUND_TRIP)}"
                             android:paddingHorizontal="@dimen/padding_tiny"
                             android:paddingVertical="@dimen/padding_small"
                             android:text="@string/returning" />
                     </RadioGroup>
+
+                    <TextView
+                        style="@style/AppTheme.Booking.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cabin"
+                        android:textSize="@dimen/text_medium" />
+
+                    <LinearLayout
+                        android:id="@+id/rv_cabin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_hotel_booking"
+                        android:onClick="@{() -> fragment.onCabinClicked()}"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="@dimen/padding_tiny"
+                        android:paddingVertical="@dimen/padding_medium"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/cabin_text"
+                            style="@style/AppTheme.Booking.Text"
+                            android:layout_width="match_parent"
+                            android:layout_weight="0.8"
+
+                            android:drawableEnd="@drawable/ic_dropdown"
+                            android:drawablePadding="@dimen/padding_small"
+                            android:onClick="@{() -> fragment.onCabinClicked()}"
+                            android:text="@={viewModel.cabin}"
+                            tools:text="@string/cabin" />
+
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/linearLayout12"
@@ -183,20 +218,12 @@
                                     android:layout_width="match_parent"
                                     android:layout_weight="0.8"
 
+                                    android:drawableEnd="@drawable/ic_dropdown"
+                                    android:drawablePadding="@dimen/padding_small"
                                     android:onClick="@{() -> fragment.onLocationFieldClicked(TripDirection.FROM)}"
                                     android:text="@={viewModel.fromLocation}"
                                     tools:text="@string/location" />
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerVertical="true"
-                                    android:layout_gravity="center"
-                                    android:layout_marginRight="@dimen/padding_tiny"
-                                    android:onClick="@{() -> fragment.onLocationFieldClicked(TripDirection.FROM)}"
-                                    android:src="@drawable/ic_dropdown"
-                                    tools:ignore="VectorDrawableCompat" />
 
                             </LinearLayout>
 
@@ -233,18 +260,11 @@
                                     android:layout_weight="0.8"
                                     android:onClick="@{() -> fragment.onLocationFieldClicked(TripDirection.TO)}"
                                     android:text="@={viewModel.toLocation}"
+
+                                    android:drawableEnd="@drawable/ic_dropdown"
+                                    android:drawablePadding="@dimen/padding_small"
                                     tools:text="@string/location" />
 
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
-                                    android:layout_centerVertical="true"
-                                    android:layout_gravity="center"
-                                    android:layout_marginRight="@dimen/padding_tiny"
-                                    android:onClick="@{() -> fragment.onLocationFieldClicked(TripDirection.TO)}"
-                                    android:src="@drawable/ic_dropdown"
-                                    tools:ignore="VectorDrawableCompat" />
 
                             </LinearLayout>
 
@@ -262,10 +282,11 @@
 
 
                         <LinearLayout
+                            android:id="@+id/ll_depart"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/padding_small"
                             android:layout_weight=".5"
+                            android:layout_marginEnd="@dimen/padding_small"
                             android:orientation="vertical">
 
                             <TextView

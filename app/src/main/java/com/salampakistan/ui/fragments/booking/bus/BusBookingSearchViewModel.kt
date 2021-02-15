@@ -21,6 +21,7 @@ class BusBookingSearchViewModel @Inject constructor(
     val arrivalLocation = MutableLiveData<String>(getString(R.string.location))
     val services = MutableLiveData<String>(getString(R.string.all_services))
     val date = MutableLiveData<String>(getString(R.string.bus_date_format))
+    val serverDate = MutableLiveData<String>(getString(R.string.bus_date_format))
 
 
     val servicesList = MutableLiveData<List<Service>>()
@@ -40,8 +41,8 @@ class BusBookingSearchViewModel @Inject constructor(
     }
 
     fun getTransportServices() = repo.getTransportServices()
-    fun getOriginCities(serviceId: Int) = repo.getOriginCities(serviceId)
-    fun getDestinationCities(originCity: Int, serviceId: Int) =
+    fun getOriginCities(serviceId: Int?) = repo.getOriginCities(serviceId)
+    fun getDestinationCities(originCity: Int, serviceId: Int?) =
         repo.getDestinationCities(originCity, serviceId)
 
 

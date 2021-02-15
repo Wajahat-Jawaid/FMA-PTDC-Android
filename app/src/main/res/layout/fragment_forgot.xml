@@ -77,8 +77,7 @@
                     android:id="@+id/email_text"
                     style="@style/AppTheme.Profile.Field"
                     android:hint="recovery email"
-                    android:inputType="textEmailAddress"
-                    android:text="fitog61402@5y5u.com" />
+                    android:inputType="textEmailAddress" />
 
                 <Button
                     android:layout_width="match_parent"

@@ -15,4 +15,5 @@ class LoginRegisterViewModel @Inject constructor(
 
     fun login(params: Array<String>) = repo.login(params)
     fun register(params: Array<String>) = repo.register(params)
+    fun getUserData(userId:String,token:String) = repo.getUserData(userId,token)
 }

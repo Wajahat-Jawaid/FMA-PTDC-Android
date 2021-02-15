@@ -1,6 +1,7 @@
 package com.salampakistan.network.repos
 
 import androidx.lifecycle.LiveData
+import com.salampakistan.model.getuserdata.GetUserDataResponse
 import com.salampakistan.model.response.SimpleApiResponse
 import com.salampakistan.model.response.user.LoginResponse
 import com.salampakistan.network.Result
@@ -21,6 +22,10 @@ class UsersRepo @Inject constructor(private val service: WebService) : BaseRepo(
 
     fun forgotPassword(email: String): LiveData<Result<SimpleApiResponse>> {
         return resultLiveData { getResult { service.forgotPasswor(email) } }
+    }
+
+    fun getUserData(userId: String,token:String): LiveData<Result<GetUserDataResponse>> {
+        return resultLiveData { getResult { service.getUserData(userId,token) } }
     }
 
     fun register(params: Array<String>): LiveData<Result<LoginResponse>> {

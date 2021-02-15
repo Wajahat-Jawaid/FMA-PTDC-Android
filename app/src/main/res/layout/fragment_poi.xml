@@ -28,9 +28,9 @@
             android:textAppearance="@style/AppTheme.TextView.Bold.XLarge" />
 
         <TextView
+            android:id="@+id/poi_name_text"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:drawableStart="@drawable/ic_arrow_down_grey"
+            android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_down_arrow_32dp"
             android:drawablePadding="@dimen/padding_small"
             android:gravity="center_vertical"
@@ -43,13 +43,14 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:background="@color/theme_yellow" />
+            android:background="@color/theme_yellow"
+            android:layout_marginVertical="@dimen/padding_tiny"/>
 
         <fragment
             android:id="@+id/mapFragment"
             android:name="com.salampakistan.ui.custom.CustomSupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="300dp" />
+            android:layout_height="@dimen/poi_map_height" />
 
 
     </LinearLayout>

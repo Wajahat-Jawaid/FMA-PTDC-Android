@@ -9,15 +9,16 @@ import com.salampakistan.model.Trip
 import com.salampakistan.network.Result
 import com.salampakistan.utils.Constants.EVENTDETAILS
 import timber.log.Timber
+import java.lang.Exception
 
 /**
  * Created by Wajahat Jawaid(wajahatjawaid@gmail.com)
  */
-class TripsCannotMissSectionFragment : BaseHomeSectionFragment<Trip>(), Injectable {
+class TripsCannotMissSectionFragment : BaseHomeSectionFragment<com.salampakistan.model.tripslist.Trip>(), Injectable {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        configAdapter(Trip)
+        configAdapter(com.salampakistan.model.tripslist.Trip)
         attachSkeletonViews(R.layout.row_home_trip_skeleton)
         setIntro(R.string.made_by_experts)
         setTitle(R.string.trips_u_cant_miss)
@@ -26,10 +27,12 @@ class TripsCannotMissSectionFragment : BaseHomeSectionFragment<Trip>(), Injectab
     }
 
     private fun getData() {
-        viewModel.events.observe(viewLifecycleOwner, Observer {
+        viewModel.trips().observe(viewLifecycleOwner, Observer {
             Timber.d("Status: %s", it.status)
             when (it.status) {
-                Result.Status.SUCCESS -> setData(it.data?.TripsList)
+                Result.Status.SUCCESS -> {
+                    setData(it.data?.data)
+                }
                 Result.Status.LOADING -> {
                 }
                 Result.Status.ERROR -> {
@@ -41,10 +44,12 @@ class TripsCannotMissSectionFragment : BaseHomeSectionFragment<Trip>(), Injectab
     override fun viewAllTextClicked() {
     }
 
-    override fun onListItemClicked(model: Trip) {
-        val bundle = Bundle()
-        bundle.putParcelable(EVENTDETAILS,model)
-        navController.navigate(R.id.action_homeFragment_to_tripDetailsFragment,bundle)
+    override fun onListItemClicked(model: com.salampakistan.model.tripslist.Trip) {
+        try {
+            val bundle = Bundle()
+            bundle.putParcelable(EVENTDETAILS, model)
+            navController.navigate(R.id.action_homeFragment_to_tripDetailsFragment, bundle)
+        }catch (e:Exception){}
     }
 
     companion object {

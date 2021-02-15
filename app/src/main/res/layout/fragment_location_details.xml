@@ -43,12 +43,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/list_top_banner_height">
 
-                    <ImageView
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        app:imageUrl="@{location.thumbnails[0]}"
-                        />
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"
+                            app:height="@{@dimen/list_top_banner_height}"
+                            app:imageUrlCustomDimensions="@{location.thumbnails[0]}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <View
                         android:layout_width="match_parent"
@@ -85,27 +94,29 @@
                         style="@style/AppTheme.LocationDetails.BannerBtn"
                         android:layout_below="@id/desc_text"
                         android:background="@color/theme_green"
-                        android:visibility="gone"
                         android:onClick="@{() -> fragment.addToPlan()}"
-                        android:text="@string/add_to_plan" />
+                        android:text="@string/add_to_plan"
+                        android:visibility="gone" />
+
                     <Button
                         android:id="@+id/remove_from_plan_btn"
                         style="@style/AppTheme.LocationDetails.BannerBtn"
-                        android:layout_toEndOf="@id/add_to_plan_btn"
                         android:layout_below="@id/desc_text"
-                        android:visibility="gone"
+                        android:layout_toEndOf="@id/add_to_plan_btn"
                         android:background="#ff5959"
                         android:onClick="@{() -> fragment.removeFromPlan()}"
-                        android:text="@string/remove_from_plan" />
+                        android:text="@string/remove_from_plan"
+                        android:visibility="gone" />
+
                     <Button
                         android:id="@+id/remove_from_wish_list"
                         style="@style/AppTheme.LocationDetails.BannerBtn"
-                        android:layout_toEndOf="@id/remove_from_plan_btn"
                         android:layout_below="@id/desc_text"
-                        android:visibility="gone"
+                        android:layout_toEndOf="@id/remove_from_plan_btn"
                         android:background="#ff5959"
                         android:onClick="@{() -> fragment.removeFromWishList()}"
-                        android:text="@string/remove_from_wish_list"/>
+                        android:text="@string/remove_from_wish_list"
+                        android:visibility="gone" />
 
                     <Button
                         android:id="@+id/add_to_wish_list"
@@ -113,9 +124,9 @@
                         android:layout_below="@id/desc_text"
                         android:layout_toEndOf="@+id/remove_from_wish_list"
                         android:background="@color/sea_green"
-                        android:visibility="gone"
                         android:onClick="@{() -> fragment.addToWishList()}"
-                        android:text="@string/add_to_wishlist" />
+                        android:text="@string/add_to_wishlist"
+                        android:visibility="gone" />
                 </RelativeLayout>
 
                 <TextView
@@ -146,46 +157,48 @@
                     android:layout_marginBottom="@dimen/padding_large" />
 
                 <include
-                    android:visibility="gone"
+                    android:id="@+id/feedback_view"
                     layout="@layout/feedback"
-                    android:id="@+id/feedback_view"/>
+                    android:visibility="gone" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
 
-                    android:layout_marginBottom="@dimen/padding_large"
                     android:layout_marginStart="@dimen/padding_large"
                     android:layout_marginEnd="@dimen/padding_large"
-                    android:background="@color/greyF0"/>
+                    android:layout_marginBottom="@dimen/padding_large"
+                    android:background="@color/greyF0" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/top_tourist_destination"
-                    android:textAppearance="@style/AppTheme.TextView.Bold.Large"
                     android:layout_marginStart="@dimen/padding_large"
-                    android:layout_marginEnd="@dimen/padding_large"/>
+                    android:layout_marginEnd="@dimen/padding_large"
+                    android:text="@string/top_tourist_destination"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Large" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@{@string/new_location_name(location.name)}"
-                    android:textAppearance="@style/AppTheme.TextView.Bold.Small"
                     android:layout_marginStart="@dimen/padding_large"
                     android:layout_marginTop="@dimen/padding_micro"
-                    tools:text="near lahore"
-                    android:layout_marginEnd="@dimen/padding_large"/>
+                    android:layout_marginEnd="@dimen/padding_large"
+                    android:text="@{@string/new_location_name(location.name)}"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                    tools:text="near lahore" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rel_loc_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginStart="@dimen/padding_large"
+                    android:layout_marginTop="@dimen/padding_tiny"
                     android:layout_marginEnd="@dimen/padding_large"
                     android:layout_marginBottom="@dimen/padding_tiny"
-                    android:layout_marginTop="@dimen/padding_tiny"
-                    tools:listitem="@layout/row_related_location"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/row_related_location" />
             </LinearLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

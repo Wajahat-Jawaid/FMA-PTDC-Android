@@ -42,9 +42,10 @@
                     android:layout_height="@dimen/list_top_banner_height">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/where_to_go_banner"/>
 
                     <View
                         android:layout_width="match_parent"

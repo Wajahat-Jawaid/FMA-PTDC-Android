@@ -89,7 +89,8 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <ScrollView
+            android:id="@+id/main_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
@@ -227,148 +228,148 @@
                         android:textColor="@color/grey22"
                         android:textSize="20sp" />
 
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_below="@+id/lets_get_booking_text"-->
-<!--                        android:layout_marginBottom="@dimen/padding_medium"-->
-<!--                        android:orientation="horizontal">-->
+                    <!--                    <LinearLayout-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_below="@+id/lets_get_booking_text"-->
+                    <!--                        android:layout_marginBottom="@dimen/padding_medium"-->
+                    <!--                        android:orientation="horizontal">-->
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginStart="@dimen/padding_micro"-->
-<!--                            android:layout_marginEnd="@dimen/padding_micro"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:background="@color/greyF4"-->
-<!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.HOTEL)}"-->
-<!--                            android:gravity="center_vertical"-->
-<!--                            android:orientation="horizontal"-->
-<!--                            android:padding="@dimen/padding_tiny">-->
+                    <!--                        <LinearLayout-->
+                    <!--                            android:layout_width="0dp"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginStart="@dimen/padding_micro"-->
+                    <!--                            android:layout_marginEnd="@dimen/padding_micro"-->
+                    <!--                            android:layout_weight="1"-->
+                    <!--                            android:background="@color/greyF4"-->
+                    <!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.HOTEL)}"-->
+                    <!--                            android:gravity="center_vertical"-->
+                    <!--                            android:orientation="horizontal"-->
+                    <!--                            android:padding="@dimen/padding_tiny">-->
 
-<!--                            <ImageView-->
-<!--                                android:layout_width="30dp"-->
-<!--                                android:layout_height="30dp"-->
-<!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
-<!--                                android:src="@drawable/ic_hotel1_32dp"-->
-<!--                                android:tint="@color/grey22" />-->
+                    <!--                            <ImageView-->
+                    <!--                                android:layout_width="30dp"-->
+                    <!--                                android:layout_height="30dp"-->
+                    <!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
+                    <!--                                android:src="@drawable/ic_hotel1_32dp"-->
+                    <!--                                android:tint="@color/grey22" />-->
 
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="@string/hotels"-->
-<!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
-<!--                                android:textColor="@color/grey22" />-->
-<!--                        </LinearLayout>-->
+                    <!--                            <TextView-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:text="@string/hotels"-->
+                    <!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
+                    <!--                                android:textColor="@color/grey22" />-->
+                    <!--                        </LinearLayout>-->
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_marginEnd="@dimen/padding_micro"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:background="@color/greyF4"-->
-<!--                            android:gravity="center_vertical"-->
-<!--                            android:orientation="horizontal"-->
-<!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.FLIGHT)}"-->
-<!--                            android:padding="@dimen/padding_tiny">-->
+                    <!--                        <LinearLayout-->
+                    <!--                            android:layout_width="0dp"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_marginEnd="@dimen/padding_micro"-->
+                    <!--                            android:layout_weight="1"-->
+                    <!--                            android:background="@color/greyF4"-->
+                    <!--                            android:gravity="center_vertical"-->
+                    <!--                            android:orientation="horizontal"-->
+                    <!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.FLIGHT)}"-->
+                    <!--                            android:padding="@dimen/padding_tiny">-->
 
-<!--                            <ImageView-->
-<!--                                android:layout_width="30dp"-->
-<!--                                android:layout_height="30dp"-->
-<!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
-<!--                                android:src="@drawable/ic_flight_32dp"-->
-<!--                                android:tint="@color/grey22" />-->
+                    <!--                            <ImageView-->
+                    <!--                                android:layout_width="30dp"-->
+                    <!--                                android:layout_height="30dp"-->
+                    <!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
+                    <!--                                android:src="@drawable/ic_flight_32dp"-->
+                    <!--                                android:tint="@color/grey22" />-->
 
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="@string/flights"-->
-<!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
-<!--                                android:textColor="@color/grey22" />-->
-<!--                        </LinearLayout>-->
+                    <!--                            <TextView-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:text="@string/flights"-->
+                    <!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
+                    <!--                                android:textColor="@color/grey22" />-->
+                    <!--                        </LinearLayout>-->
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_weight="1"-->
-<!--                            android:background="@color/greyF4"-->
-<!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.TRAIN)}"-->
-<!--                            android:gravity="center_vertical"-->
-<!--                            android:orientation="horizontal"-->
-<!--                            android:padding="@dimen/padding_tiny">-->
+                    <!--                        <LinearLayout-->
+                    <!--                            android:layout_width="0dp"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:layout_weight="1"-->
+                    <!--                            android:background="@color/greyF4"-->
+                    <!--                            android:onClick="@{() -> fragment.onBookingLayoutClicked(BookingEntity.TRAIN)}"-->
+                    <!--                            android:gravity="center_vertical"-->
+                    <!--                            android:orientation="horizontal"-->
+                    <!--                            android:padding="@dimen/padding_tiny">-->
 
-<!--                            <ImageView-->
-<!--                                android:layout_width="30dp"-->
-<!--                                android:layout_height="30dp"-->
-<!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
-<!--                                android:src="@drawable/ic_train_32dp"-->
-<!--                                android:tint="@color/grey22" />-->
+                    <!--                            <ImageView-->
+                    <!--                                android:layout_width="30dp"-->
+                    <!--                                android:layout_height="30dp"-->
+                    <!--                                android:layout_marginEnd="@dimen/padding_tiny"-->
+                    <!--                                android:src="@drawable/ic_train_32dp"-->
+                    <!--                                android:tint="@color/grey22" />-->
 
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="@string/trains"-->
-<!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
-<!--                                android:textColor="@color/grey22" />-->
-<!--                        </LinearLayout>-->
-<!--                    </LinearLayout>-->
+                    <!--                            <TextView-->
+                    <!--                                android:layout_width="wrap_content"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:text="@string/trains"-->
+                    <!--                                android:textAppearance="@style/AppTheme.TextView.Reg.Large"-->
+                    <!--                                android:textColor="@color/grey22" />-->
+                    <!--                        </LinearLayout>-->
+                    <!--                    </LinearLayout>-->
 
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/lets_get_booking_text"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginBottom="@dimen/padding_micro">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lets_get_booking_text"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="@dimen/padding_micro">
 
-                                <include
-                                    android:id="@+id/hotel_booking"
-                                    layout="@layout/booking_menu_item"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    app:icon="@{@string/accomodation}"
-                                    app:layout_constraintBottom_toBottomOf="@+id/flight_booking"
-                                    app:layout_constraintEnd_toStartOf="@+id/flight_booking"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintHorizontal_chainStyle="spread_inside"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:name="@{@string/hotels}" />
+                        <include
+                            android:id="@+id/hotel_booking"
+                            layout="@layout/booking_menu_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:icon="@{@string/accommodation}"
+                            app:layout_constraintBottom_toBottomOf="@+id/flight_booking"
+                            app:layout_constraintEnd_toStartOf="@+id/flight_booking"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintHorizontal_chainStyle="spread_inside"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:name="@{@string/hotels}" />
 
-                                <include
-                                    android:id="@+id/flight_booking"
-                                    layout="@layout/booking_menu_item"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    app:icon="@{@string/flight}"
-                                    app:layout_constraintEnd_toStartOf="@+id/include5"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toEndOf="@+id/hotel_booking"
-                                    app:name="@{@string/flight}" />
+                        <include
+                            android:id="@+id/flight_booking"
+                            layout="@layout/booking_menu_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:icon="@{@string/flight}"
+                            app:layout_constraintEnd_toStartOf="@+id/train_booking"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/hotel_booking"
+                            app:name="@{@string/flight}" />
 
-                                <include
-                                    android:id="@+id/include5"
-                                    layout="@layout/booking_menu_item"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
+                        <include
+                            android:id="@+id/train_booking"
+                            layout="@layout/booking_menu_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
 
-                                    app:icon="@{@string/train}"
-                                    app:layout_constraintEnd_toStartOf="@+id/bus_booking"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toEndOf="@+id/flight_booking"
-                                    app:name="@{@string/trains}" />
+                            app:icon="@{@string/train}"
+                            app:layout_constraintEnd_toStartOf="@+id/bus_booking"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/flight_booking"
+                            app:name="@{@string/trains}" />
 
-                                <include
-                                    android:id="@+id/bus_booking"
-                                    layout="@layout/booking_menu_item"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    app:icon="@{@string/bus}"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0"
-                                    app:layout_constraintStart_toEndOf="@+id/include5"
-                                    app:name="@{@string/bus}" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        <include
+                            android:id="@+id/bus_booking"
+                            layout="@layout/booking_menu_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:icon="@{@string/bus}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@+id/train_booking"
+                            app:name="@{@string/bus}" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <View
                         android:layout_width="match_parent"
@@ -462,6 +463,6 @@
                     style="@style/AppTheme.Home.Section"
                     android:layout_margin="0dp" />
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

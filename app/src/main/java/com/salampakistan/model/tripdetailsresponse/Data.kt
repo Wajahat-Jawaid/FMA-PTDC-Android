@@ -1,0 +1,30 @@
+package com.salampakistan.model.tripdetailsresponse
+
+data class Data(
+    val _id: String,
+    val activities: String,
+    val activitiesId: String,
+    val averageRating: Int,
+    val cancellationPolicy: String,
+    val categories: String,
+    val categoriesId: String,
+    val date: Long,
+    val description: String,
+    val duration: Int,
+    val facilities: String,
+    val facilitiesId: String,
+    val isFeatured: Boolean,
+    val itinerary: List<Itinerary>,
+    val locations: String,
+    val locationsId: String,
+    val photos: List<String>,
+    val price: Int,
+    val slug: String,
+    val status: String,
+    val thumbnails: List<String>,
+    val title: String,
+    val totalRating: Int,
+    val totalReviews: Int,
+    val vendorId: String,
+    val vendorName: String
+)

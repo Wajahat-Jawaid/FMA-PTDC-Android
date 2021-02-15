@@ -20,9 +20,13 @@ import com.salampakistan.ui.fragments.booking.bus.buslist.BusListFragment.Compan
 import com.salampakistan.ui.fragments.booking.bus.buslist.BusListFragment.Companion.DESTINATIONSHORT
 import com.salampakistan.ui.fragments.booking.bus.buslist.BusListFragment.Companion.ORIGINLONG
 import com.salampakistan.ui.fragments.booking.bus.buslist.BusListFragment.Companion.ORIGINSHORT
+import com.salampakistan.ui.fragments.booking.bus.buslist.BusListFragment.Companion.SERVERDATE
 import com.salampakistan.ui.fragments.dialog.ListDialogFragment
 import com.salampakistan.utils.CalendarUtils
 import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class BusBookingSearchFragment : BaseFragment<FragmentBusBookingSearchBinding>(), Injectable {
 
@@ -37,8 +41,20 @@ class BusBookingSearchFragment : BaseFragment<FragmentBusBookingSearchBinding>()
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 
-        RxView.clicks(binding.backBtn).subscribe { navController.navigateUp() }
         getServices()
+        getDepartureCities()
+        setView()
+    }
+
+    fun setView() {
+        RxView.clicks(binding.backBtn).subscribe { navController.navigateUp() }
+
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val df = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+
+        viewModel.serverDate.value = sdf.format(System.currentTimeMillis() - 1)
+
+        viewModel.date.value = df.format(System.currentTimeMillis() - 1)
     }
 
     fun getServices() {
@@ -54,6 +70,7 @@ class BusBookingSearchFragment : BaseFragment<FragmentBusBookingSearchBinding>()
                     }
                 }
                 Result.Status.ERROR -> {
+                    showSnack(it.message.toString())
                     hideProgressBar()
                 }
             }
@@ -96,12 +113,15 @@ class BusBookingSearchFragment : BaseFragment<FragmentBusBookingSearchBinding>()
     }
 
     private fun getDestinationCities() {
+        var service: Int? = null
+        if (viewModel.services.value!! != "all services") {
+            service =
+                viewModel.servicesList.value!!.filter { it.service_name == viewModel.services.value }
+                    .toTypedArray()[0].service_id.toInt()
+        }
         val departCity =
             viewModel.departureCitiesList.value!!.filter { it.origin_city_name == viewModel.departLocation.value }
                 .toTypedArray()[0].origin_city_id
-        val service =
-            viewModel.servicesList.value!!.filter { it.service_name == viewModel.services.value }
-                .toTypedArray()[0].service_id.toInt()
 
         viewModel.getDestinationCities(departCity, service).observe(viewLifecycleOwner, Observer {
             when (it.status) {
@@ -140,9 +160,12 @@ class BusBookingSearchFragment : BaseFragment<FragmentBusBookingSearchBinding>()
     }
 
     private fun getDepartureCities() {
-        val service =
-            viewModel.servicesList.value!!.filter { it.service_name == viewModel.services.value }
-                .toTypedArray()[0].service_id.toInt()
+        var service: Int? = null
+        if (viewModel.services.value!! != "all services") {
+            service =
+                viewModel.servicesList.value!!.filter { it.service_name == viewModel.services.value }
+                    .toTypedArray()[0].service_id.toInt()
+        }
         viewModel.getOriginCities(service).observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Result.Status.LOADING -> {
@@ -165,7 +188,10 @@ class BusBookingSearchFragment : BaseFragment<FragmentBusBookingSearchBinding>()
     fun onDateFieldClicked() {
         val listener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             val formattedDate = CalendarUtils.getBusSearchFormattedDate(year, month, dayOfMonth)
+            val serverFormattedDate =
+                CalendarUtils.getFormattedServerDate(year, month + 1, dayOfMonth)
             viewModel.date.value = formattedDate
+            viewModel.serverDate.value = serverFormattedDate
         }
         CalendarUtils.showDatePicker(context!!, listener, minDate = System.currentTimeMillis() - 1)
     }
@@ -177,6 +203,7 @@ class BusBookingSearchFragment : BaseFragment<FragmentBusBookingSearchBinding>()
             bundle.putString(SERVICENAME, viewModel.services.value)
             bundle.putString(DESTINATIONLOGN, viewModel.arrivalLocation.value)
             bundle.putString(DATE, viewModel.date.value)
+            bundle.putString(SERVERDATE, viewModel.serverDate.value)
             bundle.putString(
                 DESTINATIONSHORT,
                 viewModel.destinationCitiesList.value!!.filter { it.destination_city_name == viewModel.arrivalLocation.value }

@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data />
+    <data>
+        <variable
+            name="fragment"
+            type="com.salampakistan.ui.fragments.booking.hotel.hotellist.HotelListFragment" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -71,118 +75,135 @@
         </LinearLayout>
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingBottom="@dimen/padding_nano"
+            android:background="@drawable/bg_top_curve"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/padding_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:paddingBottom="@dimen/padding_nano"
-                android:background="@drawable/bg_top_curve"
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/hotel_option_height"
+                android:background="@drawable/bg_bottom_shadow"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:enabled="false"
+                    android:id="@+id/sort_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_small"
+                    android:drawableLeft="@drawable/ic_sort"
+                    android:drawablePadding="@dimen/padding_tiny"
+                    android:onClick="@{() -> fragment.launchSort()}"
+                    android:gravity="center_vertical"
+                    android:text="@string/sort"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/view"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/padding_tiny"
+                    android:background="@color/greyF0"
+                    app:layout_constraintEnd_toStartOf="@+id/filter_text"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/sort_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:enabled="false"
+                    android:id="@+id/filter_text"
+                    android:padding="@dimen/padding_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_filter"
+                    android:drawablePadding="@dimen/padding_tiny"
+                    android:onClick="@{() -> fragment.launchFilter()}"
+                    android:gravity="center_vertical"
+                    android:text="@string/filters"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="@dimen/padding_tiny"
+                    android:visibility="gone"
+                    android:background="@color/greyF0"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/filter_text"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_park"
+                    android:drawablePadding="@dimen/padding_tiny"
+                    android:visibility="gone"
+                    android:drawableTint="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:text="@string/map_lowercase"
+                    android:textAppearance="@style/AppTheme.TextView.Bold.Small"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_small"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/view3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="@dimen/padding_medium"
+                android:layout_marginTop="@dimen/padding_nano"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/hotel_option_height"
-                    android:background="@drawable/bg_bottom_shadow"
-                    app:layout_constraintTop_toTopOf="parent">
-
-
-                    <TextView
-                        android:enabled="false"
-                        android:id="@+id/sort_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_sort"
-                        android:drawablePadding="@dimen/padding_tiny"
-                        android:gravity="center_vertical"
-                        android:text="@string/sort"
-                        android:textAppearance="@style/AppTheme.TextView.Bold.Small"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_small"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/view"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintHorizontal_chainStyle="spread"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/view"
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginVertical="@dimen/padding_tiny"
-                        android:background="@color/greyF0"
-                        app:layout_constraintEnd_toStartOf="@+id/textView2"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/sort_text"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <TextView
-                        android:id="@+id/textView2"
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_filter"
-                        android:drawablePadding="@dimen/padding_tiny"
-                        android:gravity="center_vertical"
-                        android:text="@string/filters"
-                        android:textAppearance="@style/AppTheme.TextView.Bold.Small"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_small"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/view3"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/view"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <View
-                        android:id="@+id/view3"
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginVertical="@dimen/padding_tiny"
-                        android:background="@color/greyF0"
-                        app:layout_constraintEnd_toStartOf="@+id/textView4"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/textView2"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_park"
-                        android:drawablePadding="@dimen/padding_tiny"
-                        android:drawableTint="@color/colorPrimary"
-                        android:gravity="center_vertical"
-                        android:text="@string/map_lowercase"
-                        android:textAppearance="@style/AppTheme.TextView.Bold.Small"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_small"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/view3"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/padding_nano"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-                    app:layout_constraintWidth_percent="0.98"
-                    tools:listitem="@layout/row_hotel_list" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                app:layout_constraintWidth_percent="0.98"
+                tools:listitem="@layout/row_hotel_list" />
+            <TextView
+                android:id="@+id/nothing_found_text"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_record_found"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAppearance="@style/AppTheme.TextView.Bold.Large"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

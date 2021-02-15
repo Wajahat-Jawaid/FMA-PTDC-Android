@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.esafirm.imagepicker.features.ImagePicker
 import com.google.gson.Gson
 import com.jakewharton.rxbinding.view.RxView
@@ -18,12 +19,10 @@ import com.salampakistan.dagger.injectViewModel
 import com.salampakistan.databinding.FragmentUpdateProfileBinding
 import com.salampakistan.model.User
 import com.salampakistan.model.response.SimpleApiResponse
+import com.salampakistan.model.uploadprofilephotoresponse.UploadProfilePhotoResponse
 import com.salampakistan.network.Result
 import com.salampakistan.ui.fragments.profile.updatepassword.UpdatePasswordFragment
-import com.salampakistan.utils.CalendarUtils
-import com.salampakistan.utils.FragmentTransitionHelper
-import com.salampakistan.utils.ImageUtils
-import com.salampakistan.utils.InputUtils
+import com.salampakistan.utils.*
 import com.salampakistan.utils.extension.getFormattedSingleDigit
 import com.salampakistan.utils.extension.getMonthInWords
 import com.salampakistan.utils.validators.ProfileFormValidator
@@ -62,7 +61,7 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateProfileBinding>(), Inje
 
     }
 
-    fun uploadDoc(image:com.esafirm.imagepicker.model.Image) {
+    fun uploadDoc(image: com.esafirm.imagepicker.model.Image) {
         CoroutineScope(Dispatchers.Main).launch {
             val compressedImages = ImageUtils.getCompressImage(image, context!!, Dispatchers.Main)
             val list = ImageUtils.convertFileToBase64(compressedImages[0])
@@ -71,20 +70,29 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateProfileBinding>(), Inje
             viewModel.uploadProfilePhoto(
                 preferences.getUser()?.id.toString(),
                 preferences.getUser()?.token.toString(),
-               list[0]
-            ).observe(viewLifecycleOwner, Observer {
-                handleUploadPicsResponse(it) })
+                list[0]
+            ).observe(viewLifecycleOwner, Observer {result ->
+                handleUploadPicsResponse(result)
+            })
         }
     }
 
-    private fun handleUploadPicsResponse(it: Result<SimpleApiResponse>) {
+    private fun handleUploadPicsResponse(it: Result<UploadProfilePhotoResponse>) {
         when (it.status) {
-            Result.Status.LOADING->{}
-            Result.Status.SUCCESS->{showToast("Profile image has been updated!")}
-            Result.Status.ERROR->{}
+            Result.Status.LOADING -> {
+                showProgressBar(true)
+            }
+            Result.Status.SUCCESS -> {
+                hideProgressBar()
+                preferences.insert(Preferences.KEYS.PHOTOURL.toString(), it.data?.data!!.photo)
+                showSnack("profile image has been updated!")
+            }
+            Result.Status.ERROR -> {
+                hideProgressBar()
+                showSnack(it.message.toString())
+            }
         }
     }
-
 
 
     fun showDatePicker() {
@@ -99,14 +107,15 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateProfileBinding>(), Inje
             binding.dobText.text = formattedDate
             dob = CalendarUtils.getFormattedServerDate(year, month.inc(), dayOfMonth)
         }
-        CalendarUtils.showDatePicker(context!!, listener)
+        CalendarUtils.showDatePicker(context!!, listener, maxDate = System.currentTimeMillis() - 1)
     }
 
     fun onEditPasswordBtnClicked() {
         InputUtils.hideSoftKeyboard(getBaseActivity())
         try {
             navController.navigate(R.id.action_updateProfileFragment_to_updatePasswordFragment)
-        }catch (e:Exception){}
+        } catch (e: Exception) {
+        }
     }
 
     fun onSaveButtonClicked() {
@@ -130,7 +139,8 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateProfileBinding>(), Inje
                 binding.mobileText.text.toString(),
                 binding.cnicText.text.toString(),
                 gender,
-                dobLong
+                dobLong,
+                ""
             )
             viewModel.editProfile(
                 updatedUser.id,
@@ -151,13 +161,13 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateProfileBinding>(), Inje
                             showSnack(com.salampakistan.R.string.profile_updated_success)
                             preferences.saveUser(updatedUser)
                             hideProgressBar()
-                            updateSuccessSubject.onNext(true)
-                            updateSuccessSubject.onCompleted()
+                            navController.navigateUp()
                         }
                         com.salampakistan.network.Result.Status.LOADING -> {
                             showProgressBar(true)
                         }
                         com.salampakistan.network.Result.Status.ERROR -> {
+                            showSnack(result.message.toString())
                             hideProgressBar()
                         }
                     }
@@ -166,6 +176,10 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateProfileBinding>(), Inje
     }
 
     private fun populateFields() {
+
+        if (!preferences.getString(Preferences.KEYS.PHOTOURL.toString()).isNullOrEmpty())
+            Glide.with(context!!).load(preferences.getString(Preferences.KEYS.PHOTOURL.toString())).into(binding.circleImageView)
+
         user = preferences.getUser()!!
         Timber.d("user: %s", Gson().toJson(user))
         binding.user = user
@@ -174,7 +188,7 @@ class UpdateProfileFragment : BaseFragment<FragmentUpdateProfileBinding>(), Inje
         cal.timeInMillis = dobLong
         dob = CalendarUtils.getFormattedServerDate(
             cal.get(Calendar.YEAR),
-            cal.get(Calendar.MONTH),
+            cal.get(Calendar.MONTH) + 1,
             cal.get(Calendar.DAY_OF_MONTH)
         )
     }

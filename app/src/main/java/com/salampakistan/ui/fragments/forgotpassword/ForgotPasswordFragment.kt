@@ -36,6 +36,7 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotBinding>(), Injectable
     }
 
     fun submit() {
+        InputUtils.hideSoftKeyboard(activity!!)
         if(binding.emailText.text.isNullOrEmpty()){
             showSnack(getString(R.string.pleaseProvideEmail))
             return
@@ -45,7 +46,7 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotBinding>(), Injectable
                 Result.Status.SUCCESS -> {
                     hideProgressBar()
                     if (it.data?.data != null) {
-                        showSnack(it.data.data.message)
+                        showSnack("Password has been sent to you registered email.")
                         navController.navigateUp()
                     }
                 }
@@ -54,7 +55,7 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotBinding>(), Injectable
                 }
                 Result.Status.ERROR -> {
                     hideProgressBar()
-                    showSnack(it.data?.error?.message ?:"")
+                    showSnack("Invalid email address")
                 }
             }
         })

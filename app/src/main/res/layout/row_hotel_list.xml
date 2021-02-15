@@ -17,6 +17,7 @@
         android:background="@color/white">
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,13 +49,15 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/padding_negative_medium"
                 android:scaleType="centerCrop"
                 tools:src="@drawable/img_home_bg"
-                app:imageUrl="@{model.hotelInfo.image}"/>
+                app:height="@{@dimen/hotel_list_item_height}"
+                app:imageUrlCustomDimensions="@{model.images[0]}"
+                app:width="@{@dimen/hotel_list_img_width}"/>
         </androidx.cardview.widget.CardView>
 
 
@@ -65,7 +68,7 @@
             android:layout_marginStart="@dimen/padding_micro"
             android:ellipsize="end"
             android:maxLines="1"
-            android:text="@{model.hotelInfo.name}"
+            android:text="@{model.hotelName}"
             android:textAppearance="@style/AppTheme.TextView.Bold.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
@@ -113,7 +116,7 @@
             app:layout_constraintStart_toEndOf="@+id/textView9"
             app:layout_constraintTop_toTopOf="@+id/textView9"
             app:layout_constraintVertical_bias="0.0"
-            app:setProgress="@{model.hotelRating.rating}" />
+            app:setProgress="@{model.rating}" />
 
         <LinearLayout
             android:id="@+id/ll_rating"
@@ -138,7 +141,7 @@
                 android:ellipsize="end"
                 android:maxLines="4"
                 android:padding="@dimen/padding_tiny"
-                android:text="@{@string/rating_average(model.hotelRating.rating)}"
+                app:setRating="@{model.rating}"
                 android:textAppearance="@style/AppTheme.TextView.Bold.Small"
                 android:textColor="@color/white"
                 tools:text="4.0" />
@@ -147,6 +150,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/padding_tiny"
+                android:visibility="gone"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -186,7 +190,7 @@
             android:layout_toEndOf="@+id/image_container"
             android:ellipsize="end"
             android:maxLines="4"
-            android:text="Price for 3 day stay"
+            app:setPluraltext="@{model.daysDifference}"
             android:textAppearance="@style/AppTheme.TextView.SemiBold.Small"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
@@ -208,8 +212,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/image_container"
             app:layout_constraintTop_toBottomOf="@id/price_per_day_text"
-            app:priceText="@{model.hotelRateInfo.priceStartingFrom}"
-            app:currency="@{model.hotelInfo.currencyCode}" />
+            app:priceText="@{model.minimumRate}"
+            app:days="@{model.daysDifference}"
+            app:currency="@{model.currencyCode}" />
 
         <TextView
             android:layout_width="0dp"
@@ -218,7 +223,7 @@
             android:layout_marginStart="@dimen/padding_micro"
             android:ellipsize="end"
             android:maxLines="4"
-            android:text="@{@string/fee_cancellation(model.hotelInfo.cancellation_policy_type)}"
+            android:text="@{@string/fee_cancellation(model.cancellationPolicyType)}"
             android:textAppearance="@style/AppTheme.TextView.Reg.Small"
             android:textColor="@color/grey90"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -24,6 +24,7 @@ import com.salampakistan.model.response.getpoiresponse.Data
 import com.salampakistan.network.Result
 import com.salampakistan.ui.custom.CustomSupportMapFragment
 import com.salampakistan.ui.fragments.locationdetails.LocationDetailsFragment
+import com.salampakistan.utils.getDrawable
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -56,24 +57,37 @@ class POIFragment : BaseFragment<FragmentPoiBinding>(), Injectable, OnMapReadyCa
         super.onViewCreated(view, savedInstanceState)
 //        getData()
         setUpMap()
-        if (::surroundings.isInitialized) {
+        if (::surroundings.isInitialized && !surroundings.isNullOrEmpty()) {
             binding.text = surroundings[0].name
+            binding.poiNameText.setCompoundDrawablesWithIntrinsicBounds(
+                getDrawable(
+                    surroundings[0].name,
+                    context!!
+                ), null, resources.getDrawable(R.drawable.ic_dropdown), null
+            );
+        } else {
+            binding.text = getString(R.string.no_attraction_point)
         }
     }
 
     fun showPOIsPopup() {
 //        listOf("hotels", "hostels", "bnb", "campings", "group houses", "family trips", "group excursions", "hiking", "museums", "sports and adventures", "zoos and animal parks", "mountain trails", "food", "guide", "weather", "routes")
-        val dialogFg = POIsDialogFragment.getInstance(surroundings)
-        dialogFg.show(childFragmentManager, "POI")
-        dialogFg.poiSelectionSubject
-            .subscribe {
-                run {
-                    selectedPOI = it
-                    dialogFg.dismissAllowingStateLoss()
-                    getPOIPlaces(coordinates, it.typeKey)
-                    updateSelectedPOIText()
+        if (::surroundings.isInitialized && !surroundings.isNullOrEmpty()) {
+            val dialogFg = POIsDialogFragment.getInstance(surroundings)
+            dialogFg.show(childFragmentManager, "POI")
+            dialogFg.poiSelectionSubject
+                .subscribe {
+                    run {
+                        selectedPOI = it
+                        dialogFg.dismissAllowingStateLoss()
+                        getPOIPlaces(coordinates, it.typeKey)
+                        updateSelectedPOIText()
+                    }
                 }
-            }
+        }
+        else {
+            showSnack("No discoverable surrounding.")
+        }
     }
 
     private fun getPOIPlaces(coordinates: FloatArray, typeKey: String) {
@@ -98,9 +112,16 @@ class POIFragment : BaseFragment<FragmentPoiBinding>(), Injectable, OnMapReadyCa
     private fun updateSelectedPOIText() {
         if (::selectedPOI.isInitialized) {
             binding.text = selectedPOI.name
+            binding.poiNameText.setCompoundDrawablesWithIntrinsicBounds(
+                getDrawable(
+                    selectedPOI.name,
+                    context!!
+                ), null, resources.getDrawable(R.drawable.ic_dropdown), null
+            );
         } else {
             binding.text = getString(R.string.no_attraction_point)
         }
+
     }
 
 
@@ -167,7 +188,11 @@ class POIFragment : BaseFragment<FragmentPoiBinding>(), Injectable, OnMapReadyCa
         private val SURROUNDINGS = "$TAG.surroundings"
         private val LOCATIONNAME = "$TAG.locationname"
         private val COORDINATES = "$TAG.coordinates"
-        fun getInstance(locationName:String,surroundings: ArrayList<POI>, coordinates: FloatArray?): POIFragment {
+        fun getInstance(
+            locationName: String,
+            surroundings: ArrayList<POI>,
+            coordinates: FloatArray?
+        ): POIFragment {
             val fg = POIFragment()
             val bundle = Bundle()
             bundle.putParcelableArrayList(SURROUNDINGS, surroundings)

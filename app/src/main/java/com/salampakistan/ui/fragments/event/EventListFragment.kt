@@ -14,7 +14,6 @@ import com.salampakistan.databinding.RowEventBinding
 import com.salampakistan.databinding.RowFeaturedEventBinding
 import com.salampakistan.model.event.Event
 import com.salampakistan.network.Result
-import com.salampakistan.ui.adapters.EventsListAdapter
 import com.salampakistan.ui.adapters.SimpleListAdapter
 import com.salampakistan.ui.fragments.event.detail.EventDetailsFragment.Companion.EVENTID
 import java.lang.Exception
@@ -24,7 +23,7 @@ class EventListFragment : BaseFragment<FragmentEventListBinding>(), Injectable {
     private lateinit var viewModel: EventListViewModel
     private lateinit var binding: FragmentEventListBinding
     private lateinit var featuredEventAdapter: SimpleListAdapter<RowFeaturedEventBinding, Event>
-    private lateinit var eventListAdapter: EventsListAdapter<RowEventBinding, Event>
+    private lateinit var eventListAdapter: SimpleListAdapter<RowEventBinding, Event>
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,12 +57,12 @@ class EventListFragment : BaseFragment<FragmentEventListBinding>(), Injectable {
         RxView.clicks(binding.toolbar.backBtnView.backBtn).subscribe {
             navController.navigateUp()
         }
-        eventListAdapter = EventsListAdapter(R.layout.row_event)
+        eventListAdapter = SimpleListAdapter(R.layout.row_event)
         featuredEventAdapter = SimpleListAdapter(R.layout.row_featured_event)
         binding.recViewEvent.adapter = eventListAdapter
         binding.recViewFeatureEvent.adapter = featuredEventAdapter
 
-        eventListAdapter.clickSubject.subscribe {
+        eventListAdapter.itemClickSubject.subscribe {
             try {
                 val bundle = Bundle()
                 bundle.putString(EVENTID, it._id)

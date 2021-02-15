@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.salampakistan.model.getbusservicesreponse.Data" />
+            type="com.salampakistan.model.getbusservicesreponse.BusService" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/fligh_card_top"
-            android:orientation="vertical"
+            android:animateLayoutChanges="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -39,21 +39,25 @@
 
                 <LinearLayout
                     android:id="@+id/linearLayout9"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
                     android:gravity="center"
+                    app:layout_constraintHorizontal_bias="0"
                     android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
                         android:gravity="center"
-                        android:text="@{@string/set_journey_city(model.origin_city_name,model.destination_city_name)}"
-                        android:textAppearance="@style/AppTheme.TextView.SemiBold.XXLarge"
-
+                        android:layout_gravity="start"
+                        android:text="@{@string/set_journey_city(model.departureCityName,model.arrivalCityName)}"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold.XLarge"
+                        android:maxLength="34"
+                        android:ellipsize="end"
                         android:textColor="@color/grey46"
                         tools:text="Islamabad to Karachi" />
 
@@ -75,7 +79,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:gravity="center"
-                            android:text="09:00 PM"
+                            android:text="@{model.departureTime}"
                             android:textAppearance="@style/AppTheme.TextView.SemiBold.XLarge"
                             android:textColor="@color/colorPrimary" />
                     </LinearLayout>
@@ -124,7 +128,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:gravity="center"
-                    android:text="pkr 18,100"
+                    app:SetFareText="@{model.originalFare}"
                     android:textAppearance="@style/AppTheme.TextView.Bold.XXLarge"
                     android:textColor="@color/colorPrimary" />
             </RelativeLayout>
@@ -185,8 +189,11 @@
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="50dp"
+                    android:layout_centerInParent="true"
                     android:src="@drawable/deawoo_logo"
-                    app:imageUrl="@{model.thumbnail}"/>
+                    app:height="@{@dimen/hotel_list_image_placeholder_size}"
+                    app:imageUrlCustomDimensions="@{model.thumbnail}"
+                    app:width="@{@dimen/hotel_list_image_placeholder_size}"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -199,6 +206,7 @@
                     android:paddingHorizontal="@dimen/padding_medium"
                     android:paddingVertical="@dimen/padding_micro"
                     android:text="Luxury"
+                    android:visibility="gone"
                     android:textAppearance="@style/AppTheme.TextView.Bold.Small"
                     android:textColor="@color/white" />
             </RelativeLayout>

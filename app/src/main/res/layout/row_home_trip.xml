@@ -7,12 +7,12 @@
 
         <variable
             name="model"
-            type="com.salampakistan.model.Trip" />
+            type="com.salampakistan.model.tripslist.Trip" />
     </data>
 
     <androidx.cardview.widget.CardView
+        android:layout_height="wrap_content"
         android:layout_width="@dimen/row_home_event_item_width"
-        android:layout_height="@dimen/row_home_event_item_height"
         android:layout_marginEnd="@dimen/padding_small"
         app:cardBackgroundColor="@color/transparent"
         app:cardCornerRadius="@dimen/padding_large"
@@ -24,14 +24,22 @@
             android:background="@color/white"
             android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/row_home_blog_item_img_height"
-                android:layout_marginBottom="@dimen/padding_small"
-                android:background="@color/greye0"
-                android:scaleType="centerCrop"
-                app:imageUrl="@{model.thumbnail}" />
 
+            <androidx.cardview.widget.CardView
+                android:layout_height="@dimen/row_home_blog_item_img_height"
+                android:layout_width="@dimen/row_home_event_item_width"
+                app:cardCornerRadius="@dimen/padding_large"
+                app:cardElevation="0dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_small"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    app:height="@{@dimen/row_home_event_item_height}"
+                    app:imageUrlCustomDimensions="@{model.thumbnails[0]}"
+                    app:width="@{@dimen/row_home_event_item_width}" />
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/title_text"
                 style="@style/AppTheme.TextView.Bold"
@@ -48,10 +56,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/padding_micro"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:text="@{model.locations}"
+                android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                android:textColor="@color/grey77"
+                tools:text="14" />
+            <TextView
+                android:id="@+id/duration_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_micro"
                 android:layout_marginBottom="@dimen/padding_small"
                 android:ellipsize="end"
                 android:includeFontPadding="false"
-                android:text="@{@string/starting_from(model.startingLocation)}"
+                android:text="@{@string/duration(model.duration)}"
                 android:textAppearance="@style/AppTheme.TextView.Reg.Small"
                 android:textColor="@color/grey77"
                 tools:text="14" />

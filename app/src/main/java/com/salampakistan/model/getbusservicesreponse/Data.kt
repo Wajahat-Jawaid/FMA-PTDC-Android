@@ -1,6 +1,7 @@
 package com.salampakistan.model.getbusservicesreponse
 
 data class Data(
+    var id:Int,
     val cancellation_before: Int,
     val cancellation_fee: Int,
     val destination_city_id: Int,

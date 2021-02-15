@@ -15,16 +15,19 @@ import com.salampakistan.databinding.FragmentHotelListBinding
 import com.salampakistan.databinding.RowHotelListBinding
 import com.salampakistan.model.hotelsearchresponse.Hotel
 import com.salampakistan.network.Result
+import com.salampakistan.ui.adapters.BookingListAdapter
 import com.salampakistan.ui.adapters.SimpleListAdapter
 import com.salampakistan.ui.fragments.booking.hotel.HotelListFilter
+import com.salampakistan.ui.fragments.booking.hotel.HotelListSort
 import com.salampakistan.ui.fragments.booking.hotel.hoteldetails.HotelDetailsFragment
+import com.salampakistan.utils.CalendarUtils
 import com.salampakistan.utils.CalendarUtils.getDates
 
 
 class HotelListFragment : BaseFragment<FragmentHotelListBinding>(), Injectable {
     private lateinit var viewModel: HotelListViewModel
     private lateinit var binding: FragmentHotelListBinding
-    private lateinit var adapter: SimpleListAdapter<RowHotelListBinding, Hotel>
+    private lateinit var adapter: BookingListAdapter<RowHotelListBinding, Hotel>
     private lateinit var city: String
     private lateinit var startDate: String
     private lateinit var endDate: String
@@ -36,13 +39,19 @@ class HotelListFragment : BaseFragment<FragmentHotelListBinding>(), Injectable {
         binding = injectBinding(view)
         viewModel = injectViewModel(viewModelFactory)
         super.onViewCreated(view, savedInstanceState)
-
-        getData(city,startDate,endDate,adult,child,noOfRooms = room)
+        binding.fragment = this
         setView()
+        if (viewModel.data.isNullOrEmpty())
+            getData(city, startDate, endDate, adult, child, noOfRooms = room)
+        else {
+            binding.sortText.isEnabled = true
+            binding.filterText.isEnabled = true
+            adapter.updateContent(viewModel.data)
+        }
     }
 
-    private fun launchSort() {
-        val fragment = HotelListFilter.getInstance()
+    fun launchSort() {
+        val fragment = HotelListSort.getInstance()
 
         fragment.show(childFragmentManager, "ll")
         // Listen for filter events
@@ -52,9 +61,15 @@ class HotelListFragment : BaseFragment<FragmentHotelListBinding>(), Injectable {
                     // Dismiss fragment
                     fragment.dismiss()
 
-                    // sort hotels
-                    adapter.updateContent(viewModel.sortData(it))
-
+                    // sort properties
+                    viewModel.filters = it.values
+                    val data = viewModel.sortData(it)
+                    if (data.isEmpty()) {
+                        binding.nothingFoundText.visibility = View.VISIBLE
+                    } else binding.nothingFoundText.visibility = View.GONE
+                    adapter.updateContent(data)
+                    adapter.notifyDataSetChanged()
+                    binding.recyclerView.smoothScrollToPosition(0)
                 }
             }
         fragment.filtersClearedSubject
@@ -65,20 +80,56 @@ class HotelListFragment : BaseFragment<FragmentHotelListBinding>(), Injectable {
 
                     // Dismiss fragment
                     fragment.dismiss()
+                    binding.nothingFoundText.visibility = View.GONE
+                    viewModel.filteredData.value = ArrayList()
                     adapter.updateContent(viewModel.data)
+                    adapter.notifyDataSetChanged()
                 }
             }
 
     }
 
+
+    fun launchFilter() {
+        val fragment = HotelListFilter.getInstance()
+
+        fragment.show(childFragmentManager, "filter")
+        // Listen for filter events
+        fragment.filtersAppliedSubjecthotel
+            .subscribe {
+                run {
+                    // Dismiss fragment
+                    fragment.dismiss()
+
+                    // sort properties
+                    viewModel.filters = it.values
+                    val data = viewModel.sortData(it)
+                    if (data.isEmpty()) {
+                        binding.nothingFoundText.visibility = View.VISIBLE
+                    } else binding.nothingFoundText.visibility = View.GONE
+                    adapter.updateContent(data)
+                    adapter.notifyDataSetChanged()
+                }
+            }
+        fragment.filtersClearedSubject
+            .subscribe {
+                run {
+                    // Reset filters model
+                    viewModel.appliedFiltersData.value?.reset()
+
+                    // Dismiss fragment
+                    fragment.dismiss()
+                    binding.nothingFoundText.visibility = View.GONE
+                    adapter.updateContent(viewModel.data)
+                    adapter.notifyDataSetChanged()
+                }
+            }
+    }
+
     fun setView() {
 
-        RxView.clicks(binding.sortText).subscribe {
-            launchSort()
-        }
-
         binding.titleText.text = "${city.capitalize()} ${getDates(startDate, endDate)}"
-        adapter = SimpleListAdapter(R.layout.row_hotel_list)
+        adapter = BookingListAdapter(R.layout.row_hotel_list)
         binding.recyclerView.adapter = adapter
 
 
@@ -99,15 +150,18 @@ class HotelListFragment : BaseFragment<FragmentHotelListBinding>(), Injectable {
             try {
                 val bundle = Bundle()
                 bundle.putString(HotelDetailsFragment.CITY, city)
-                bundle.putString(HotelDetailsFragment.HOTELNAME, it.hotelInfo.Name)
+                bundle.putString(HotelDetailsFragment.HOTELNAME, it.hotelName)
                 bundle.putString(HotelDetailsFragment.STARTDATE, startDate)
                 bundle.putString(HotelDetailsFragment.ENDDATE, endDate)
                 bundle.putInt(HotelDetailsFragment.ADULT, adult)
                 bundle.putInt(HotelDetailsFragment.CHILD, child)
                 bundle.putInt(HotelDetailsFragment.ROOMS, room)
+                bundle.putInt(HotelDetailsFragment.DAY, it.daysDifference)
+                bundle.putInt(HotelDetailsFragment.PERDAYRATE, it.minimumRate)
+                bundle.putStringArrayList(HotelDetailsFragment.HOTELAMENITIES, it.hotelAmenities)
                 bundle.putStringArrayList(
                     HotelDetailsFragment.HOTELPHOTOS,
-                    it.hotelInfo.multi_images
+                    it.images
                 )
                 navController.navigate(
                     R.id.action_hotelListFragment_to_hotelDetailsFragment,
@@ -140,19 +194,38 @@ class HotelListFragment : BaseFragment<FragmentHotelListBinding>(), Injectable {
         ).observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Result.Status.LOADING -> {
-
+                    showProgressBar(true)
                 }
                 Result.Status.SUCCESS -> {
+                    hideProgressBar()
                     binding.sortText.isEnabled = true
-                    if (!it.data?.data.isNullOrEmpty()) {
-                        viewModel.data = it.data?.data!!
-                        adapter.updateContent(it.data?.data)
-                    }
+                    binding.filterText.isEnabled = true
+                    if (!it.data?.data?.Hotels.isNullOrEmpty()) {
+                        viewModel.data = it.data?.data?.Hotels!!
+                        viewModel.data.map {
+                            it.daysDifference = CalendarUtils.getDaysDifference(
+                                returnDate,
+                                departDate
+                            )
+                        }
+                        adapter.updateContent(viewModel.data)
+                    } else binding.nothingFoundText.visibility = View.VISIBLE
                 }
                 Result.Status.ERROR -> {
+                    if(!it.message.isNullOrEmpty())showSnack(it.message.toString())
+                    binding.nothingFoundText.visibility = View.VISIBLE
+                    hideProgressBar()
                 }
             }
         })
+    }
+
+    override fun onPause() {
+        super.onPause()
+        try {
+            hideProgressBar()
+        } catch (e: Exception) {
+        }
     }
 
     override fun handleArguments(arguments: Bundle) {

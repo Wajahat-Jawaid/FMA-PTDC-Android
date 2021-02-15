@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -13,7 +12,7 @@
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="@dimen/row_related_event_width"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/row_related_event_width"
         android:layout_marginHorizontal="@dimen/padding_tiny"
         android:background="@color/greyF3F5F7"
         android:orientation="vertical"
@@ -21,7 +20,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView5"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/row_related_event_width"
             android:layout_height="@dimen/row_event_width"
             android:background="@drawable/bf_round_top"
             android:layout_gravity="center"
@@ -35,12 +34,14 @@
 
             <ImageView
                 android:id="@+id/roundedImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/padding_negative_medium"
                 android:scaleType="centerCrop"
-                app:imageUrl="@{model.thumbnails[0]}"
+                app:height="@{@dimen/row_carousel_image_height}"
+                app:imageUrlCustomDimensions="@{model.thumbnails[0]}"
+                app:width="@{@dimen/row_related_event_width}"
                 android:src="@drawable/img_home_bg" />
         </androidx.cardview.widget.CardView>
 
@@ -49,7 +50,7 @@
             android:id="@+id/textView20"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_tiny"
+            android:layout_marginTop="@dimen/padding_micro"
             android:maxLines="1"
             android:text="@{model.title}"
             android:textAppearance="@style/AppTheme.TextView.SemiBold.Large"
@@ -63,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_micro"
-            android:maxLines="4"
+            android:maxLines="1"
             tools:text="The K2 base camp trek in Pakistan is one of the,"
             android:text="@{model.description}"
             android:textAppearance="@style/AppTheme.TextView.Reg.Small"
@@ -78,7 +79,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_tiny"
             android:layout_marginBottom="@dimen/padding_tiny"
-
             android:drawableEnd="@drawable/ef_ic_arrow_forward"
             android:drawableTint="@color/colorPrimary"
             android:text="@string/read_more"

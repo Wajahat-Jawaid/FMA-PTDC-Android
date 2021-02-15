@@ -15,6 +15,7 @@ import com.salampakistan.MainActivity
 import com.salampakistan.R
 import com.salampakistan.databinding.ActivityOnboardingBinding
 import com.salampakistan.ui.adapters.OnboardingPagerAdapter
+import com.salampakistan.utils.DepthPagerTransformer
 import com.salampakistan.utils.Preferences
 
 class OnBoardingActivity : AppCompatActivity() {
@@ -27,10 +28,8 @@ class OnBoardingActivity : AppCompatActivity() {
         binding = ActivityOnboardingBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setView()
-        Preferences(this).setDisplayedOnboarding(true)
-        RxView.clicks(binding.skipText).subscribe {
-            startActivity(Intent(this, MainActivity::class.java))
-        }
+//        Preferences(this).setDisplayedOnboarding(true)
+
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -39,8 +38,13 @@ class OnBoardingActivity : AppCompatActivity() {
     }
 
     private fun setView() {
+        RxView.clicks(binding.skipText).subscribe {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+
         adapter = OnboardingPagerAdapter()
         binding.imagePager.adapter = adapter
+        binding.imagePager.setPageTransformer(true, DepthPagerTransformer())
         binding.tabLayout.setupWithViewPager(binding.imagePager)
         val slidingTabStrip = binding.tabLayout.getChildAt(0) as ViewGroup
         for (i in 0 until (slidingTabStrip.children.count())) {

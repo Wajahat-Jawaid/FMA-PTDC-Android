@@ -29,7 +29,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.salampakistan.R
 import com.salampakistan.base.BindableAdapter
 import com.salampakistan.model.hotelsearchresponse.Hotel
-import com.salampakistan.utils.CalendarUtils.getDates
 import com.salampakistan.utils.CalendarUtils.getEventDates
 import com.salampakistan.utils.extension.getCommaSeparatedPrice
 import com.salampakistan.utils.extension.getParentActivity
@@ -37,7 +36,6 @@ import timber.log.Timber
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 enum class TintDrawableAlignment(internal var positionCode: Int) {
@@ -100,7 +98,6 @@ fun setImageUrl(view: ImageView, url: String?) {
     Glide.with(view.context)
         .load(url)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
-        .placeholder(R.drawable.ic_placeholder)
         .into(view)
 
 }
@@ -116,20 +113,28 @@ fun getDrawable(iconName: String?, context: Context): Drawable? {
         return ContextCompat.getDrawable(context, R.drawable.ic_hotel)
     } else if (iconName.toString().contains("elephant", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_park)
-    } else if (iconName.toString().contains("surface", true)) {
+    } else if (iconName.toString().contains("museum", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_museum)
-    } else if (iconName.toString().contains("Outline", true)) {
+    } else if (iconName.toString().contains("food", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_food)
+    } else if (iconName.toString().contains("hiking", true)) {
+        return ContextCompat.getDrawable(context, R.drawable.ic_trekking)
     } else if (iconName.toString().contains("home", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_guest_house)
     } else if (iconName.toString().contains("trophy", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_trophy)
     } else if (iconName.toString().contains("amusement", true)) {
-        return ContextCompat.getDrawable(context, R.drawable.ic_park)
-    } else if (iconName.toString().contains("hostel", true)) {
+        return ContextCompat.getDrawable(context, R.drawable.ic_amusement)
+    } else if (iconName.toString().contains("hostel", true) ||
+        iconName.toString().contains("bank", true)
+    ) {
         return ContextCompat.getDrawable(context, R.drawable.ic_hostel)
     } else if (iconName.toString().contains("hospital", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_hospital)
+    } else if (iconName.toString().contains("museum", true)) {
+        return ContextCompat.getDrawable(context, R.drawable.ic_museum)
+    } else if (iconName.toString().contains("camping", true)) {
+        return ContextCompat.getDrawable(context, R.drawable.ic_tent)
     } else if (iconName.toString().contains("market", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_market)
     } else if (iconName.toString().contains("shop", true)) {
@@ -140,13 +145,17 @@ fun getDrawable(iconName: String?, context: Context): Drawable? {
         return ContextCompat.getDrawable(context, R.drawable.ic_pharmacy)
     } else if (iconName.toString().contains("cafe", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_cafe)
-    } else if (iconName.toString().contains("bakery", true)) {
+    } else if (iconName.toString().contains("baker", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_bakery)
     } else if (iconName.toString().contains("airport", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_airport)
     } else if (iconName.toString().contains("church", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_hotel)
-    } else if (iconName.toString().contains("accomodation", true)) {
+    } else if (iconName.toString().contains("mountain", true)) {
+        return ContextCompat.getDrawable(context, R.drawable.ic_trails)
+    } else if (iconName.toString().contains("family", true)) {
+        return ContextCompat.getDrawable(context, R.drawable.ic_family)
+    } else if (iconName.toString().contains("accommodation", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_accomodation)
     } else if (iconName.toString().contains("car", true)) {
         return ContextCompat.getDrawable(context, R.drawable.ic_car)
@@ -188,19 +197,48 @@ fun setImageUrlWithCustomDimensions(
     if (width == 0f && activity != null) {
         resolvedWidth = DisplayUtils.getScreenWidth(activity)
     }
+
     Glide.with(view.context)
         .load(url)
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .placeholder(if (shouldNotUsePlaceholder) 0 else R.drawable.ic_placeholder)
         .override(resolvedWidth, height.toInt())
         .into(view)
+
+}
+
+@BindingAdapter("convertTimeFormat")
+fun transformTimeFormat(view: TextView, date: String) {
+//    val inputFormat =
+//        SimpleDateFormat("MM/dd/yyyy'T'HH:mm:ss.SSS")
+//    val outputFormat = SimpleDateFormat("hh:mm aa")
+//
+//    val date = inputFormat.parse(date.split("+")[0])
+//    view.text = outputFormat.format(date)
 }
 
 @SuppressLint("SetTextI18n")
-@BindingAdapter("priceText","currency")
-fun setPriceText(view: TextView, price: String, currency: String) {
+@BindingAdapter("priceText", "currency", "days")
+fun setPriceText(view: TextView, price: Int, currency: String, days: Int = 1) {
     val formatter = DecimalFormat("#,###,###")
-    view.text = "$currency ${formatter.format(price.toLong())}"
+    val total = price.toDouble() * days
+    view.text = "$currency ${formatter.format(total)}"
+}
+
+@SuppressLint("SetTextI18n")
+@BindingAdapter("SetFareText")
+fun setPriceText(view: TextView, price: Int) {
+    val formatter = DecimalFormat("#,###,###")
+    view.text = "pkr ${formatter.format(price.toLong())}"
+}
+
+@BindingAdapter("setPluraltext")
+fun setPluraltext(view: TextView, quantity: Int) {
+    view.text = "Price for $quantity ${view.context.resources.getQuantityString(
+        R.plurals.days,
+        quantity
+    )} stay"
+
 }
 
 /* Text Formatting */
@@ -212,7 +250,7 @@ fun formatValueWithZero(view: TextView, value: Int) {
 @BindingAdapter(value = ["drawableAlignment", "drawableTint"])
 fun setDrawableTint(textView: TextView, alignment: TintDrawableAlignment, @ColorInt color: Int) {
     val drawable = textView.compoundDrawablesRelative[alignment.positionCode]
-    // Get only the drawable of a provided alignment. 0: Left, 1: Top, 2: Right, 3: Bottom
+    // Get only the drawable of a provided alignment. 0: Left, 1: Top, 2: Right, 3: Bottommanif
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
         drawable.colorFilter = BlendModeColorFilter(color, BlendMode.SRC_ATOP)
     } else {
@@ -250,8 +288,13 @@ fun setLayoutMarginBottom(view: View, dimen: Float) {
 }
 
 @BindingAdapter("setProgress")
-fun setRatingBarProgress(view: RatingBar, stars: Int) {
-    view.rating = stars.toFloat()
+fun setRatingBarProgress(view: RatingBar, stars: Any) {
+    view.rating = stars.toString().toFloat()
+}
+
+@BindingAdapter("setRating")
+fun setRatingText(view: TextView, stars: Any) {
+    view.text = stars.toString().toFloat().toString()
 }
 
 @BindingAdapter("setProgressbarProgress")
@@ -261,7 +304,7 @@ fun setprogressBarProgress(view: ProgressBar, progress: Int) {
 
 @BindingAdapter("setText")
 fun getPerNightIntSpannable(view: TextView, amount: Int) {
-    val perText = "PKR ${amount.getCommaSeparatedPrice()} per night"
+    val perText = "pkr ${amount.getCommaSeparatedPrice()} per night"
     val spannable = SpannableString(perText)
     spannable.setSpan(RelativeSizeSpan(0.7f), perText.length - 10, perText.length, 0)
     spannable.setSpan(
@@ -275,7 +318,7 @@ fun getPerNightIntSpannable(view: TextView, amount: Int) {
 
 @BindingAdapter("setPerpersonText")
 fun getPerPersonIntSpannable(view: TextView, amount: Int) {
-    val perText = "PKR ${amount.getCommaSeparatedPrice()} / person"
+    val perText = "pkr ${amount.getCommaSeparatedPrice()} / person"
     view.text = perText
 }
 
@@ -284,7 +327,7 @@ fun setCityState(view: TextView, model: Hotel) {
 //    if (!model.hotelInfo.HotelLocation.isNullOrEmpty()) {
 //        view.text = "${model.city}, ${model.state}"
 //    } else
-    view.text = model.hotelInfo.HotelLocation
+    view.text = model.hotelLocation
 }
 
 @BindingAdapter("setStartDate", "setEndDate")

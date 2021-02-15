@@ -30,8 +30,8 @@
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
                 app:height="@{@dimen/row_where_to_go_height}"
-                app:imageUrlCustomDimensions="@{model.thumbnail}"
-                app:width="@{@dimen/row_where_to_go_height}" />
+                app:width="@{@dimen/row_where_to_go_height}"
+                app:imageUrlCustomDimensions="@{model.thumbnail}" />
         </androidx.cardview.widget.CardView>
 
         <TextView

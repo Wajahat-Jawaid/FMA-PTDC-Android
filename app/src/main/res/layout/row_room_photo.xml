@@ -7,14 +7,14 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/room_photo_width"
         android:layout_height="@dimen/photo_height"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_marginHorizontal="@dimen/padding_small"
         android:background="@color/transparent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -26,12 +26,15 @@
 
             <ImageView
                 android:id="@+id/roundedImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="@drawable/bg_room_list"
                 android:scaleType="centerCrop"
                 tools:src="@drawable/img_home_bg"
-                app:imageUrl="@{model.url}"/>
+                app:height="@{@dimen/photo_height}"
+                app:imageUrlCustomDimensions="@{model.url}"
+                app:width="@{@dimen/room_photo_width}"/>
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

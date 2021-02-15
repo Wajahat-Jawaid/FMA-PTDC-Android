@@ -13,6 +13,7 @@ import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.salampakistan.MainActivity
 import com.salampakistan.R
 import com.salampakistan.base.BaseFragment
 import com.salampakistan.dagger.Injectable
@@ -47,14 +48,24 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Injectable, OnMapReadyCa
         setUpMap()
         getData()
 
-
         setAdapterClick()
+        setUpView()
+        binding.cityText.requestFocus()
+        InputUtils.showSoftKeyboard(context!!,binding.cityText)
+    }
+
+    private fun setUpView() {
+        binding.cityText.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus) (activity!! as MainActivity).hideBottomNav()
+            else (activity!! as MainActivity).showBottomNav()
+        }
     }
 
     private fun setAdapterClick() {
         adapter = MapPOIListAdapter(context!!, R.layout.row_map_poi)
         binding.recyclerView.adapter = adapter
         adapter.itemClickSubject.subscribe {
+            binding.cityText.clearFocus()
             getPOIData(name, it, coordinates)
         }
     }
@@ -92,7 +103,8 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Injectable, OnMapReadyCa
             surrounding = location.surroundings
             coordinates = location.location.coordinates
             setView()
-            binding.cityText.nextFocusDownId
+            binding.cityText.clearFocus()
+            binding.recyclerView.requestFocus()
         }
     }
 
@@ -185,7 +197,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Injectable, OnMapReadyCa
         mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
         mMap.uiSettings.isZoomControlsEnabled = true;
 
-        val location = LatLng(24.883221, 67.144376)
+        val location = LatLng(33.684518, 73.047513)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location))
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.0f))
 
@@ -198,11 +210,11 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), Injectable, OnMapReadyCa
         })
 
         try {
-//            mMap.addMarker(
-//                MarkerOptions()
-//                    .position(location)
-//                    .icon(BitmapDescriptorFactory.fromResource(R.mipmap.logo))
-//            )
+            mMap.addMarker(
+                MarkerOptions()
+                    .position(location)
+                    .title("Islamabad")
+            )
         } catch (e: Exception) {
         }
     }

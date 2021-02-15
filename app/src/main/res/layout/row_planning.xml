@@ -17,11 +17,11 @@
 
         <TextView
             android:id="@+id/distance_text"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/row_planning_km"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            tools:text="1234 km"
-            android:text="@{model.location.}"
+            android:text="12345678911"
+            android:gravity="end"
             android:textAppearance="@style/AppTheme.TextView.Bold.Small" />
 
         <RelativeLayout

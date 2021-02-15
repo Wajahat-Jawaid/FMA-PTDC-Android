@@ -9,6 +9,7 @@ import com.salampakistan.databinding.RowPlanningBinding
 import com.salampakistan.model.LocationCoordinates
 import com.salampakistan.model.WishList
 import com.salampakistan.ui.adapters.SimpleListAdapter
+import kotlin.math.roundToInt
 
 /**
  * Created by Wajahat Jawaid(wajahatjawaid@gmail.com)
@@ -21,22 +22,22 @@ class PlanningListAdapter : SimpleListAdapter<RowPlanningBinding, WishList>(R.la
         if (position == items.size - 1) {
             binding.distanceText.visibility = View.INVISIBLE
         }
-
+        else binding.distanceText.visibility = View.VISIBLE
         if(position != items.size - 1){
             binding.distanceText.text = getLocationsDifference(items[position].location,items[position+1].location)
         }
         super.onBindViewHolder(holder, position)
     }
 
-    private fun getLocationsDifference(startLocation: LocationCoordinates, endLocation: LocationCoordinates): CharSequence? {
-        val startLocation = Location("StartLocation")
-        startLocation.latitude = 0.0
-        startLocation.longitude = 0.0
-        val endLocation = Location("endLocation")
-        endLocation.latitude = 0.0
-        endLocation.longitude = 0.0
-        val loc = LatLng(firstLocatoin.location.coordinates[1].toDouble(), firstLocatoin.location.coordinates[0].toDouble())
-        val l = startLocation.distanceTo(endLocation)/1000
+    private fun getLocationsDifference(beginLocation: LocationCoordinates, destinationLocation: LocationCoordinates): String {
+        val startLocation = Location("beginLocation")
+        startLocation.latitude = beginLocation.coordinates[1].toDouble()
+        startLocation.longitude = beginLocation.coordinates[0].toDouble()
+        val endLocation = Location("destinationLocation")
+        endLocation.latitude = destinationLocation.coordinates[1].toDouble()
+        endLocation.longitude = destinationLocation.coordinates[0].toDouble()
+        return "${String.format("%.2f",(startLocation.distanceTo(endLocation) / 1000))} km"
     }
+
 
 }

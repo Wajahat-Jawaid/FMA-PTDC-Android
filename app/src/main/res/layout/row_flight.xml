@@ -3,26 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data >
+    <data>
+
         <variable
             name="model"
-            type="String" />
+            type="com.salampakistan.model.getflightsresponse.Airline" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/padding_tiny">
+        android:layout_marginBottom="@dimen/padding_tiny"
+        android:animateLayoutChanges="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_Vew"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/fligh_card_top"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/fligh_card_top">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout14"
@@ -75,7 +77,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="ISL"
+                        tools:text="ISL"
+                        android:text="@{model.outboundRoute[0].from}"
                         android:textAppearance="@style/AppTheme.TextView.SemiBold.XXLarge"
                         android:textColor="@color/grey46" />
 
@@ -91,7 +94,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="8:00 pm"
+
+                        app:convertTimeFormat="@{model.outboundRoute[0].depart}"
+                        tools:text="8:00 pm"
                         android:textAppearance="@style/AppTheme.TextView.Reg.Small"
                         android:textColor="@color/colorPrimary" />
                 </LinearLayout>
@@ -113,9 +118,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_booking_round"
+                    android:elevation="5dp"
                     android:padding="@dimen/padding_tiny"
                     android:src="@drawable/ic_flight"
-                    android:elevation="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/view7"
                     app:layout_constraintEnd_toEndOf="@+id/view7"
                     app:layout_constraintStart_toEndOf="@+id/linearLayout9"
@@ -149,7 +154,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="KHI"
+                        android:text="@{model.outboundRoute[model.outboundRoute.size()-1].to}"
+                        tools:text="KHI"
                         android:textAppearance="@style/AppTheme.TextView.SemiBold.XXLarge"
                         android:textColor="@color/grey46" />
 
@@ -165,7 +171,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="10:30 pm"
+                        app:convertTimeFormat="@{model.outboundRoute[model.outboundRoute.size()-1].arrival}"
+                        tools:text="10:30 pm"
                         android:textAppearance="@style/AppTheme.TextView.Reg.Small"
                         android:textColor="@color/colorPrimary" />
                 </LinearLayout>
@@ -197,10 +204,13 @@
                 tools:layout_editor_absoluteX="12dp">
 
                 <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/pia_logo" />
+                    app:height="@{@dimen/airline_logo_height}"
+                    app:width="@{@dimen/airline_logo_width}"
+                    app:imageUrlCustomDimensions="@{model.outboundRoute[0].airline_logo}"
+                    tools:src="@drawable/plac" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -208,18 +218,19 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:gravity="center"
-                    android:text="pkr 18,100"
+                    app:SetFareText="@{model.approxTotalPrice}"
+                    tools:text="pkr 18,100"
                     android:textAppearance="@style/AppTheme.TextView.Bold.XLarge"
                     android:textColor="@color/colorPrimary" />
             </RelativeLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:visibility="gone"
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_services"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/padding_small"
                 android:layout_marginTop="@dimen/padding_small"
+                android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintBottom_toTopOf="@+id/bottom_logo_text"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayout4"
@@ -229,14 +240,14 @@
                 tools:listitem="@layout/row_services" />
 
             <LinearLayout
-                android:visibility="gone"
                 android:id="@+id/bottom_logo_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/padding_tiny"
                 android:layout_marginBottom="@dimen/book_now_button_margin"
+                android:orientation="horizontal"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

@@ -14,20 +14,16 @@ import android.view.ViewGroup
 import android.widget.PopupWindow
 import android.widget.Toast
 import androidx.annotation.DrawableRes
+import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import com.esafirm.imagepicker.features.ImagePicker
 import com.ethanhua.skeleton.Skeleton
 import com.ethanhua.skeleton.SkeletonScreen
@@ -39,6 +35,7 @@ import com.salampakistan.databinding.MenuBottomCameraBinding
 import com.salampakistan.utils.ActionBarHelper
 import com.salampakistan.utils.DialogUtils
 import com.salampakistan.utils.Preferences
+import java.lang.Exception
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -124,6 +121,19 @@ abstract class BaseFragment<out VDB> : Fragment() {
 
     fun showSnack(@StringRes msg: Int) {
         showSnack(getString(msg))
+    }
+
+    fun showLoginSnackBar(@StringRes msg: Int,@IdRes id:Int){showLoginSnackBar(getString(msg),id)}
+
+    fun showLoginSnackBar(msg: String,@IdRes id:Int){
+        Snackbar
+            .make(view!!, msg, Snackbar.LENGTH_LONG)
+            .setAction("Login") {
+                try {
+                    navController.navigate(id)
+                }catch (e:Exception){}
+            }
+            .show()
     }
 
     fun onBackPressed() {

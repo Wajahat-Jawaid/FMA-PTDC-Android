@@ -55,7 +55,7 @@ class ReviewsListFragment : BaseListFragment<FragmentListBinding>(), Injectable 
                         else {
                             binding.titleText.text = getString(R.string.no_review_present)
                             binding.msgText.text = getString(R.string.please_provide_review)
-
+                            binding.noWishlistLayout.visibility = View.VISIBLE
                         }
 
                     }

@@ -132,7 +132,7 @@
                     android:id="@+id/dob_text"
                     style="@style/AppTheme.Profile.Field"
                     android:onClick="@{() -> fragment.showDatePicker()}"
-                    android:text="@string/date_format" />
+                    android:hint="Date of Birth" />
 
                 <Button
                     android:layout_width="match_parent"

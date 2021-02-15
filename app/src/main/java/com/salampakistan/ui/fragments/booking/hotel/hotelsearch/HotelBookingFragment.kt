@@ -4,6 +4,7 @@ import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.jakewharton.rxbinding.view.RxView
 import com.salampakistan.R
 import com.salampakistan.base.BaseFragment
@@ -12,6 +13,7 @@ import com.salampakistan.dagger.injectViewModel
 import com.salampakistan.databinding.FragmentHotelBookingBinding
 import com.salampakistan.model.enums.HotelCheck
 import com.salampakistan.network.JSONKeys
+import com.salampakistan.network.Result
 import com.salampakistan.ui.fragments.booking.hotel.hotellist.HotelListFragment.Companion.ADULT
 import com.salampakistan.ui.fragments.booking.hotel.hotellist.HotelListFragment.Companion.CHILD
 import com.salampakistan.ui.fragments.booking.hotel.hotellist.HotelListFragment.Companion.CITY
@@ -20,7 +22,8 @@ import com.salampakistan.ui.fragments.booking.hotel.hotellist.HotelListFragment.
 import com.salampakistan.ui.fragments.booking.hotel.hotellist.HotelListFragment.Companion.STARTDATE
 import com.salampakistan.ui.fragments.dialog.ListDialogFragment
 import com.salampakistan.utils.CalendarUtils
-import java.lang.Exception
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by Wajahat Jawaid(wajahatjawaid@gmail.com)
@@ -42,11 +45,42 @@ class HotelBookingFragment : BaseFragment<FragmentHotelBookingBinding>(), Inject
             navController.navigateUp()
         }
         setView()
+
+        if(viewModel.citiesList.value.isNullOrEmpty()) getCities()
+    }
+
+    private fun getCities() {
+        viewModel.getHotelCities().observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+                Result.Status.LOADING -> {
+                    showProgressBar(true)
+                }
+                Result.Status.SUCCESS -> {
+                    hideProgressBar()
+                    if (it.data?.data != null) {
+                        viewModel.citiesList.value = it.data?.data
+                    }
+                }
+                Result.Status.ERROR -> {
+                    hideProgressBar()
+                }
+            }
+        })
     }
 
     private fun setView() {
         binding.adultsCounterLayout.counterValueText.text = getString(R.string.one)
         binding.roomsCounterLayout.counterValueText.text = getString(R.string.one)
+
+        val gc = GregorianCalendar()
+        gc.add(Calendar.DATE, 1)
+        gc.time
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val df = SimpleDateFormat("dd MMM", Locale.getDefault())
+        viewModel.serverFormattedCheckInDate.value = sdf.format(System.currentTimeMillis() - 1)
+        viewModel.serverFormattedCheckOutDate.value = sdf.format(gc.time)
+        viewModel.checkInDate.value = df.format(System.currentTimeMillis() - 1)
+        viewModel.checkOutDate.value = df.format(gc.time)
     }
 
     private fun getAdultsCount(): Int {
@@ -113,31 +147,43 @@ class HotelBookingFragment : BaseFragment<FragmentHotelBookingBinding>(), Inject
 
         try {
             val bundle = Bundle()
-            bundle.putString(CITY,binding.locationText.text.toString())
-            bundle.putString(STARTDATE,viewModel.serverFormattedCheckInDate.value)
-            bundle.putString(ENDDATE,viewModel.serverFormattedCheckOutDate.value)
-            bundle.putInt(ADULT,binding.adultsCounterLayout.counterValueText.text.toString().toInt()?:0)
-            bundle.putInt(CHILD,binding.childrenCounterLayout.counterValueText.text.toString().toInt()?:0)
-            bundle.putInt(ROOMS,binding.roomsCounterLayout.counterValueText.text.toString().toInt()?:0)
-            navController.navigate(R.id.action_bookingHotelFragment_to_hotelListFragment,bundle)
+            bundle.putString(CITY, binding.locationText.text.toString())
+            bundle.putString(STARTDATE, viewModel.serverFormattedCheckInDate.value)
+            bundle.putString(ENDDATE, viewModel.serverFormattedCheckOutDate.value)
+            bundle.putInt(
+                ADULT,
+                binding.adultsCounterLayout.counterValueText.text.toString().toInt() ?: 0
+            )
+            bundle.putInt(
+                CHILD,
+                binding.childrenCounterLayout.counterValueText.text.toString().toInt() ?: 0
+            )
+            bundle.putInt(
+                ROOMS,
+                binding.roomsCounterLayout.counterValueText.text.toString().toInt() ?: 0
+            )
+            navController.navigate(R.id.action_bookingHotelFragment_to_hotelListFragment, bundle)
         } catch (e: Exception) {
         }
-
-
 
 
 //        launchWebView("https://ptdc.findmyadventure.pk/accomodation/location/karachi")
     }
 
     override fun onPause() {
-        try{hideProgressBar()}
-        catch (e:Exception){}
+        try {
+            hideProgressBar()
+        } catch (e: Exception) {
+        }
         super.onPause()
 
     }
+
     fun onLocationFieldClicked() {
-        val locations= resources.getStringArray(R.array.locations).toList()
-        val dialogFg = ListDialogFragment.getInstance(locations as ArrayList<String>)
+        if(viewModel.citiesList.value.isNullOrEmpty())
+            return
+        val locations = viewModel.citiesList.value!!.map { it.city_name }.toTypedArray()
+        val dialogFg = ListDialogFragment.getInstance(locations.toList() as ArrayList<String>)
         dialogFg.show(childFragmentManager, JSONKeys.locations)
         dialogFg.itemClickPositionSubject
             .subscribe { position ->
@@ -151,16 +197,31 @@ class HotelBookingFragment : BaseFragment<FragmentHotelBookingBinding>(), Inject
     fun onDateFieldClicked(check: HotelCheck) {
         val listener = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
             val formattedDate = CalendarUtils.getHotelSearchFormattedDate(year, month, dayOfMonth)
-            val serverFormattedDate = CalendarUtils.getFormattedServerDate(year, month, dayOfMonth)
+            val serverFormattedDate =
+                CalendarUtils.getFormattedServerDate(year, month + 1, dayOfMonth)
             if (check == HotelCheck.CHECK_IN) {
                 viewModel.serverFormattedCheckInDate.value = serverFormattedDate
                 viewModel.checkInDate.value = formattedDate
+                viewModel.serverFormattedCheckOutDate.value =
+                    SimpleDateFormat("yyyy-MM-dd").format(CalendarUtils.getMinimumDate(viewModel.serverFormattedCheckInDate.value))
+                viewModel.checkOutDate.value =
+                    SimpleDateFormat("dd MMM").format(CalendarUtils.getMinimumDate(viewModel.serverFormattedCheckInDate.value))
             } else {
                 viewModel.serverFormattedCheckOutDate.value = serverFormattedDate
                 viewModel.checkOutDate.value = formattedDate
             }
         }
-        CalendarUtils.showDatePicker(context!!, listener, minDate = System.currentTimeMillis() - 1)
+        if (check == HotelCheck.CHECK_IN)
+            CalendarUtils.showDatePicker(
+                context!!,
+                listener,
+                minDate = System.currentTimeMillis() - 1
+            )
+        else CalendarUtils.showDatePicker(
+            context!!,
+            listener,
+            minDate = CalendarUtils.getMinimumDate(viewModel.serverFormattedCheckInDate.value)
+        )
     }
 
     override fun getViewId() = R.layout.fragment_hotel_booking

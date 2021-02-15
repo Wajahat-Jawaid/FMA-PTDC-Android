@@ -1,7 +1,7 @@
 package com.salampakistan.model.hotelsearchresponse
 
 data class HotelSearchResponse(
-    val `data`: List<Hotel>,
+    val `data`: Data,
     val meta: Meta,
     val statusCode: Int
 )

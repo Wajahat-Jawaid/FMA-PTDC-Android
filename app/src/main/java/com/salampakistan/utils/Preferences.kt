@@ -20,6 +20,7 @@ class Preferences @Inject constructor(context: Context) {
     enum class KEYS(private val text: String) {
 
         USER("USER"),
+        PHOTOURL("PHOTOURL"),
         ONBOARDINGSCREEN("ONBOARDINGSCREEN"),
         PROMPT_COUNTER("PROMPT_COUNTER");
 
@@ -84,6 +85,7 @@ class Preferences @Inject constructor(context: Context) {
             return null
         return Gson().fromJson<User>(json, User::class.java)
     }
+
 
     fun getString(key: String) = preferences.getString(key, emptyString)!!
     fun getInt(key: String) = preferences.getInt(key, 0)

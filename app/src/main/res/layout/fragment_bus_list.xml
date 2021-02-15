@@ -204,8 +204,8 @@
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_sort"
                     android:drawablePadding="@dimen/padding_tiny"
-                    android:enabled="false"
                     android:gravity="center_vertical"
+                    android:padding="@dimen/padding_small"
                     android:text="@string/sort"
                     android:textAppearance="@style/AppTheme.TextView.Bold.Small"
                     android:textColor="@color/black"
@@ -223,20 +223,21 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="@dimen/padding_tiny"
                     android:background="@color/greyF0"
-                    app:layout_constraintEnd_toStartOf="@+id/textView2"
+                    app:layout_constraintEnd_toStartOf="@+id/filter_text"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/sort_text"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/filter_text"
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_filter"
                     android:drawablePadding="@dimen/padding_tiny"
                     android:gravity="center_vertical"
+                    android:padding="@dimen/padding_small"
                     android:text="@string/filters"
                     android:textAppearance="@style/AppTheme.TextView.Bold.Small"
                     android:textColor="@color/black"
@@ -261,6 +262,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
                 tools:itemCount="3"
                 tools:listitem="@layout/row_bus" />
+            <TextView
+                android:id="@+id/nothing_found_text"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:text="@string/no_record_found"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+                app:layout_constraintBottom_toBottomOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

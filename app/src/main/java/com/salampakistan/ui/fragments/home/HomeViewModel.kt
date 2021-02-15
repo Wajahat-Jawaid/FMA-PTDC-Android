@@ -11,12 +11,14 @@ import javax.inject.Inject
  */
 class HomeViewModel @Inject constructor(
     app: Application,
-    tripsRepo: TripsRepo,
+    private val tripsRepo: TripsRepo,
     fmaRepo: FMARepo
 ) : BaseViewModel(app) {
 
     val locations = tripsRepo.getLocationsCategoryListing()
     val tripsUCantMiss = tripsRepo.getTripsUCantMiss()
-    val events = fmaRepo.getTrips()
+    fun trips(pageSize:Int = 0) = tripsRepo.getTrips(pageSize)
     val expertTips = fmaRepo.getCategoryBlogs("travellers of pakistan")
+
+    var scrollPostion = 0
 }

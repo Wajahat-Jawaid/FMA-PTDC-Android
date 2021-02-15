@@ -11,7 +11,7 @@
 
         <variable
             name="event"
-            type="com.salampakistan.model.Trip" />
+            type="com.salampakistan.model.tripdetailsresponse.Data" />
 
         <variable
             name="cancellationPolicy"
@@ -50,14 +50,24 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/list_top_banner_height">
-
-                    <ImageView
-                        android:id="@+id/image"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/greye0"
-                        android:scaleType="centerCrop"
-                        tools:src="@drawable/ic_placeholder" />
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@color/greye0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:scaleType="centerCrop"
+                            tools:src="@drawable/ic_placeholder" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                     <View
                         android:layout_width="match_parent"
@@ -96,7 +106,7 @@
                         style="@style/AppTheme.LocationDetails.BannerBtn"
                         android:layout_below="@id/desc_text"
                         android:background="@color/theme_green"
-                        android:visibility="visible"
+                        android:visibility="gone"
                         android:onClick="@{() -> fragment.addToPlan()}"
                         android:text="@string/add_to_plan" />
                     <Button
@@ -172,13 +182,13 @@
                     <TextView
                         style="@style/AppTheme.EventDetails.FacilitiesTitle"
                         android:text="@string/services"
-                        app:visibilityGone="@{event.whatsIncluded != null &amp;&amp; event.whatsIncluded.size()!=0}"
+                        app:visibilityGone="@{event.facilities != null &amp;&amp; event.facilities.length()!=0}"
                         />
 
                     <com.google.android.flexbox.FlexboxLayout
                         android:id="@+id/services_flex_box"
                         style="@style/AppTheme.EventDetails.FacilitiesLayout"
-                        app:visibilityGone="@{event.whatsIncluded != null &amp;&amp; event.whatsIncluded.size()!=0}"
+                        app:visibilityGone="@{event.facilities != null &amp;&amp; event.facilities.length()!=0}"
                         />
 
                     <!-- cancellation policy -->

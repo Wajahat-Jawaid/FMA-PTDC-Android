@@ -30,18 +30,50 @@ class BookingRepo @Inject constructor(private val service: WebService) : BaseRep
     }
 
     fun getTransportServices() = resultLiveData { getResult { service.getTransportServices() } }
-    fun getOriginCities(serviceId: Int) =
+
+    fun getHotelCities() = resultLiveData { getResult { service.getHotelCities() } }
+
+    fun getOriginCities(serviceId: Int? = null) =
         resultLiveData { getResult { service.getDepartureCities(serviceId) } }
 
-    fun getDestinationCities(originCity: Int, serviceId: Int) =
+    fun getFlights(
+        departureCity: String,
+        destinationName: String,
+        departDate: String,
+        returnDate: String = "",
+        noOfAdults: Int = 1,
+        noOfInfants: Int = 0,
+        cabin: String = "",
+        noOfChildren: Int = 0,
+        sort: Int = 0,
+        pageSize: Int = 0,
+        skip: Int = 0) =
+        resultLiveData { getResult { service.getFlights(
+            departureCity,
+            destinationName,
+            departDate,
+            returnDate,
+            noOfAdults,
+            noOfInfants,
+            cabin,
+            noOfChildren,
+            sort,
+            pageSize,
+            skip) } }
+
+    fun getAirports() =
+        resultLiveData { getResult { service.getAirports() } }
+
+    fun getDestinationCities(originCity: Int, serviceId: Int?) =
         resultLiveData { getResult { service.getDestinationCities(originCity, serviceId) } }
 
-    fun getBusServices(originCity: String, destinationCity: String, serviceName: String) =
+    fun getBusServices(originCity: String, destinationCity: String, serviceName: String?=null,date:String,skip:Int = 0, pageSize:Int = 0) =
         resultLiveData {
             getResult {
                 service.getAllBusServices(
                     originCity,
                     destinationCity,
+                    date,
                     serviceName
                 )
             }

@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding.view.RxView
 import com.salampakistan.R
 import com.salampakistan.base.BaseFragment
 import com.salampakistan.dagger.Injectable
 import com.salampakistan.databinding.FragmentProfileOptionsBinding
 import com.salampakistan.ui.fragments.login.LoginFragment
+import com.salampakistan.ui.fragments.login.LoginFragment.Companion.loginSuccessSubject
+import com.salampakistan.ui.fragments.login.LoginRegisterViewModel
 import com.salampakistan.ui.fragments.profile.update.UpdateProfileFragment
 import com.salampakistan.utils.Preferences
 import timber.log.Timber
@@ -63,6 +66,7 @@ class ProfileOptionsFragment : BaseFragment<FragmentProfileOptionsBinding>(), In
                             binding.logoutLayout.visibility = View.GONE
                             binding.wishlistLayout.root.visibility = View.GONE
                             binding.reviewLayout.root.visibility = View.GONE
+                            binding.userImage.visibility = View.GONE
                             Preferences(context!!).clear()
                             binding.nameText.text = getString(R.string.login_signup)
                             binding.emailText.text = getString(R.string.login_to_view_details)
@@ -83,34 +87,35 @@ class ProfileOptionsFragment : BaseFragment<FragmentProfileOptionsBinding>(), In
             RxView.clicks(binding.loginContainer)
                 .subscribe {
                     if (clickable) {
-                        val loginFg = LoginFragment.getInstance()
-                        navController.navigate(R.id.action_profileFragment_to_loginFragment)
-                        loginFg.loginSuccessSubject
-                            .subscribe {
-                                Timber.d("Login Success Subject")
-                                Handler().post {
-                                    navController.navigateUp()
-                                    // Update User Details View
-                                    Timber.d(
-                                        "prefs.getUser() != null: %b",
-                                        (prefs.getUser() != null)
-                                    )
-                                    if (prefs.getUser() != null) {
-                                        clickable = false
-                                        binding.logoutLayout.visibility = View.VISIBLE
-                                        binding.wishlistLayout.root.visibility = View.VISIBLE
-                                        binding.reviewLayout.root.visibility = View.VISIBLE
-                                        binding.userImage.visibility = View.VISIBLE
-                                        binding.nameText.text = String.format(
-                                            "%s %s",
-                                            prefs.getUser()!!.firstName,
-                                            prefs.getUser()!!.lastName
-                                        )
-                                        binding.emailText.text = prefs.getUser()!!.email
-                                        binding.editIcon.visibility = View.VISIBLE
-                                    }
-                                }
+                        try {
+                            navController.navigate(R.id.action_profileFragment_to_loginFragment)
+                        } catch (e: Exception) {
+                        }
+                        Timber.d("Login Success Subject")
+                        Handler().post {
+//                            navController.navigateUp()
+                            // Update User Details View
+                            Timber.d(
+                                "prefs.getUser() != null: %b",
+                                (prefs.getUser() != null)
+                            )
+                            if (prefs.getUser() != null) {
+                                clickable = false
+                                binding.logoutLayout.visibility = View.VISIBLE
+                                binding.wishlistLayout.root.visibility = View.VISIBLE
+                                binding.reviewLayout.root.visibility = View.VISIBLE
+                                binding.userImage.visibility = View.VISIBLE
+                                if (!prefs.getString(Preferences.KEYS.PHOTOURL.toString()).isNullOrEmpty())
+                                    Glide.with(context!!).load(prefs.getString(Preferences.KEYS.PHOTOURL.toString())).into(binding.userImage)
+                                binding.nameText.text = String.format(
+                                    "%s %s",
+                                    prefs.getUser()!!.firstName,
+                                    prefs.getUser()!!.lastName
+                                )
+                                binding.emailText.text = prefs.getUser()!!.email
+                                binding.editIcon.visibility = View.VISIBLE
                             }
+                        }
                     }
                 }
         } else {
@@ -119,6 +124,8 @@ class ProfileOptionsFragment : BaseFragment<FragmentProfileOptionsBinding>(), In
             binding.wishlistLayout.root.visibility = View.VISIBLE
             binding.reviewLayout.root.visibility = View.VISIBLE
             binding.userImage.visibility = View.VISIBLE
+            if (!prefs.getString(Preferences.KEYS.PHOTOURL.toString()).isNullOrEmpty())
+                Glide.with(context!!).load(prefs.getString(Preferences.KEYS.PHOTOURL.toString())).into(binding.userImage)
             binding.nameText.text = String.format(
                 "%s %s",
                 prefs.getUser()!!.firstName,
@@ -130,9 +137,10 @@ class ProfileOptionsFragment : BaseFragment<FragmentProfileOptionsBinding>(), In
         RxView.clicks(binding.editIcon)
             .throttleFirst(300, TimeUnit.MILLISECONDS)
             .subscribe {
-                try{
+                try {
                     navController.navigate(R.id.action_profileFragment_to_updateProfileFragment)
-                }catch (e:Exception){}
+                } catch (e: Exception) {
+                }
                 UpdateProfileFragment.updateSuccessSubject.subscribe { updateSuccess ->
                     run {
                         if (updateSuccess) {

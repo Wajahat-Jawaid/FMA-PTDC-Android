@@ -15,6 +15,7 @@ import com.salampakistan.dagger.injectViewModel
 import com.salampakistan.databinding.*
 import com.salampakistan.model.*
 import com.salampakistan.model.seasons.Data
+import com.salampakistan.model.tripslist.Trip
 import com.salampakistan.ui.adapters.BaseListAdapter
 import com.salampakistan.ui.adapters.SimpleListAdapter
 import java.util.concurrent.TimeUnit
@@ -95,7 +96,7 @@ abstract class BaseHomeSectionFragment<M> : BaseFragment<ViewHomeFragmentContain
             )
             is Blog -> (adapter as SimpleListAdapter<RowHomeBlogBinding, Blog>).updateContent(items as List<Blog>)
             is Trip -> (adapter as SimpleListAdapter<RowHomeTripBinding, Trip>).updateContent(
-                items as List<Trip>
+                items as List<com.salampakistan.model.tripslist.Trip>
             )
             else -> (adapter as SimpleListAdapter<RowHomeActivityBinding, Activity>).updateContent(
                 items as List<Activity>

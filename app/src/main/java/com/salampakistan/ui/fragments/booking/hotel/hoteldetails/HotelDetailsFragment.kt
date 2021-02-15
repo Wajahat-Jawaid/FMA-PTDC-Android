@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.jakewharton.rxbinding.view.RxView
 import com.salampakistan.ui.custom.layoutManager.SliderLayoutManager
 import com.salampakistan.R
@@ -12,16 +13,18 @@ import com.salampakistan.dagger.Injectable
 import com.salampakistan.dagger.injectViewModel
 import com.salampakistan.databinding.*
 import com.salampakistan.model.Classint
+import com.salampakistan.model.hotelsearchresponse.HotelAmenities
 import com.salampakistan.model.hotelsearchresponse.Photo
 import com.salampakistan.ui.adapters.SimpleListAdapter
+import com.salampakistan.ui.fragments.ImageViewFragment
 import com.salampakistan.ui.fragments.booking.hotel.bookingdetails.HotelBookingDetailsFragment
+import com.salampakistan.utils.Preferences
 
 class HotelDetailsFragment : BaseFragment<FragmentHotelDetailsBinding>(), Injectable {
 
-    private lateinit var roomAdapter:SimpleListAdapter<RowPropertyListBinding,Classint>
-    private lateinit var amenitiesAdapter:SimpleListAdapter<RowAmenitiesBinding,String>
-    private lateinit var roomPhotoAdapter:SimpleListAdapter<RowRoomPhotoBinding,Photo>
-    private lateinit var binding:FragmentHotelDetailsBinding
+    private lateinit var roomAdapter: SimpleListAdapter<RowPropertyListBinding, Classint>
+    private lateinit var roomPhotoAdapter: SimpleListAdapter<RowRoomPhotoBinding, Photo>
+    private lateinit var binding: FragmentHotelDetailsBinding
 
     private lateinit var city: String
     private lateinit var hotelName: String
@@ -30,10 +33,12 @@ class HotelDetailsFragment : BaseFragment<FragmentHotelDetailsBinding>(), Inject
     private var adult: Int = 0
     private var child: Int = 0
     private var room: Int = 0
+    private var days: Int = 0
+    private var perDayRates: Int = 0
     private lateinit var photos: ArrayList<String>
-    val intArr = ArrayList<Int>()
+    private var hotelAmenities: ArrayList<HotelAmenities> = ArrayList()
 
-    lateinit var arrPhotos:ArrayList<Photo>
+    lateinit var arrPhotos: ArrayList<Photo>
     private lateinit var viewModel: HotelDetailsViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -45,36 +50,60 @@ class HotelDetailsFragment : BaseFragment<FragmentHotelDetailsBinding>(), Inject
     }
 
     private fun setView() {
-        arrPhotos = ArrayList()
-        photos.map { arrPhotos.add((Photo(it))) }
 
+
+        val amenitiesBuilder = StringBuilder()
+        hotelAmenities.map {
+            amenitiesBuilder.append("- ")
+            amenitiesBuilder.append(it.name+"\n")
+        }
+        binding.amenityText.text = amenitiesBuilder.toString()
+
+        arrPhotos = ArrayList()
+        photos.map {
+            arrPhotos.add((Photo(it)))
+        }
+
+        if (hotelAmenities.isNullOrEmpty()) binding.amenityLayout.visibility = View.GONE
         binding.titleText.text = hotelName.toLowerCase()
 
         //junk data
 
-        val strArr = ArrayList<String>()
-        strArr.add("")
-        strArr.add("")
-        strArr.add("")
-        strArr.add("")
         val intArr = ArrayList<Classint>()
         intArr.add(Classint("https://i.pinimg.com/originals/cc/18/8c/cc188c604e58cffd36e1d183c7198d21.jpg"))
         intArr.add(Classint("https://i.pinimg.com/originals/cc/18/8c/cc188c604e58cffd36e1d183c7198d21.jpg"))
         intArr.add(Classint("https://i.pinimg.com/originals/cc/18/8c/cc188c604e58cffd36e1d183c7198d21.jpg"))
 
         roomAdapter = SimpleListAdapter(R.layout.row_property_list)
-        amenitiesAdapter = SimpleListAdapter(R.layout.row_amenities)
         roomPhotoAdapter = SimpleListAdapter(R.layout.row_room_photo)
 
         binding.recRoom.adapter = roomAdapter
-        binding.incAmenities.recAmenities.adapter = amenitiesAdapter
         binding.recPhotos.adapter = roomPhotoAdapter
 
-        amenitiesAdapter.updateContent(strArr)
+
         roomAdapter.updateContent(intArr)
         roomPhotoAdapter.updateContent(arrPhotos)
+
+        if (!arrPhotos.isNullOrEmpty())
+            Glide.with(context!!).load(arrPhotos[0].url).into(binding.placeHolder)
+
+        roomPhotoAdapter.itemClickSubject.subscribe {
+            try {
+                val bundle = Bundle()
+                bundle.putStringArrayList(
+                    ImageViewFragment.IMAGES,
+                    arrPhotos.map { it.url }.toList() as java.util.ArrayList<String>
+                )
+                bundle.putInt(ImageViewFragment.INDEX, arrPhotos.indexOf(it))
+                navController.navigate(
+                    R.id.action_hotelDetailsFragment_to_imageViewFragment,
+                    bundle
+                )
+            } catch (e: java.lang.Exception) {
+            }
+        }
         setHorizontalPicker()
-        binding.incAmenities.recAmenities.layoutManager = GridLayoutManager(context!!,2)
+//        binding.amenityRec.layoutManager = GridLayoutManager(context!!, 2)
         RxView.clicks(binding.backBtn).subscribe {
             navController.navigateUp()
         }
@@ -83,15 +112,25 @@ class HotelDetailsFragment : BaseFragment<FragmentHotelDetailsBinding>(), Inject
 
             try {
                 val bundle = Bundle()
-                bundle.putString(HotelBookingDetailsFragment.HOTELNAME,hotelName)
-                bundle.putString(HotelBookingDetailsFragment.CITY,city)
-                bundle.putString(HotelBookingDetailsFragment.STARTDATE,startDate)
-                bundle.putString(HotelBookingDetailsFragment.ENDDATE,endDate)
-                bundle.putInt(HotelBookingDetailsFragment.ADULT,adult)
-                bundle.putInt(HotelBookingDetailsFragment.CHILD,child)
-                bundle.putInt(HotelBookingDetailsFragment.ROOMS,room)
-                navController.navigate(R.id.action_hotelDetailsFragment_to_hotelBookingDetailsFragment,bundle)
-            }catch (e:Exception){}
+                bundle.putString(HotelBookingDetailsFragment.HOTELNAME, hotelName)
+                bundle.putString(HotelBookingDetailsFragment.CITY, city)
+                bundle.putString(HotelBookingDetailsFragment.STARTDATE, startDate)
+                bundle.putString(HotelBookingDetailsFragment.ENDDATE, endDate)
+                bundle.putInt(HotelBookingDetailsFragment.ADULT, adult)
+                bundle.putInt(HotelBookingDetailsFragment.CHILD, child)
+                bundle.putInt(HotelBookingDetailsFragment.ROOMS, room)
+                bundle.putInt(HotelBookingDetailsFragment.DAY, days)
+                bundle.putInt(HotelBookingDetailsFragment.PERDAYRATE, perDayRates)
+                bundle.putParcelableArrayList(
+                    HotelBookingDetailsFragment.HOTELAMENITIES,
+                    hotelAmenities
+                )
+                navController.navigate(
+                    R.id.action_hotelDetailsFragment_to_hotelBookingDetailsFragment,
+                    bundle
+                )
+            } catch (e: Exception) {
+            }
         }
     }
 
@@ -103,7 +142,12 @@ class HotelDetailsFragment : BaseFragment<FragmentHotelDetailsBinding>(), Inject
         adult = arguments?.getInt(HotelDetailsFragment.ADULT)!!
         child = arguments?.getInt(HotelDetailsFragment.CHILD)!!
         room = arguments?.getInt(HotelDetailsFragment.ROOMS)!!
+        days = arguments?.getInt(HotelDetailsFragment.DAY)!!
+        perDayRates = arguments?.getInt(HotelDetailsFragment.PERDAYRATE)!!
         photos = arguments?.getStringArrayList(HotelDetailsFragment.HOTELPHOTOS)!!
+        hotelAmenities.addAll(
+            arguments?.getStringArrayList(HotelDetailsFragment.HOTELAMENITIES)!!
+                .map { HotelAmenities(it) })
     }
 
     private fun setHorizontalPicker() {
@@ -113,12 +157,10 @@ class HotelDetailsFragment : BaseFragment<FragmentHotelDetailsBinding>(), Inject
     }
 
 
-
-
-
     override fun getViewId(): Int = R.layout.fragment_hotel_details
 
-    override fun injectBinding(view: View): FragmentHotelDetailsBinding = DataBindingUtil.bind(view)!!
+    override fun injectBinding(view: View): FragmentHotelDetailsBinding =
+        DataBindingUtil.bind(view)!!
 
     companion object {
         private val TAG = HotelDetailsFragment::class.java.simpleName
@@ -130,6 +172,9 @@ class HotelDetailsFragment : BaseFragment<FragmentHotelDetailsBinding>(), Inject
         val ROOMS = "$TAG.rooms"
         val HOTELNAME = "$TAG.hotelName"
         val HOTELPHOTOS = "$TAG.hotelPhotos"
+        val HOTELAMENITIES = "$TAG.hotelAmenities"
+        val DAY = "$TAG.days"
+        val PERDAYRATE = "$TAG.perdayRate"
         fun newInstance() = HotelDetailsFragment()
     }
 

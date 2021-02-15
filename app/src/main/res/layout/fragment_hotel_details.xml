@@ -95,10 +95,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/padding_medium"
                     android:layout_marginTop="@dimen/padding_medium"
-                    android:text="@string/available_rooms"
-                    android:textAppearance="@style/AppTheme.TextView.SemiBold"
+                    android:text="@string/details"
+                    android:textAppearance="@style/AppTheme.TextView.SemiBold.Large"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/text_huge"
                     app:layout_constraintBottom_toTopOf="@+id/rec_room"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -108,8 +107,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/padding_tiny"
+                    android:visibility="invisible"
                     android:orientation="horizontal"
-                    app:layout_constraintBottom_toTopOf="@+id/textView8"
+                    app:layout_constraintBottom_toTopOf="@+id/amenity_layout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -117,16 +117,53 @@
                     tools:itemCount="1"
                     tools:listitem="@layout/row_property_list" />
 
-                <include
-                    android:id="@+id/inc_amenities"
-                    layout="@layout/layout_amenities"
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rec_room"
+                    app:layout_constraintEnd_toEndOf="@+id/rec_room"
+                    app:layout_constraintStart_toStartOf="@+id/rec_room"
+                    app:layout_constraintTop_toTopOf="@+id/rec_room">
+                    <ImageView
+                        android:id="@+id/place_holder"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_placeholder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/amenity_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/padding_medium"
-                    android:layout_marginTop="@dimen/padding_medium"
+                    android:layout_marginStart="@dimen/padding_medium"
+                    android:layout_marginEnd="@dimen/padding_medium"
+                    android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rec_room" />
+                    app:layout_constraintTop_toBottomOf="@+id/rec_room" >
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_tiny"
+                        android:text="@string/amenities"
+                        android:textAppearance="@style/AppTheme.TextView.SemiBold"
+                        android:textSize="@dimen/text_large"
+                        app:layout_constraintBottom_toTopOf="@+id/rec_amenities"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rec_room" />
+                    <TextView
+                        android:id="@+id/amenity_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/padding_medium"
+                        android:layout_marginTop="@dimen/padding_medium"/>
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/textView10"
@@ -140,13 +177,14 @@
                     android:textSize="@dimen/text_large"
                     app:layout_constraintBottom_toTopOf="@+id/rec_amenities"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/inc_amenities" />
+                    app:layout_constraintTop_toBottomOf="@+id/amenity_layout" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="room 205"
                     android:textSize="@dimen/text_medium"
+                    android:visibility="gone"
                     android:layout_marginStart="@dimen/padding_tiny"
                     app:layout_constraintBottom_toBottomOf="@+id/textView10"
                     app:layout_constraintStart_toEndOf="@+id/textView10"

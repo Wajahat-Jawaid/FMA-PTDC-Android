@@ -1,3 +1,4 @@
 package com.salampakistan.model.hotelsearchresponse
 
-data class Photo(val url:String)
+
+data class Photo(var url:String)

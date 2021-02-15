@@ -3,9 +3,13 @@ package com.salampakistan
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
+import android.widget.FrameLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
+import androidx.core.view.marginBottom
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
@@ -31,6 +35,13 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
     override fun supportFragmentInjector() = dispatchingAndroidInjector
 
     lateinit var navController: NavController
+
+//    private val frameLayoutParams:CoordinatorLayout.LayoutParams by lazy {
+//        CoordinatorLayout.LayoutParams(
+//            FrameLayout.LayoutParams.MATCH_PARENT,
+//            FrameLayout.LayoutParams.MATCH_PARENT
+//        )
+//    }
 
 
     enum class BottomTabMode {
@@ -68,16 +79,21 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
     }
 
     fun showHideBottomNav() {
-        navController.addOnDestinationChangedListener { _, destination, _ ->
+        navController.addOnDestinationChangedListener { navController, destination, _ ->
             var prevFragId = 0
             prevFragId = navController.previousBackStackEntry?.destination?.id ?: 0
-            if (prevFragId != R.id.homeFragment && prevFragId != R.id.planningFragment && prevFragId != R.id.profileFragment) prevFragId =
+            if (prevFragId != R.id.homeFragment && prevFragId != R.id.planningFragment && prevFragId != R.id.profileOptionsFragment
+                && prevFragId != R.id.mapFragment && prevFragId != R.id.profileFragment && prevFragId != R.id.eventListFragment
+            ) prevFragId =
                 1
             when (destination.id) {
-    //                R.id.homeFragment -> if (prevFragId == 1) showBottomNav()
-    //                R.id.planningFragment -> if (prevFragId == 1) showBottomNav()
-    //                R.id.profileFragment -> if (prevFragId == 1) showBottomNav()
-    //                else -> if (bottom_navigation_view.isVisible) hideBottomNav()
+                R.id.homeFragment -> if (!bottom_navigation_view.isVisible) showBottomNav()
+                R.id.planningFragment -> if (!bottom_navigation_view.isVisible) showBottomNav()
+                R.id.mapFragment -> if (!bottom_navigation_view.isVisible) showBottomNav()
+                R.id.profileFragment -> if (!bottom_navigation_view.isVisible) showBottomNav()
+                R.id.profileOptionsFragment -> if (!bottom_navigation_view.isVisible) showBottomNav()
+                R.id.eventListFragment -> if (!bottom_navigation_view.isVisible) showBottomNav()
+                else -> if (bottom_navigation_view.isVisible) hideBottomNav()
             }
         }
     }
@@ -90,6 +106,8 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
             )
         )
         Handler().postDelayed({
+//            frameLayoutParams.setMargins(0,0,0,this.resources.getDimension(R.dimen.bottom_navigation_menu_height).toInt())
+//            nav_host_fragment.layoutParams = frameLayoutParams
             bottom_navigation_view.visibility = View.VISIBLE
         }, 300)
     }
@@ -102,6 +120,8 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
             )
         )
         Handler().postDelayed({
+//            frameLayoutParams.setMargins(0,0,0,0)
+//            nav_host_fragment.layoutParams = frameLayoutParams
             bottom_navigation_view.visibility = View.GONE
         }, 300)
     }
@@ -120,6 +140,7 @@ class MainActivity : BaseActivity(), HasSupportFragmentInjector {
         val displayMetrics = resources.displayMetrics
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         setContentView(R.layout.activity_main)
+
 //        bottom_navigation_view.setOnNavigationItemSelectedListener { item ->\
 //            when (item.itemId) {
 //                R.id.home -> {

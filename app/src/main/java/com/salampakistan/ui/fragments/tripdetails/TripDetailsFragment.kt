@@ -34,8 +34,8 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
 
     private lateinit var binding: FragmentTripDetailsBinding
     private lateinit var viewModel: TripDetailsViewModel
-    private val trip = MutableLiveData<Trip>()
-    lateinit var tripArguments: Trip
+    private val trip = MutableLiveData<com.salampakistan.model.tripdetailsresponse.Data>()
+    lateinit var tripArguments: com.salampakistan.model.tripslist.Trip
     private lateinit var fragment: ImageCarouselFragment
 
     override fun handleArguments(arguments: Bundle) {
@@ -49,26 +49,27 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
 
         binding.fragment = this
         getData()
-        fetchPlans()
-        fetchWishList()
         RxView.clicks(binding.toolbar.backBtnView.backBtn).subscribe { navController.navigateUp() }
     }
 
     private fun getData() {
-        viewModel.getTripDetails(tripArguments.autoId!!, tripArguments.trimmedSlug!!)
+        viewModel.getTripDetails(tripArguments._id!!)
             .observe(viewLifecycleOwner, Observer {
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
                         if (it.data?.data != null) {
+
+                            fetchPlans()
+                            fetchWishList()
                             trip.value = it.data.data
                             binding.event = trip.value
                             addItinerariesFragment()
                             addImagesFragment()
                             setFacilities()
-                            if (!trip.value?.photos.isNullOrEmpty()) {
+                            if (!trip.value?.thumbnails.isNullOrEmpty()) {
                                 Glide.with(context!!)
-                                    .load(trip.value!!.photos[0])
+                                    .load(trip.value!!.thumbnails[0])
                                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                                     .into(binding.image)
                             }
@@ -89,7 +90,7 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
             return
         }
         showProgressBar()
-        viewModel.removeLocationFromPlan(preferences.getUser()?.token!!, trip.value?.id!!)
+        viewModel.removeTripFromPlan(preferences.getUser()?.token!!, trip.value?._id!!)
             .observe(viewLifecycleOwner, Observer {
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
@@ -97,15 +98,18 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack(it.data.data.message)
+                            binding.removeFromPlanBtn.isClickable = true
                             binding.addToPlanBtn.visibility = View.VISIBLE
                             binding.removeFromPlanBtn.visibility = View.GONE
                         }
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.removeFromPlanBtn.isClickable = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.removeFromPlanBtn.isClickable = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
@@ -116,15 +120,16 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
     fun addToWishList() {
         Timber.d("clicked wishlist button")
         if (preferences.getUser() == null) {
-            showSnack("Please login to continue")
+            showLoginSnackBar("Please login to continue",R.id.action_tripDetailsFragment_to_loginFragment)
             return
         }
         showProgressBar()
-        viewModel.addToWishList(preferences.getUser()?.token!!, trip.value?.id!!)
+        viewModel.addToWishList(preferences.getUser()?.token!!, trip.value?._id!!)
             .observe(viewLifecycleOwner, Observer {
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
+                        binding.addToWishList.isClickable = true
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack(it.data.data.message)
@@ -135,9 +140,11 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.addToWishList.isClickable = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.addToWishList.isClickable = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
@@ -152,11 +159,12 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
             return
         }
         showProgressBar()
-        viewModel.removeFromWishList(preferences.getUser()?.token!!, trip.value?.id!!)
+        viewModel.removeFromWishList(preferences.getUser()?.token!!, trip.value?._id!!)
             .observe(viewLifecycleOwner, Observer {
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
+                        binding.removeFromWishList.isClickable = true
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack(it.data.data.message)
@@ -166,9 +174,11 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.removeFromWishList.isClickable = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.removeFromWishList.isClickable = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
@@ -179,15 +189,16 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
     fun addToPlan() {
         Timber.d("clicked plan button")
         if (preferences.getUser() == null) {
-            showSnack("Please login to continue")
+            showLoginSnackBar("Please login to continue",R.id.action_tripDetailsFragment_to_loginFragment)
             return
         }
         showProgressBar()
-        viewModel.addToPlan(preferences.getUser()?.token!!, trip.value?.id!!)
+        viewModel.addToPlan(preferences.getUser()?.token!!, trip.value?._id!!)
             .observe(viewLifecycleOwner, Observer {
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
+                        binding.addToPlanBtn.isClickable = true
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack(it.data.data.message)
@@ -197,9 +208,11 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.addToPlanBtn.isClickable = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.addToPlanBtn.isClickable = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
@@ -219,12 +232,12 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
                         Result.Status.LOADING -> {
                         }
                         Result.Status.SUCCESS -> {
-                            if (!it.data?.data?.locations.isNullOrEmpty()) {
+                            if (!it.data?.data?.trips.isNullOrEmpty()) {
                                 val tempLoc =
-                                    it.data?.data?.locations?.filter { it -> it.id == tripArguments.id }
+                                    it.data?.data?.trips?.filter { it -> it.id == tripArguments._id }
                                         ?.toTypedArray()
                                 if (!tempLoc.isNullOrEmpty()) {
-                                    if (it.data?.data?.locations!!.contains(tempLoc[0])) {
+                                    if (it.data?.data?.trips!!.contains(tempLoc[0])) {
                                         binding.addToPlanBtn.visibility = View.GONE
                                         binding.removeFromPlanBtn.visibility = View.VISIBLE
                                     }
@@ -255,12 +268,12 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
                         if (it.data?.data == null) {
                             return@Observer
                         }
-                        val tempLoc = it.data?.data?.locations?.filter { it.id == tripArguments.id }
+                        val tempLoc = it.data?.data?.trips?.filter { it.id == tripArguments._id }
                             ?.toTypedArray()
 
 
                         if (!tempLoc.isNullOrEmpty()) {
-                            if (it.data?.data?.locations!!.contains(tempLoc[0])) {
+                            if (it.data?.data?.trips!!.contains(tempLoc[0])) {
                                 binding.addToWishList.visibility = View.GONE
                                 binding.removeFromWishList.visibility = View.VISIBLE
                             }else binding.addToWishList.visibility = View.VISIBLE
@@ -279,14 +292,14 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
 
 
     private fun addItinerariesFragment() {
-        if (!trip.value?.itinerary.isNullOrEmpty()) {
-            childFragmentManager.beginTransaction()
-                .add(
-                    R.id.itineraries_frame_layout,
-                    ItineraryListFragment.getInstance(ArrayList(trip.value?.itinerary!!))
-                )
-                .commit()
-        }
+//        if (!trip.value?.itinerary.isNullOrEmpty()) {
+//            childFragmentManager.beginTransaction()
+//                .add(
+//                    R.id.itineraries_frame_layout,
+//                    ItineraryListFragment.getInstance(ArrayList(trip.value?.facilities!!))
+//                )
+//                .commit()
+//        }
     }
 
     private fun addImagesFragment() {
@@ -310,7 +323,7 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
                         bundle.putStringArrayList(ImageViewFragment.IMAGES, it.first)
                         bundle.putInt(ImageViewFragment.INDEX, it.second)
                         navController.navigate(
-                            R.id.action_eventDetailsFragment_to_imageViewFragment,
+                            R.id.action_tripDetailsFragment_to_imageViewFragment,
                             bundle
                         )
                     } catch (e: Exception) {
@@ -336,25 +349,25 @@ class TripDetailsFragment : BaseFragment<FragmentTripDetailsBinding>(), Injectab
             return
         // Activities
         if (trip.value?.activities != null && trip.value?.activities!!.isNotEmpty()) {
-            for (text in trip.value?.activities!!) {
-                Timber.d("activity: %s", text)
-                binding.activitiesFlexBox.addView(getFacilityView(binding.activitiesFlexBox, text))
-            }
+//            for (text in trip.value?.activities!!) {
+//                Timber.d("activity: %s", text)
+//                binding.activitiesFlexBox.addView(getFacilityView(binding.activitiesFlexBox, text))
+//            }
         }
         // Locations
         if (trip.value?.locations != null && trip.value?.locations!!.isNotEmpty()) {
-            for (text in trip.value?.locations!!) {
-                Timber.d("location: %s", text)
-                binding.locationsFlexBox.addView(getFacilityView(binding.locationsFlexBox, text))
-            }
+//            for (text in trip.value?.locations!!) {
+//                Timber.d("location: %s", text)
+//                binding.locationsFlexBox.addView(getFacilityView(binding.locationsFlexBox, text))
+//            }
         }
         // Services
-        if (!trip.value?.whatsIncluded.isNullOrEmpty()) {
-            for (text in trip.value?.whatsIncluded!!.map { it!!.label.capitalize() }) {
-                Timber.d("Service: %s", text)
-                binding.servicesFlexBox.addView(getFacilityView(binding.servicesFlexBox, text))
-            }
-        }
+//        if (!trip.value?.facilities.isNullOrEmpty()) {
+//            for (text in trip.value?.facilities!!.map { it!!.label.capitalize() }) {
+//                Timber.d("Service: %s", text)
+//                binding.servicesFlexBox.addView(getFacilityView(binding.servicesFlexBox, text))
+//            }
+//        }
         // Cancellation Policy
         if (!TextUtils.isEmpty(trip.value?.cancellationPolicy)) {
             binding.cancellationPolicy = trip.value?.cancellationPolicy!!

@@ -1,6 +1,8 @@
 package com.salampakistan.ui.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,8 +35,11 @@ class ImageViewFragment : BaseFragment<FragmentImageViewBinding>() {
     private fun setupImagePager() {
         imagePagerAdapter = ImagePagerAdapter(images)
         binding.viewPager.adapter = imagePagerAdapter
-        binding.viewPager.setPageTransformer(true,DepthPagerTransformer())
-        binding.viewPager.setCurrentItem(index!!,true)
+        binding.viewPager.setPageTransformer(true, DepthPagerTransformer())
+        Handler().postDelayed({
+            if (index == 0) binding.statusText.text = "${index + 1} / ${images.size}"
+            binding.viewPager.setCurrentItem(index!!, true)
+        }, 100)
         RxView.clicks(binding.closeImg).subscribe {
             navController.navigateUp()
         }
@@ -48,14 +53,14 @@ class ImageViewFragment : BaseFragment<FragmentImageViewBinding>() {
                 binding.statusText.text = "${position + 1} / ${images.size}"
             }
 
-            override fun onPageSelected(position: Int) {}
+            override fun onPageSelected(position: Int) {
+            }
 
             override fun onPageScrollStateChanged(state: Int) {}
         })
     }
 
     override fun handleArguments(arguments: Bundle) {
-        super.handleArguments(arguments)
         images = arguments.getStringArrayList(IMAGES)!!
         index = arguments.getInt(INDEX)
     }

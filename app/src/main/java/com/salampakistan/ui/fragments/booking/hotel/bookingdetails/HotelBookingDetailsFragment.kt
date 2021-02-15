@@ -1,11 +1,8 @@
 package com.salampakistan.ui.fragments.booking.hotel.bookingdetails
 
-import androidx.lifecycle.ViewModelProvider
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jakewharton.rxbinding.view.RxView
@@ -14,13 +11,15 @@ import com.salampakistan.base.BaseFragment
 import com.salampakistan.dagger.Injectable
 import com.salampakistan.dagger.injectViewModel
 import com.salampakistan.databinding.FragmentHotelBookingDetailsBinding
-import com.salampakistan.databinding.RowAmenitiesBinding
+import com.salampakistan.databinding.RowAmenitiesHotelBinding
+import com.salampakistan.model.hotelsearchresponse.HotelAmenities
 import com.salampakistan.ui.adapters.SimpleListAdapter
-import com.salampakistan.ui.fragments.booking.hotel.hoteldetails.HotelDetailsFragment
-import com.salampakistan.ui.fragments.booking.hotel.hotellist.HotelListFragment
+import com.salampakistan.utils.CalendarUtils.convertDate
+import com.salampakistan.utils.extension.getCommaSeparatedPrice
 
 class HotelBookingDetailsFragment : BaseFragment<FragmentHotelBookingDetailsBinding>(), Injectable {
 
+    private val services: Int = 0
     private lateinit var viewModel: HotelBookingDetailsViewModel
     private lateinit var binding: FragmentHotelBookingDetailsBinding
     private lateinit var city: String
@@ -30,30 +29,43 @@ class HotelBookingDetailsFragment : BaseFragment<FragmentHotelBookingDetailsBind
     private var adult: Int = 0
     private var child: Int = 0
     private var room: Int = 0
-    private lateinit var amenitiesAdapter: SimpleListAdapter<RowAmenitiesBinding, String>
+    private var days: Int = 0
+    private var perDayRate: Int = 0
+    private var hotelAmenities: ArrayList<HotelAmenities> = ArrayList()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = injectBinding(view)
         viewModel = injectViewModel(viewModelFactory)
         super.onViewCreated(view, savedInstanceState)
+
         setView()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setView() {
-        val strArr = ArrayList<String>()
-        strArr.add("")
-        strArr.add("")
-        strArr.add("")
-        strArr.add("")
         binding.hotelNameText.text = hotelName
-        amenitiesAdapter = SimpleListAdapter(R.layout.row_amenities)
-        binding.incAmenities.recAmenities.adapter = amenitiesAdapter
-        amenitiesAdapter.updateContent(strArr)
+        binding.cityText.text = city
+        binding.locationText.text = city
+        binding.arrivalDateText.text = convertDate(startDate)
+        binding.departDateText.text = convertDate(endDate)
+        binding.totalText.text = "${perDayRate.getCommaSeparatedPrice()} pkr"
+        binding.roomIntoNightRatesText.text = "${perDayRate.getCommaSeparatedPrice()} pkr"
+        binding.roomIntoNightText.text = "$room ${context!!.resources.getQuantityString(
+            R.plurals.rooms,
+            room
+        )}, $days ${context!!.resources.getQuantityString(R.plurals.days, days)}"
 
-        binding.incAmenities.recAmenities.layoutManager = GridLayoutManager(context!!, 2)
         RxView.clicks(binding.backBtn).subscribe {
             navController.navigateUp()
         }
+
+
+        val amenitiesBuilder = StringBuilder()
+        hotelAmenities.map {
+            amenitiesBuilder.append("- ")
+            amenitiesBuilder.append(it.name+"\n")
+        }
+        binding.amenityText.text = amenitiesBuilder.toString()
     }
 
     override fun handleArguments(arguments: Bundle) {
@@ -64,6 +76,9 @@ class HotelBookingDetailsFragment : BaseFragment<FragmentHotelBookingDetailsBind
         adult = arguments?.getInt(HotelBookingDetailsFragment.ADULT)!!
         child = arguments?.getInt(HotelBookingDetailsFragment.CHILD)!!
         room = arguments?.getInt(HotelBookingDetailsFragment.ROOMS)!!
+        perDayRate = arguments?.getInt(HotelBookingDetailsFragment.PERDAYRATE)!!
+        hotelAmenities = arguments.getParcelableArrayList(HOTELAMENITIES)!!
+        days = arguments.getInt(DAY)!!
     }
 
     override fun getViewId(): Int = R.layout.fragment_hotel_booking_details
@@ -79,6 +94,9 @@ class HotelBookingDetailsFragment : BaseFragment<FragmentHotelBookingDetailsBind
         val ADULT = "$TAG.adult"
         val CHILD = "$TAG.child"
         val ROOMS = "$TAG.rooms"
+        val HOTELAMENITIES = "${TAG}.hotelAmenities"
+        val DAY = "${TAG}.hotelDays"
+        val PERDAYRATE = "${TAG}.perdayrate"
         fun newInstance() = HotelBookingDetailsFragment()
     }
 

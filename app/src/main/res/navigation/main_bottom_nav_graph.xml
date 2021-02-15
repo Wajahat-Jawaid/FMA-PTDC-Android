@@ -60,7 +60,7 @@
             app:popExitAnim="@anim/slide_in_fragment_from_left" />
         <action
             android:id="@+id/action_homeFragment_to_bookingFragment"
-            app:destination="@id/bookingFragment"
+            app:destination="@id/bookingTrainFragment"
             app:enterAnim="@anim/slide_in_fragment_from_right"
             app:exitAnim="@anim/slide_out_fragment_to_left"
             app:popEnterAnim="@anim/slide_out_fragment_to_right"
@@ -93,12 +93,35 @@
             app:exitAnim="@anim/slide_out_fragment_to_left"
             app:popEnterAnim="@anim/slide_out_fragment_to_right"
             app:popExitAnim="@anim/slide_in_fragment_from_left" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_bookingTrainFragment"
+            app:destination="@id/bookingTrainFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_mapFragment"
+            app:destination="@id/mapFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
     </fragment>
     <fragment
         android:id="@+id/planningFragment"
         android:name="com.salampakistan.ui.fragments.planning.PlanningFragment"
         android:label="PlanningFragment"
-        tools:layout="@layout/fragment_planning" />
+        tools:layout="@layout/fragment_planning" >
+        <action
+            android:id="@+id/action_planningFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.salampakistan.ui.fragments.profile.ProfileFragment"
@@ -146,6 +169,13 @@
             app:exitAnim="@anim/slide_out_fragment_to_top"
             app:popEnterAnim="@anim/slide_in_fragment_from_top"
             app:popExitAnim="@anim/slide_out_fragment_to_bottom" />
+        <action
+            android:id="@+id/action_locationDetailsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
 
     </fragment>
     <fragment
@@ -180,6 +210,13 @@
             app:exitAnim="@anim/slide_out_fragment_to_top"
             app:popEnterAnim="@anim/slide_in_fragment_from_top"
             app:popExitAnim="@anim/slide_out_fragment_to_bottom" />
+        <action
+            android:id="@+id/action_tripDetailsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"/>
     </fragment>
 
     <fragment
@@ -219,20 +256,8 @@
         android:name="com.salampakistan.ui.fragments.visastatus.CheckVisaStatusFragment"
         android:label="CheckVisaStatusFragment"
         tools:layout="@layout/fragment_check_visa_status" />
-    <fragment
-        android:id="@+id/bookingFragment"
-        android:name="com.salampakistan.ui.fragments.booking.BookingFragment"
-        android:label="bookingFragment"
-        tools:layout="@layout/fragment_booking">
 
-        <action
-            android:id="@+id/action_bookingFragment_to_bookingTrainFragment"
-            app:destination="@id/bookingTrainFragment"
-            app:enterAnim="@anim/slide_in_fragment_from_right"
-            app:exitAnim="@anim/slide_out_fragment_to_left"
-            app:popEnterAnim="@anim/slide_out_fragment_to_right"
-            app:popExitAnim="@anim/slide_in_fragment_from_left" />
-    </fragment>
+
     <fragment
         android:id="@+id/bookingHotelFragment"
         android:name="com.salampakistan.ui.fragments.booking.hotel.hotelsearch.HotelBookingFragment"
@@ -263,7 +288,15 @@
         android:id="@+id/bookingTrainFragment"
         android:name="com.salampakistan.ui.fragments.booking.train.TrainBookingFragment"
         android:label="bookingTrainFragment"
-        tools:layout="@layout/fragment_train_booking" />
+        tools:layout="@layout/fragment_train_booking" >
+        <action
+            android:id="@+id/action_bookingTrainFragment_to_trainListFragment"
+            app:destination="@id/trainListFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"  />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.salampakistan.ui.fragments.login.LoginFragment"
@@ -307,6 +340,15 @@
             app:popExitAnim="@anim/slide_in_fragment_from_left"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -349,6 +391,13 @@
             app:exitAnim="@anim/slide_out_fragment_to_left"
             app:popEnterAnim="@anim/slide_out_fragment_to_right"
             app:popExitAnim="@anim/slide_in_fragment_from_left" />
+        <action
+            android:id="@+id/action_hotelDetailsFragment_to_imageViewFragment"
+            app:destination="@id/imageViewFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_bottom"
+            app:exitAnim="@anim/slide_out_fragment_to_top"
+            app:popEnterAnim="@anim/slide_in_fragment_from_top"
+            app:popExitAnim="@anim/slide_out_fragment_to_bottom" />
     </fragment>
     <fragment
         android:id="@+id/hotelBookingDetailsFragment"
@@ -389,6 +438,13 @@
             app:exitAnim="@anim/slide_out_fragment_to_top"
             app:popEnterAnim="@anim/slide_in_fragment_from_top"
             app:popExitAnim="@anim/slide_out_fragment_to_bottom" />
+        <action
+            android:id="@+id/action_eventDetailsFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_fragment_from_right"
+            app:exitAnim="@anim/slide_out_fragment_to_left"
+            app:popEnterAnim="@anim/slide_out_fragment_to_right"
+            app:popExitAnim="@anim/slide_in_fragment_from_left" />
     </fragment>
     <fragment
         android:id="@+id/flightListFragment"
@@ -414,4 +470,12 @@
         android:id="@+id/updatePasswordFragment"
         android:name="com.salampakistan.ui.fragments.profile.updatepassword.UpdatePasswordFragment"
         android:label="UpdatePasswordFragment" />
+    <fragment
+        android:id="@+id/trainListFragment"
+        android:name="com.salampakistan.ui.fragments.booking.train.trainlist.TrainListFragment"
+        android:label="TrainListFragment" />
+    <fragment
+        android:id="@+id/profileOptionsFragment"
+        android:name="com.salampakistan.ui.fragments.profile.ProfileOptionsFragment"
+        android:label="ProfileOptionsFragment" />
 </navigation>

@@ -18,6 +18,8 @@ import com.salampakistan.utils.extension.getFormattedSingleDigit
 import com.salampakistan.utils.extension.getMonthInWords
 import com.salampakistan.utils.extension.isValidEmail
 import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * Created by Wajahat Jawaid(wajahatjawaid@gmail.com)
@@ -37,6 +39,14 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(), Injectable {
         binding.fragment = this
         super.onViewCreated(view, savedInstanceState)
         setGenderRadioGroup()
+        setView()
+    }
+
+    private fun setView() {
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val df = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+//        binding.dobText.text = df.format(System.currentTimeMillis() - 1)
+//        dob = sdf.format(System.currentTimeMillis() - 1)
     }
 
     fun showDatePicker() {
@@ -69,9 +79,11 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(), Injectable {
                         if (it.data?.data != null) {
                             val success =
                                 ResponseHandler.handleSuccessResponse(context!!, it.data, params[4])
-                            navController.navigate(R.id.action_registerFragment_to_homeFragment)
+                            try {
+                                navController.navigate(R.id.action_registerFragment_to_homeFragment)
+                            }catch (e:Exception){}
                         } else {
-                            showSnack(R.string.email_already_exists_error)
+                            showSnack(it.message.toString())
                         }
                     }
                     Result.Status.LOADING -> {
@@ -79,7 +91,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(), Injectable {
                     }
                     Result.Status.ERROR -> {
                         hideProgressBar()
-                        showSnack(R.string.email_already_exists_error)
+                        showSnack(it.message.toString())
                     }
                 }
             })
@@ -87,7 +99,9 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(), Injectable {
     }
 
     fun onLoginHereBtnClicked() {
-        pushFragment(LoginFragment.getInstance())
+        try{
+            navController.navigate(R.id.action_registerFragment_to_loginFragment)
+        }catch (e:Exception){}
     }
 
     private fun setGenderRadioGroup() {
@@ -139,7 +153,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(), Injectable {
                 showSnack(R.string.invalid_gender)
                 false
             }
-            binding.dobText.text.toString().equals("mm/dd/yyyy") -> {
+            binding.dobText.text.toString().isNullOrEmpty() -> {
                 showSnack(R.string.invalid_dob)
                 false
             }

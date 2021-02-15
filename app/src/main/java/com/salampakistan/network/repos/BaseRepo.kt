@@ -22,20 +22,20 @@ abstract class BaseRepo {
                 if (body != null) return com.salampakistan.network.Result.success(body)
             }
             // Retry for another 2 times
-            if (retryCount.value!! < retryLimit) {
-                retryCount.value = retryCount.value?.inc()
-                return getResult(call)
-            }
+//            if (retryCount.value!! < retryLimit) {
+//                retryCount.value = retryCount.value?.inc()
+//                return getResult(call)
+//            }
             // If after 3 attempts, it still fails, return an error
-            return error(" ${response.code()} ${JSONObject(response.errorBody()?.string()).getJSONObject("error").getString("message")}")
+            return com.salampakistan.network.Result.error(" ${response.code()} ${JSONObject(response.errorBody()?.string()).getJSONObject("error").getString("message")}")
         } catch (e: Exception) {
-            return error(e.message ?: e.toString())
+            return com.salampakistan.network.Result.error("")
         }
     }
 
     private fun <T> error(message: String): com.salampakistan.network.Result<T> {
         Timber.e(message)
-        return com.salampakistan.network.Result.error("Network call has failed for a following reason: $message")
+        return com.salampakistan.network.Result.error("$message")
     }
 
     companion object {

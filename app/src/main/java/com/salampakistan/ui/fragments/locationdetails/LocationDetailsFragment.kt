@@ -55,16 +55,13 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
         binding = injectBinding(view)
         binding.fragment = this
         super.onViewCreated(view, savedInstanceState)
-        if (location.value?.id.isNullOrEmpty())
-            getData(locationSlug)
-        else binding.location = location.value
-
+        getData(locationSlug)
         RxView.clicks(binding.toolbar.backBtnView.backBtn).subscribe {
             navController.navigateUp()
         }
 
         if (preferences.getUser() != null) {
-            binding.feedbackView.root.visibility = View.VISIBLE
+//            binding.feedbackView.root.visibility = View.VISIBLE
         }
 
         binding.feedbackView.ratingBar.setOnRatingBarChangeListener { ratingBar, fl, b ->
@@ -74,8 +71,7 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
         setScrollView(false)
 
         getRelatedLocationsData()
-        fetchPlans()
-        fetchWishList()
+
 
     }
 
@@ -89,6 +85,8 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                 when (it.status) {
                     Result.Status.SUCCESS -> {
                         Timber.d("Response: %s", Gson().toJson(it.data))
+                        binding.addToWishList.isEnabled = true
+
                         if (it.data?.data == null) {
                             return@Observer
                         }
@@ -100,14 +98,21 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                             if (it.data?.data?.locations!!.contains(tempLoc[0])) {
                                 binding.addToWishList.visibility = View.GONE
                                 binding.removeFromWishList.visibility = View.VISIBLE
-                            }else binding.addToWishList.visibility = View.VISIBLE
-                        }else binding.addToWishList.visibility = View.VISIBLE
+                            } else {
+                                binding.addToWishList.visibility = View.VISIBLE
+                                binding.removeFromWishList.visibility = View.GONE
+                            }
+                        } else {
+                            binding.addToWishList.visibility = View.VISIBLE
+                            binding.removeFromWishList.visibility = View.GONE
+                        }
 
                     }
                     Result.Status.LOADING -> {
                         Timber.d("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.addToWishList.isEnabled = false
                         Timber.e("Error")
                     }
                 }
@@ -126,6 +131,7 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
+                        binding.removeFromPlanBtn.isEnabled = true
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack(it.data.data.message)
@@ -135,9 +141,11 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.removeFromPlanBtn.isEnabled = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.removeFromPlanBtn.isEnabled = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
@@ -170,9 +178,11 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
 
                                 } else {
                                     binding.addToPlanBtn.visibility = View.VISIBLE
+                                    binding.removeFromPlanBtn.visibility = View.GONE
                                 }
                             } else {
                                 binding.addToPlanBtn.visibility = View.VISIBLE
+                                binding.removeFromPlanBtn.visibility = View.GONE
                             }
                         }
                         Result.Status.ERROR -> {
@@ -245,7 +255,10 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
     fun addToWishList() {
         Timber.d("clicked wishlist button")
         if (preferences.getUser() == null) {
-            showSnack("Please login to continue")
+            showLoginSnackBar(
+                "Please login to continue",
+                R.id.action_locationDetailsFragment_to_loginFragment
+            )
             return
         }
         showProgressBar()
@@ -254,6 +267,7 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
+                        binding.addToWishList.isClickable = true
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack(it.data.data.message)
@@ -264,9 +278,11 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.addToWishList.isClickable = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.addToWishList.isClickable = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
@@ -274,7 +290,7 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
             })
     }
 
- fun removeFromWishList() {
+    fun removeFromWishList() {
         Timber.d("clicked wishlist button")
         if (preferences.getUser() == null) {
             showSnack("Please login to continue")
@@ -286,6 +302,7 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
+                        binding.removeFromWishList.isClickable = true
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack(it.data.data.message)
@@ -295,9 +312,11 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.removeFromWishList.isClickable = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.removeFromWishList.isClickable = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
@@ -308,7 +327,10 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
     fun addToPlan() {
         Timber.d("clicked plan button")
         if (preferences.getUser() == null) {
-            showSnack("Please login to continue")
+            showLoginSnackBar(
+                "Please login to continue",
+                R.id.action_locationDetailsFragment_to_loginFragment
+            )
             return
         }
         showProgressBar()
@@ -317,6 +339,7 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                 Timber.d("Details response: %s", Gson().toJson(it))
                 when (it.status) {
                     Result.Status.SUCCESS -> {
+                        binding.addToPlanBtn.isClickable = true
                         Timber.d("Success")
                         if (it.data?.data != null) {
                             showSnack("Location added to plan")
@@ -326,14 +349,24 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                         hideProgressBar()
                     }
                     Result.Status.LOADING -> {
+                        binding.addToPlanBtn.isClickable = false
                         Timber.e("Loading")
                     }
                     Result.Status.ERROR -> {
+                        binding.addToPlanBtn.isClickable = true
                         Timber.e("Error")
                         hideProgressBar()
                     }
                 }
             })
+    }
+
+    override fun onPause() {
+        super.onPause()
+        try {
+            hideProgressBar()
+        } catch (e: Exception) {
+        }
     }
 
     private fun getData(slug: String) {
@@ -346,6 +379,11 @@ class LocationDetailsFragment : BaseFragment<FragmentLocationDetailsBinding>(), 
                         location.value = it.data.location
                         binding.location = location.value
                         binding.feedbackView.titleText.setText(location.value?.name?.capitalize())
+                        locationId = location.value!!.id
+                        locationName = location.value!!.name
+                        locationSlug = location.value!!.slug
+                        fetchPlans()
+                        fetchWishList()
 
                         addImagesFragment()
                         addPOIsFragment()

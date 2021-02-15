@@ -14,5 +14,6 @@ data class User(
     val mobile: String,
     val cnic: String?,
     val gender: String,
-    val dob: Long
+    val dob: Long,
+    var photoUrl: String
 )

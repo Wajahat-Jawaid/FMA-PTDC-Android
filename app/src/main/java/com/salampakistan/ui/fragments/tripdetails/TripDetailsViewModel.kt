@@ -12,14 +12,14 @@ import javax.inject.Inject
 class TripDetailsViewModel @Inject constructor(app: Application, val repo: TripsRepo) :
     BaseViewModel(app) {
 
-    fun getTripDetails(autoId: Int, slug: String) = repo.getTripDetails(autoId, slug)
+    fun getTripDetails(id: String) = repo.getTripDetails(id)
 
 
     fun getPlans(id: String, token: String) = repo.getPlans(id, token)
-    fun addToWishList(token: String, id: String) = repo.addLocationToWishlist(token, id)
-    fun removeFromWishList(token: String, id: String) = repo.removeLocationFromWishlist(token, id)
+    fun addToWishList(token: String, id: String) = repo.addTripToWishlist(token, id)
+    fun removeFromWishList(token: String, id: String) = repo.removeTripFromWishlist(token, id)
     fun getWishlist(id: String, token: String) = repo.getWishlist(id, token)
-    fun addToPlan(token: String, id: String) = repo.addLocationToPlan(token, id)
-    fun removeLocationFromPlan(token: String, id: String) = repo.removeLocationFromPlan(token, id)
+    fun addToPlan(token: String, id: String) = repo.addTripToPlan(token, id)
+    fun removeTripFromPlan(token: String, id: String) = repo.removeTripFromPlan(token, id)
 
 }

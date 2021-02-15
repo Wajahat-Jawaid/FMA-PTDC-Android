@@ -163,18 +163,11 @@
                                 android:onClick="@{() -> fragment.onLocationFieldClicked()}"
                                 android:layout_weight="0.8"
                                 android:text="@={viewModel.location}"
-                                tools:text="@string/location" />
+                                tools:text="@string/location"
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_centerVertical="true"
-                                android:layout_gravity="center"
-                                android:layout_marginRight="@dimen/padding_tiny"
-                                android:onClick="@{() -> fragment.onLocationFieldClicked()}"
-                                android:src="@drawable/ic_dropdown"
-                                tools:ignore="VectorDrawableCompat" />
+                                android:drawableEnd="@drawable/ic_dropdown"
+                                android:drawablePadding="@dimen/padding_small"/>
+
 
                         </LinearLayout>
 
@@ -261,7 +254,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/padding_small"
-                        android:text="@string/room"
+                        android:text="@string/rooms"
                         style="@style/AppTheme.Booking.Label"
                         android:textSize="@dimen/text_medium" />
 

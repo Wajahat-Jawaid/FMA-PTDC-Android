@@ -16,13 +16,12 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         Handler().postDelayed({
-            if (Preferences(this).hasDisplayedOnBoarding()) startActivity(
-                Intent(
-                    this,
-                    MainActivity::class.java
-                )
-            )
-            else startActivity(Intent(this, OnBoardingActivity::class.java))
+//            startActivity(
+//                Intent(
+//                    this,
+//                    MainActivity::class.java
+//                )
+            startActivity(Intent(this, OnBoardingActivity::class.java))
         }, 2000)
 //        try {
 //            Thread.sleep(2000)

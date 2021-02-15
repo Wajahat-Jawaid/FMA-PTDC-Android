@@ -41,4 +41,6 @@
     <color name="grey80">#808080</color>
     <color name="grey90">#909090</color>
     <color name="grey241f20">#241f20</color>
+    <color name="fb_color">#3b5999</color>
+    <color name="google">#cf4332</color>
 </resources>

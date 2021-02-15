@@ -76,15 +76,13 @@
                     android:id="@+id/email_text"
                     style="@style/AppTheme.Profile.Field"
                     android:hint="@string/enter_email"
-                    android:inputType="textEmailAddress"
-                    android:text="fitog61402@5y5u.com" />
+                    android:inputType="textEmailAddress" />
 
                 <EditText
                     android:id="@+id/pwd_text"
                     style="@style/AppTheme.Profile.Field"
                     android:hint="@string/pwd"
-                    android:inputType="textPassword"
-                    android:text="abcdef" />
+                    android:inputType="textPassword" />
 
                 <TextView
                     android:id="@+id/forgot_pwd_text"
@@ -99,20 +97,120 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/padding_huge"
+                    android:layout_marginBottom="@dimen/padding_medium"
                     android:background="@color/theme_green"
                     android:gravity="center"
                     android:onClick="@{() -> fragment.login()}"
                     android:text="@string/login"
                     android:textAppearance="@style/AppTheme.TextView.Bold.Medium"
                     android:textColor="@color/white" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_medium">
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="@dimen/padding_small"
+                        android:backgroundTint="@color/grey77"
+                        android:background="@drawable/dashed_line"
+                        android:layerType="software" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/or"
+                        android:textAllCaps="false"
+                        android:padding="@dimen/padding_small"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/grey77"
+                        android:background="@color/white"
+                        android:textSize="18sp"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
                 <com.facebook.login.widget.LoginButton
-                    android:id="@+id/login_button"
+                    android:id="@+id/fb_login_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp" />
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/fb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_medium"
+                    android:background="@color/fb_color"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/padding_micro">
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/padding_small"
+                        android:src="@drawable/fb_logo_login" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img"
+                        android:gravity="center"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/sign_in_with_facebook"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/google"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/google"
+                    android:gravity="center"
+                    android:paddingVertical="@dimen/padding_micro">
+
+                    <ImageView
+                        android:id="@+id/img_google"
+                        android:layout_width="24dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/padding_small"
+                        android:src="@drawable/google_logo_login" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/img_google"
+                        android:gravity="center"
+                        android:textAppearance="@style/AppTheme.TextView.Reg.Small"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/sign_in_in_with_google"
+                        android:textAllCaps="false"
+                        android:textColor="#ffffff"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/google_sign_in_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="30dp"
+                    android:visibility="gone" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
